@@ -365,6 +365,47 @@
                 "outbound": "✨Claude"
             },
             {
+                "domain_suffix": [
+                    "github.com",
+                    "githubusercontent.com",
+                    "githubassets.com",
+                    "github.io",
+                    "githubstatus.com",
+                    "github.dev",
+                    "githubcopilot.com"
+                ],
+                "action": "route",
+                "outbound": "🐙GitHub"
+            },
+            {
+                "domain_suffix": [
+                    "youtube.com",
+                    "googlevideo.com",
+                    "ytimg.com",
+                    "youtu.be",
+                    "youtubei.googleapis.com",
+                    "ggpht.com"
+                ],
+                "action": "route",
+                "outbound": "📺YouTube"
+            },
+            {
+                "domain_suffix": [
+                    "facebook.com",
+                    "instagram.com",
+                    "whatsapp.com",
+                    "whatsapp.net",
+                    "fbcdn.net",
+                    "cdninstagram.com",
+                    "fb.com",
+                    "fbsbx.com",
+                    "messenger.com",
+                    "threads.net"
+                ],
+                "action": "route",
+                "outbound": "📘Meta"
+            },
+            {
                 "rule_set": [
                     "OpenAI-Site"
                 ],
@@ -555,8 +596,15 @@
             "tag": "🌏️主代理",
             "outbounds": [
                 "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
                 "Direct",
-                "{all}"
+                "{all}",
+                "REJECT"
             ],
             "default": "♾️自动选择"
         },
@@ -567,7 +615,14 @@
                 "Direct",
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "REJECT"
             ],
             "default": "Direct"
         },
@@ -577,7 +632,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -587,7 +650,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -597,8 +668,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
                 "Direct",
-                "{all}"
+                "{all}",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -608,8 +686,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
                 "Direct",
-                "{all}"
+                "{all}",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -619,7 +704,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -630,7 +723,14 @@
                 "Direct",
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "REJECT"
             ],
             "default": "Direct"
         },
@@ -640,7 +740,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -650,7 +758,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -660,7 +776,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -670,7 +794,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -680,7 +812,69 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🐙GitHub",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "📺YouTube",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "📘Meta",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -690,7 +884,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -700,7 +902,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -710,8 +920,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
                 "Direct",
-                "{all}"
+                "{all}",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -721,7 +938,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -731,7 +956,15 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
-                "{all}"
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
             ],
             "default": "🌏️主代理"
         },
@@ -741,11 +974,17 @@
             "outbounds": [
                 "{all}"
             ],
-            "url": "https://www.gstatic.com/generate_204"
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "2m",
+            "tolerance": 30
         },
         {
             "type": "direct",
             "tag": "Direct"
+        },
+        {
+            "type": "block",
+            "tag": "REJECT"
         }
     ],
     "experimental": {
