@@ -15,14 +15,12 @@
             {
                 "tag": "DNS-RESOLVER",
                 "type": "udp",
-                "server": "223.5.5.5",
-                "detour": "Direct"
+                "server": "223.5.5.5"
             },
             {
                 "tag": "DNS-PROXY",
                 "type": "https",
-                "server": "223.5.5.5",
-                "detour": "Direct"
+                "server": "223.5.5.5"
             },
             {
                 "tag": "DNS-DIRECT",
@@ -31,8 +29,7 @@
                 "domain_resolver": {
                     "server": "DNS-RESOLVER",
                     "strategy": "ipv4_only"
-                },
-                "detour": "Direct"
+                }
             },
             {
                 "tag": "DNS-FAKEIP",
@@ -43,14 +40,12 @@
             {
                 "tag": "DNS-GOOGLEFCM",
                 "type": "https",
-                "server": "223.5.5.5",
-                "detour": "Direct"
+                "server": "223.5.5.5"
             },
             {
                 "tag": "DNS-GOOGLE",
                 "type": "https",
-                "server": "223.5.5.5",
-                "detour": "Direct"
+                "server": "223.5.5.5"
             }
         ],
         "rules": [
