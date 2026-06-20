@@ -1,5 +1,4 @@
 {
-    "save_config_path": "./dist/config.json",
     "log": {
         "disabled": false,
         "level": "error",
