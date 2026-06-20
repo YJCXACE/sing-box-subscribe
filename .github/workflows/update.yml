@@ -1,0 +1,58 @@
+name: Update sing-box config
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # 每30分钟自动跑一次
+  workflow_dispatch: {}      # 允许在Actions页面手动点击运行
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Start converter locally
+        run: |
+          nohup python main.py > server.log 2>&1 &
+          sleep 6
+          echo "----- server.log -----"
+          cat server.log || true
+
+      - name: Generate config
+        env:
+          SUB_URL: ${{ secrets.SUB_URL }}
+        run: |
+          mkdir -p dist
+          PORT=$(grep -oP 'http://127\.0\.0\.1:\K[0-9]+' server.log | head -1)
+          if [ -z "$PORT" ]; then
+            echo "未能从server.log中检测到端口,默认尝试5000"
+            PORT=5000
+          fi
+          echo "检测到端口: $PORT"
+          FILE_URL="https://raw.githubusercontent.com/${{ github.repository }}/main/template.json"
+          curl -s "http://127.0.0.1:${PORT}/config/${SUB_URL}&file=${FILE_URL}" -o dist/config.json
+          echo "----- 生成结果前200字符 -----"
+          head -c 200 dist/config.json
+          echo ""
+          # 简单校验是不是合法JSON,不是的话让任务失败,方便排查
+          python -c "import json; json.load(open('dist/config.json', encoding='utf-8'))"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/config.json
+          git diff --cached --quiet || git commit -m "auto update config $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
