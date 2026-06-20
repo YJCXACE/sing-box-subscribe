@@ -1,0 +1,793 @@
+{
+    "log": {
+        "disabled": false,
+        "level": "error",
+        "timestamp": true
+    },
+    "ntp": {
+        "enabled": true,
+        "server": "ntp.aliyun.com",
+        "server_port": 123,
+        "interval": "30m"
+    },
+    "dns": {
+        "servers": [
+            {
+                "tag": "DNS-RESOLVER",
+                "address": "223.5.5.5",
+                "strategy": "ipv4_only",
+                "detour": "Direct"
+            },
+            {
+                "tag": "DNS-PROXY",
+                "address": "https://223.5.5.5/dns-query",
+                "address_resolver": "DNS-RESOLVER",
+                "strategy": "ipv4_only",
+                "detour": "Direct"
+            },
+            {
+                "tag": "DNS-DIRECT",
+                "address": "https://dns.alidns.com/dns-query",
+                "address_resolver": "DNS-RESOLVER",
+                "strategy": "ipv4_only",
+                "detour": "Direct"
+            },
+            {
+                "tag": "DNS-BLOCK",
+                "address": "rcode://refused"
+            },
+            {
+                "tag": "DNS-FAKEIP",
+                "address": "fakeip"
+            },
+            {
+                "tag": "DNS-GOOGLEFCM",
+                "address": "https://223.5.5.5/dns-query",
+                "address_resolver": "DNS-RESOLVER",
+                "strategy": "ipv4_only",
+                "detour": "Direct"
+            },
+            {
+                "tag": "DNS-GOOGLE",
+                "address": "https://223.5.5.5/dns-query",
+                "address_resolver": "DNS-RESOLVER",
+                "strategy": "ipv4_only",
+                "detour": "Direct"
+            }
+        ],
+        "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
+        },
+        "rules": [
+            {
+                "domain_suffix": [
+                    "ntp.aliyun.com"
+                ],
+                "action": "route",
+                "server": "DNS-DIRECT"
+            },
+            {
+                "domain_keyword": [
+                    "msftconnecttest.com",
+                    "msftncsi.com"
+                ],
+                "action": "route",
+                "server": "DNS-PROXY"
+            },
+            {
+                "domain_keyword": [
+                    "googleapis"
+                ],
+                "action": "route",
+                "server": "DNS-GOOGLE"
+            },
+            {
+                "rule_set": [
+                    "GoogleFCM-Site"
+                ],
+                "action": "route",
+                "server": "DNS-GOOGLEFCM"
+            },
+            {
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "action": "route",
+                "server": "DNS-FAKEIP",
+                "disable_cache": true
+            },
+            {
+                "outbound": [
+                    "🌏️主代理",
+                    "♾️自动选择",
+                    "Direct"
+                ],
+                "action": "route",
+                "server": "DNS-DIRECT"
+            }
+        ],
+        "final": "DNS-DIRECT"
+    },
+    "route": {
+        "rule_set": [
+            {
+                "tag": "Apple-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Apple-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Bahamut-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bahamut.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Bilibili-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Bilibili-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "China-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geosite-cn.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "China-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geoip-cn.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Discord-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "GFWList-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/Dreista/sing-box-rule-set-cn@rule-set/gfwlist.txt.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Google-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Google-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "GoogleFCM-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/googlefcm.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Local-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/iplocation-direct.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Microsoft-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/microsoft.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Netflix-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Netflix-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "OpenAI-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "OpenAI-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Speedtest-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/speedtest.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Spotify-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Spotify-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Steam-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/games.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Telegram-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "Telegram-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs",
+                "download_detour": "Direct"
+            },
+            {
+                "tag": "TikTok-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/tiktok.srs",
+                "download_detour": "Direct"
+            }
+        ],
+        "rules": [
+            {
+                "inbound": [
+                    "dns-in"
+                ],
+                "action": "route",
+                "override_address": "8.8.8.8",
+                "override_port": 53,
+                "outbound": "Direct"
+            },
+            {
+                "port": 53,
+                "action": "hijack-dns"
+            },
+            {
+                "inbound": [
+                    "mixed-in",
+                    "tun-in"
+                ],
+                "action": "sniff",
+                "timeout": "300ms"
+            },
+            {
+                "protocol": "dns",
+                "action": "hijack-dns"
+            },
+            {
+                "ip_is_private": true,
+                "action": "route",
+                "outbound": "Direct"
+            },
+            {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                    {
+                        "network": [
+                            "udp"
+                        ]
+                    },
+                    {
+                        "port": [
+                            443
+                        ]
+                    }
+                ],
+                "action": "reject",
+                "method": "default",
+                "no_drop": false
+            },
+            {
+                "domain": [
+                    "ntp.aliyun.com",
+                    "converter-mitce.sakuraikaede.com"
+                ],
+                "action": "route",
+                "outbound": "Direct"
+            },
+            {
+                "domain_keyword": [
+                    "msftconnecttest.com",
+                    "msftncsi.com"
+                ],
+                "action": "route",
+                "outbound": "🌏️主代理"
+            },
+            {
+                "domain_keyword": [
+                    "googleapis"
+                ],
+                "action": "route",
+                "outbound": "🔍Google"
+            },
+            {
+                "rule_set": [
+                    "Bahamut-Site"
+                ],
+                "action": "route",
+                "outbound": "🌸Bahamut"
+            },
+            {
+                "rule_set": [
+                    "Bilibili-Site"
+                ],
+                "action": "route",
+                "outbound": "📺Bilibili"
+            },
+            {
+                "rule_set": [
+                    "Discord-Site"
+                ],
+                "action": "route",
+                "outbound": "🎙️Discord"
+            },
+            {
+                "rule_set": [
+                    "GoogleFCM-Site"
+                ],
+                "action": "route",
+                "outbound": "☁️GoogleFCM"
+            },
+            {
+                "rule_set": [
+                    "Netflix-Site"
+                ],
+                "action": "route",
+                "outbound": "📽️Netflix"
+            },
+            {
+                "domain_suffix": [
+                    "claude.ai",
+                    "claude.com",
+                    "anthropic.com"
+                ],
+                "action": "route",
+                "outbound": "✨Claude"
+            },
+            {
+                "rule_set": [
+                    "OpenAI-Site"
+                ],
+                "action": "route",
+                "outbound": "🤖OpenAI"
+            },
+            {
+                "rule_set": [
+                    "Speedtest-Site"
+                ],
+                "action": "route",
+                "outbound": "⏱️Speedtest"
+            },
+            {
+                "rule_set": [
+                    "Spotify-Site"
+                ],
+                "action": "route",
+                "outbound": "🎵Spotify"
+            },
+            {
+                "rule_set": [
+                    "Steam-Site"
+                ],
+                "action": "route",
+                "outbound": "🎮Steam"
+            },
+            {
+                "rule_set": [
+                    "Telegram-Site"
+                ],
+                "action": "route",
+                "outbound": "✈️Telegram"
+            },
+            {
+                "rule_set": [
+                    "TikTok-Site"
+                ],
+                "action": "route",
+                "outbound": "🎶TikTok"
+            },
+            {
+                "rule_set": [
+                    "Apple-Site"
+                ],
+                "action": "route",
+                "outbound": "🍎Apple"
+            },
+            {
+                "rule_set": [
+                    "Google-Site"
+                ],
+                "action": "route",
+                "outbound": "🔍Google"
+            },
+            {
+                "rule_set": [
+                    "Microsoft-Site"
+                ],
+                "action": "route",
+                "outbound": "💻Microsoft"
+            },
+            {
+                "rule_set": [
+                    "GFWList-Site"
+                ],
+                "action": "route",
+                "outbound": "🧱黑名单网站"
+            },
+            {
+                "rule_set": [
+                    "China-Site"
+                ],
+                "action": "route",
+                "outbound": "🇨🇳中国大陆网站"
+            },
+            {
+                "rule_set": [
+                    "Local-IP"
+                ],
+                "action": "route",
+                "outbound": "Direct"
+            },
+            {
+                "rule_set": [
+                    "Bilibili-IP"
+                ],
+                "action": "route",
+                "outbound": "📺Bilibili"
+            },
+            {
+                "rule_set": [
+                    "Netflix-IP"
+                ],
+                "action": "route",
+                "outbound": "📽️Netflix"
+            },
+            {
+                "rule_set": [
+                    "OpenAI-IP"
+                ],
+                "action": "route",
+                "outbound": "🤖OpenAI"
+            },
+            {
+                "rule_set": [
+                    "Spotify-IP"
+                ],
+                "action": "route",
+                "outbound": "🎵Spotify"
+            },
+            {
+                "rule_set": [
+                    "Telegram-IP"
+                ],
+                "outbound": "✈️Telegram"
+            },
+            {
+                "rule_set": [
+                    "Apple-IP"
+                ],
+                "action": "route",
+                "outbound": "🍎Apple"
+            },
+            {
+                "rule_set": [
+                    "Google-IP"
+                ],
+                "action": "route",
+                "outbound": "🔍Google"
+            },
+            {
+                "rule_set": [
+                    "China-IP"
+                ],
+                "action": "route",
+                "outbound": "🇨🇳中国大陆网站"
+            }
+        ],
+        "final": "🌏️主代理",
+        "auto_detect_interface": true
+    },
+    "inbounds": [
+        {
+            "type": "direct",
+            "listen": "127.0.0.1",
+            "tag": "dns-in",
+            "listen_port": 5350
+        },
+        {
+            "type": "mixed",
+            "tag": "mixed-in",
+            "listen": "127.0.0.1",
+            "listen_port": 4000,
+            "udp_timeout": "5m"
+        },
+        {
+            "type": "tun",
+            "tag": "tun-in",
+            "interface_name": "SakuraiTunnel",
+            "address": [
+                "172.18.0.1/30"
+            ],
+            "auto_route": true,
+            "strict_route": true,
+            "stack": "system",
+            "mtu": 9000,
+            "endpoint_independent_nat": true,
+            "udp_timeout": "5m",
+            "platform": {
+                "http_proxy": {
+                    "enabled": true,
+                    "server": "127.0.0.1",
+                    "server_port": 4000
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "type": "selector",
+            "tag": "🌏️主代理",
+            "outbounds": [
+                "♾️自动选择",
+                "Direct",
+                "{all}"
+            ],
+            "default": "♾️自动选择"
+        },
+        {
+            "tag": "🇨🇳中国大陆网站",
+            "type": "selector",
+            "outbounds": [
+                "Direct",
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "Direct"
+        },
+        {
+            "tag": "🧱黑名单网站",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🔍Google",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🍎Apple",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "Direct",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "💻Microsoft",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "Direct",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🌸Bahamut",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "📺Bilibili",
+            "type": "selector",
+            "outbounds": [
+                "Direct",
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "Direct"
+        },
+        {
+            "tag": "🎙️Discord",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "☁️GoogleFCM",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "📽️Netflix",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🤖OpenAI",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "✨Claude",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "⏱️Speedtest",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🎵Spotify",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🎮Steam",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "Direct",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "✈️Telegram",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🎶TikTok",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "{all}"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "♾️自动选择",
+            "type": "urltest",
+            "outbounds": [
+                "{all}"
+            ],
+            "url": "https://www.gstatic.com/generate_204"
+        },
+        {
+            "type": "direct",
+            "tag": "Direct"
+        }
+    ],
+    "experimental": {
+        "clash_api": {
+            "external_controller": "127.0.0.1:9090",
+            "external_ui": "ui"
+        }
+    }
+}
