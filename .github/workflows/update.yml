@@ -46,6 +46,11 @@ jobs:
           echo ""
           python -c "import json; json.load(open('dist/config.json', encoding='utf-8'))"
 
+      - name: Split auto-select group by region
+        run: |
+          python postprocess.py
+          python -c "import json; json.load(open('dist/config.json', encoding='utf-8'))"
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
