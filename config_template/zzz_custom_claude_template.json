@@ -93,20 +93,14 @@
                 "action": "route",
                 "server": "DNS-FAKEIP",
                 "disable_cache": true
-            },
-            {
-                "outbound": [
-                    "🌏️主代理",
-                    "♾️自动选择",
-                    "Direct"
-                ],
-                "action": "route",
-                "server": "DNS-DIRECT"
             }
         ],
         "final": "DNS-DIRECT"
     },
     "route": {
+        "default_domain_resolver": {
+            "server": "DNS-DIRECT"
+        },
         "rule_set": [
             {
                 "tag": "Apple-Site",
