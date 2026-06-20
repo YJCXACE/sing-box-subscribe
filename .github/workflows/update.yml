@@ -2,7 +2,7 @@ name: Update sing-box config
 
 on:
   schedule:
-    - cron: '*/1440 * * * *'   # 每30分钟自动跑一次
+    - cron: '*/30 * * * *'   # 每30分钟自动跑一次
   workflow_dispatch: {}      # 允许在Actions页面手动点击运行
 
 permissions:
@@ -53,3 +53,7 @@ jobs:
           git add dist/config.json
           git diff --cached --quiet || git commit -m "auto update config $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
+
+      - name: Purge jsdelivr CDN cache
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/dist/config.json" || true
