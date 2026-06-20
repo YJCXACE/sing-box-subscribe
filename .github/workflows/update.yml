@@ -25,7 +25,9 @@ jobs:
 
       - name: Start converter locally
         run: |
-          nohup python main.py > server.log 2>&1 &
+          pip install flask
+          export FLASK_APP=main
+          nohup flask run --host 127.0.0.1 --port 5000 > server.log 2>&1 &
           sleep 6
           echo "----- server.log -----"
           cat server.log || true
@@ -35,12 +37,7 @@ jobs:
           SUB_URL: ${{ secrets.SUB_URL }}
         run: |
           mkdir -p dist
-          PORT=$(grep -oP 'http://127\.0\.0\.1:\K[0-9]+' server.log | head -1)
-          if [ -z "$PORT" ]; then
-            echo "未能从server.log中检测到端口,默认尝试5000"
-            PORT=5000
-          fi
-          echo "检测到端口: $PORT"
+          PORT=5000
           FILE_URL="https://raw.githubusercontent.com/${{ github.repository }}/main/template.json"
           curl -s "http://127.0.0.1:${PORT}/config/${SUB_URL}&file=${FILE_URL}" -o dist/config.json
           echo "----- 生成结果前200字符 -----"
