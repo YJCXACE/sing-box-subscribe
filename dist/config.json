@@ -91,6 +91,7 @@
     "final": "DNS-DIRECT"
   },
   "route": {
+    "default_http_client": "RuleSetClient",
     "default_domain_resolver": {
       "server": "DNS-DIRECT"
     },
@@ -99,176 +100,151 @@
         "tag": "Apple-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
       },
       {
         "tag": "Apple-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
       },
       {
         "tag": "Bahamut-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bahamut.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bahamut.srs"
       },
       {
         "tag": "Bilibili-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
       },
       {
         "tag": "Bilibili-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
       },
       {
         "tag": "China-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geosite-cn.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geosite-cn.srs"
       },
       {
         "tag": "China-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geoip-cn.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geoip-cn.srs"
       },
       {
         "tag": "Discord-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
       },
       {
         "tag": "GFWList-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/Dreista/sing-box-rule-set-cn@rule-set/gfwlist.txt.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/Dreista/sing-box-rule-set-cn@rule-set/gfwlist.txt.srs"
       },
       {
         "tag": "Google-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
       },
       {
         "tag": "Google-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
       },
       {
         "tag": "GoogleFCM-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/googlefcm.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/googlefcm.srs"
       },
       {
         "tag": "Local-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/iplocation-direct.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/iplocation-direct.srs"
       },
       {
         "tag": "Microsoft-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/microsoft.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/microsoft.srs"
       },
       {
         "tag": "Netflix-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
       },
       {
         "tag": "Netflix-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
       },
       {
         "tag": "OpenAI-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
       },
       {
         "tag": "OpenAI-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
       },
       {
         "tag": "Speedtest-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/speedtest.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/speedtest.srs"
       },
       {
         "tag": "Spotify-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
       },
       {
         "tag": "Spotify-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
       },
       {
         "tag": "Steam-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/games.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/games.srs"
       },
       {
         "tag": "Telegram-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
       },
       {
         "tag": "Telegram-IP",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
       },
       {
         "tag": "TikTok-Site",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/tiktok.srs",
-        "download_detour": "Direct"
+        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/tiktok.srs"
       }
     ],
     "rules": [
@@ -565,6 +541,12 @@
           "server_port": 4000
         }
       }
+    }
+  ],
+  "http_clients": [
+    {
+      "tag": "RuleSetClient",
+      "detour": "Direct"
     }
   ],
   "outbounds": [
@@ -1875,7 +1857,7 @@
       "tag": "HK2-HY2",
       "type": "hysteria2",
       "server": "hk2.dexlos.com",
-      "server_port": 20250,
+      "server_port": 20225,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -1892,7 +1874,7 @@
       "tag": "HK3-HY2",
       "type": "hysteria2",
       "server": "hk3.dexlos.com",
-      "server_port": 20419,
+      "server_port": 20449,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -1909,7 +1891,7 @@
       "tag": "HK4-HY2",
       "type": "hysteria2",
       "server": "hk4.dexlos.com",
-      "server_port": 20753,
+      "server_port": 20750,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -1926,7 +1908,7 @@
       "tag": "HK5-HY2",
       "type": "hysteria2",
       "server": "hk5.dexlos.com",
-      "server_port": 20863,
+      "server_port": 20964,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2099,7 +2081,7 @@
       "tag": "JP6-HY2",
       "type": "hysteria2",
       "server": "jp6.dexlos.com",
-      "server_port": 21186,
+      "server_port": 21136,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2116,7 +2098,7 @@
       "tag": "JP7-HY2",
       "type": "hysteria2",
       "server": "jp7.dexlos.com",
-      "server_port": 21254,
+      "server_port": 21368,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2133,7 +2115,7 @@
       "tag": "JP8-HY2",
       "type": "hysteria2",
       "server": "jp8.dexlos.com",
-      "server_port": 21481,
+      "server_port": 21511,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2150,7 +2132,7 @@
       "tag": "JP9-HY2",
       "type": "hysteria2",
       "server": "jp9.dexlos.com",
-      "server_port": 21738,
+      "server_port": 21723,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2167,7 +2149,7 @@
       "tag": "JP10-HY2",
       "type": "hysteria2",
       "server": "jp10.dexlos.com",
-      "server_port": 21809,
+      "server_port": 21960,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2314,7 +2296,7 @@
       "tag": "SG1-HY2",
       "type": "hysteria2",
       "server": "sg1.dexlos.com",
-      "server_port": 20028,
+      "server_port": 20085,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2331,7 +2313,7 @@
       "tag": "SG2-HY2",
       "type": "hysteria2",
       "server": "sg2.dexlos.com",
-      "server_port": 20272,
+      "server_port": 20347,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2678,7 +2660,7 @@
       "tag": "US1-HY2",
       "type": "hysteria2",
       "server": "us1.dexlos.com",
-      "server_port": 20143,
+      "server_port": 20021,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2699,7 +2681,7 @@
       "tag": "US2-HY2",
       "type": "hysteria2",
       "server": "us2.dexlos.com",
-      "server_port": 20261,
+      "server_port": 20346,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2720,7 +2702,7 @@
       "tag": "US3-HY2",
       "type": "hysteria2",
       "server": "us3.dexlos.com",
-      "server_port": 20532,
+      "server_port": 20555,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2741,7 +2723,7 @@
       "tag": "US4-HY2",
       "type": "hysteria2",
       "server": "us4.dexlos.com",
-      "server_port": 20763,
+      "server_port": 20606,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2762,7 +2744,7 @@
       "tag": "US5-HY2",
       "type": "hysteria2",
       "server": "us5.dexlos.com",
-      "server_port": 20992,
+      "server_port": 20894,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2783,7 +2765,7 @@
       "tag": "US6-HY2",
       "type": "hysteria2",
       "server": "us6.dexlos.com",
-      "server_port": 21136,
+      "server_port": 21178,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2804,7 +2786,7 @@
       "tag": "US7-HY2",
       "type": "hysteria2",
       "server": "us7.dexlos.com",
-      "server_port": 21345,
+      "server_port": 21296,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
@@ -2825,7 +2807,7 @@
       "tag": "US8-HY2",
       "type": "hysteria2",
       "server": "us8.dexlos.com",
-      "server_port": 21573,
+      "server_port": 21567,
       "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
       "up_mbps": 10,
       "down_mbps": 100,
