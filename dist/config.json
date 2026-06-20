@@ -1,2834 +1,3328 @@
 {
-  "log": {
-    "disabled": false,
-    "level": "error",
-    "timestamp": true
-  },
-  "ntp": {
-    "enabled": true,
-    "server": "ntp.aliyun.com",
-    "server_port": 123,
-    "interval": "30m"
-  },
-  "dns": {
-    "servers": [
-      {
-        "tag": "DNS-RESOLVER",
-        "type": "udp",
-        "server": "223.5.5.5"
-      },
-      {
-        "tag": "DNS-PROXY",
-        "type": "https",
-        "server": "223.5.5.5"
-      },
-      {
-        "tag": "DNS-DIRECT",
-        "type": "https",
-        "server": "dns.alidns.com",
-        "domain_resolver": {
-          "server": "DNS-RESOLVER",
-          "strategy": "ipv4_only"
-        }
-      },
-      {
-        "tag": "DNS-FAKEIP",
-        "type": "fakeip",
-        "inet4_range": "198.18.0.0/15",
-        "inet6_range": "fc00::/18"
-      },
-      {
-        "tag": "DNS-GOOGLEFCM",
-        "type": "https",
-        "server": "223.5.5.5"
-      },
-      {
-        "tag": "DNS-GOOGLE",
-        "type": "https",
-        "server": "223.5.5.5"
-      }
-    ],
-    "rules": [
-      {
-        "domain_suffix": [
-          "ntp.aliyun.com"
-        ],
-        "action": "route",
-        "server": "DNS-DIRECT"
-      },
-      {
-        "domain_keyword": [
-          "msftconnecttest.com",
-          "msftncsi.com"
-        ],
-        "action": "route",
-        "server": "DNS-PROXY"
-      },
-      {
-        "domain_keyword": [
-          "googleapis"
-        ],
-        "action": "route",
-        "server": "DNS-GOOGLE"
-      },
-      {
-        "rule_set": [
-          "GoogleFCM-Site"
-        ],
-        "action": "route",
-        "server": "DNS-GOOGLEFCM"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "action": "route",
-        "server": "DNS-FAKEIP",
-        "disable_cache": true
-      }
-    ],
-    "final": "DNS-DIRECT"
-  },
-  "route": {
-    "default_http_client": "RuleSetClient",
-    "default_domain_resolver": {
-      "server": "DNS-DIRECT"
+    "log": {
+        "disabled": false,
+        "level": "error",
+        "timestamp": true
     },
-    "rule_set": [
-      {
-        "tag": "Apple-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
-      },
-      {
-        "tag": "Apple-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
-      },
-      {
-        "tag": "Bahamut-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bahamut.srs"
-      },
-      {
-        "tag": "Bilibili-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
-      },
-      {
-        "tag": "Bilibili-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
-      },
-      {
-        "tag": "China-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geosite-cn.srs"
-      },
-      {
-        "tag": "China-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geoip-cn.srs"
-      },
-      {
-        "tag": "Discord-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
-      },
-      {
-        "tag": "GFWList-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/Dreista/sing-box-rule-set-cn@rule-set/gfwlist.txt.srs"
-      },
-      {
-        "tag": "Google-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
-      },
-      {
-        "tag": "Google-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
-      },
-      {
-        "tag": "GoogleFCM-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/googlefcm.srs"
-      },
-      {
-        "tag": "Local-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/iplocation-direct.srs"
-      },
-      {
-        "tag": "Microsoft-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/microsoft.srs"
-      },
-      {
-        "tag": "Netflix-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
-      },
-      {
-        "tag": "Netflix-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
-      },
-      {
-        "tag": "OpenAI-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
-      },
-      {
-        "tag": "OpenAI-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
-      },
-      {
-        "tag": "Speedtest-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/speedtest.srs"
-      },
-      {
-        "tag": "Spotify-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
-      },
-      {
-        "tag": "Spotify-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
-      },
-      {
-        "tag": "Steam-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/games.srs"
-      },
-      {
-        "tag": "Telegram-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
-      },
-      {
-        "tag": "Telegram-IP",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
-      },
-      {
-        "tag": "TikTok-Site",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/tiktok.srs"
-      }
-    ],
-    "rules": [
-      {
-        "inbound": [
-          "dns-in"
+    "ntp": {
+        "enabled": true,
+        "server": "ntp.aliyun.com",
+        "server_port": 123,
+        "interval": "30m"
+    },
+    "dns": {
+        "servers": [
+            {
+                "tag": "DNS-RESOLVER",
+                "type": "udp",
+                "server": "223.5.5.5"
+            },
+            {
+                "tag": "DNS-PROXY",
+                "type": "https",
+                "server": "223.5.5.5"
+            },
+            {
+                "tag": "DNS-DIRECT",
+                "type": "https",
+                "server": "dns.alidns.com",
+                "domain_resolver": {
+                    "server": "DNS-RESOLVER",
+                    "strategy": "ipv4_only"
+                }
+            },
+            {
+                "tag": "DNS-FAKEIP",
+                "type": "fakeip",
+                "inet4_range": "198.18.0.0/15",
+                "inet6_range": "fc00::/18"
+            },
+            {
+                "tag": "DNS-GOOGLEFCM",
+                "type": "https",
+                "server": "223.5.5.5"
+            },
+            {
+                "tag": "DNS-GOOGLE",
+                "type": "https",
+                "server": "223.5.5.5"
+            }
         ],
-        "action": "route",
-        "override_address": "8.8.8.8",
-        "override_port": 53,
-        "outbound": "Direct"
-      },
-      {
-        "port": 53,
-        "action": "hijack-dns"
-      },
-      {
-        "inbound": [
-          "mixed-in",
-          "tun-in"
-        ],
-        "action": "sniff",
-        "timeout": "300ms"
-      },
-      {
-        "protocol": "dns",
-        "action": "hijack-dns"
-      },
-      {
-        "ip_is_private": true,
-        "action": "route",
-        "outbound": "Direct"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
         "rules": [
-          {
-            "network": [
-              "udp"
-            ]
-          },
-          {
-            "port": [
-              443
-            ]
-          }
+            {
+                "domain_suffix": [
+                    "ntp.aliyun.com"
+                ],
+                "action": "route",
+                "server": "DNS-DIRECT"
+            },
+            {
+                "domain_keyword": [
+                    "msftconnecttest.com",
+                    "msftncsi.com"
+                ],
+                "action": "route",
+                "server": "DNS-PROXY"
+            },
+            {
+                "domain_keyword": [
+                    "googleapis"
+                ],
+                "action": "route",
+                "server": "DNS-GOOGLE"
+            },
+            {
+                "rule_set": [
+                    "GoogleFCM-Site"
+                ],
+                "action": "route",
+                "server": "DNS-GOOGLEFCM"
+            },
+            {
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "action": "route",
+                "server": "DNS-FAKEIP",
+                "disable_cache": true
+            }
         ],
-        "action": "reject",
-        "method": "default",
-        "no_drop": false
-      },
-      {
-        "domain": [
-          "ntp.aliyun.com",
-          "converter-mitce.sakuraikaede.com"
-        ],
-        "action": "route",
-        "outbound": "Direct"
-      },
-      {
-        "domain_keyword": [
-          "msftconnecttest.com",
-          "msftncsi.com"
-        ],
-        "action": "route",
-        "outbound": "🌏️主代理"
-      },
-      {
-        "domain_keyword": [
-          "googleapis"
-        ],
-        "action": "route",
-        "outbound": "🔍Google"
-      },
-      {
+        "final": "DNS-DIRECT"
+    },
+    "route": {
+        "default_http_client": "RuleSetClient",
+        "default_domain_resolver": {
+            "server": "DNS-DIRECT"
+        },
         "rule_set": [
-          "Bahamut-Site"
+            {
+                "tag": "Apple-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
+            },
+            {
+                "tag": "Apple-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
+            },
+            {
+                "tag": "Bahamut-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bahamut.srs"
+            },
+            {
+                "tag": "Bilibili-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
+            },
+            {
+                "tag": "Bilibili-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
+            },
+            {
+                "tag": "China-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geosite-cn.srs"
+            },
+            {
+                "tag": "China-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geoip-cn.srs"
+            },
+            {
+                "tag": "Discord-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
+            },
+            {
+                "tag": "GFWList-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/Dreista/sing-box-rule-set-cn@rule-set/gfwlist.txt.srs"
+            },
+            {
+                "tag": "Google-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
+            },
+            {
+                "tag": "Google-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
+            },
+            {
+                "tag": "GoogleFCM-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/googlefcm.srs"
+            },
+            {
+                "tag": "Local-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/iplocation-direct.srs"
+            },
+            {
+                "tag": "Microsoft-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/microsoft.srs"
+            },
+            {
+                "tag": "Netflix-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
+            },
+            {
+                "tag": "Netflix-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
+            },
+            {
+                "tag": "OpenAI-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
+            },
+            {
+                "tag": "OpenAI-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
+            },
+            {
+                "tag": "Speedtest-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/speedtest.srs"
+            },
+            {
+                "tag": "Spotify-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
+            },
+            {
+                "tag": "Spotify-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
+            },
+            {
+                "tag": "Steam-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/games.srs"
+            },
+            {
+                "tag": "Telegram-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
+            },
+            {
+                "tag": "Telegram-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
+            },
+            {
+                "tag": "TikTok-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/tiktok.srs"
+            }
         ],
-        "action": "route",
-        "outbound": "🌸Bahamut"
-      },
-      {
-        "rule_set": [
-          "Bilibili-Site"
+        "rules": [
+            {
+                "inbound": [
+                    "dns-in"
+                ],
+                "action": "route",
+                "override_address": "8.8.8.8",
+                "override_port": 53,
+                "outbound": "Direct"
+            },
+            {
+                "port": 53,
+                "action": "hijack-dns"
+            },
+            {
+                "inbound": [
+                    "mixed-in",
+                    "tun-in"
+                ],
+                "action": "sniff",
+                "timeout": "300ms"
+            },
+            {
+                "protocol": "dns",
+                "action": "hijack-dns"
+            },
+            {
+                "ip_is_private": true,
+                "action": "route",
+                "outbound": "Direct"
+            },
+            {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                    {
+                        "network": [
+                            "udp"
+                        ]
+                    },
+                    {
+                        "port": [
+                            443
+                        ]
+                    }
+                ],
+                "action": "reject",
+                "method": "default",
+                "no_drop": false
+            },
+            {
+                "domain": [
+                    "ntp.aliyun.com",
+                    "converter-mitce.sakuraikaede.com"
+                ],
+                "action": "route",
+                "outbound": "Direct"
+            },
+            {
+                "domain_keyword": [
+                    "msftconnecttest.com",
+                    "msftncsi.com"
+                ],
+                "action": "route",
+                "outbound": "🌏️主代理"
+            },
+            {
+                "domain_keyword": [
+                    "googleapis"
+                ],
+                "action": "route",
+                "outbound": "🔍Google"
+            },
+            {
+                "rule_set": [
+                    "Bahamut-Site"
+                ],
+                "action": "route",
+                "outbound": "🌸Bahamut"
+            },
+            {
+                "rule_set": [
+                    "Bilibili-Site"
+                ],
+                "action": "route",
+                "outbound": "📺Bilibili"
+            },
+            {
+                "rule_set": [
+                    "Discord-Site"
+                ],
+                "action": "route",
+                "outbound": "🎙️Discord"
+            },
+            {
+                "rule_set": [
+                    "GoogleFCM-Site"
+                ],
+                "action": "route",
+                "outbound": "☁️GoogleFCM"
+            },
+            {
+                "rule_set": [
+                    "Netflix-Site"
+                ],
+                "action": "route",
+                "outbound": "📽️Netflix"
+            },
+            {
+                "domain_suffix": [
+                    "claude.ai",
+                    "claude.com",
+                    "anthropic.com"
+                ],
+                "action": "route",
+                "outbound": "✨Claude"
+            },
+            {
+                "domain_suffix": [
+                    "github.com",
+                    "githubusercontent.com",
+                    "githubassets.com",
+                    "github.io",
+                    "githubstatus.com",
+                    "github.dev",
+                    "githubcopilot.com"
+                ],
+                "action": "route",
+                "outbound": "🐙GitHub"
+            },
+            {
+                "domain_suffix": [
+                    "youtube.com",
+                    "googlevideo.com",
+                    "ytimg.com",
+                    "youtu.be",
+                    "youtubei.googleapis.com",
+                    "ggpht.com"
+                ],
+                "action": "route",
+                "outbound": "📺YouTube"
+            },
+            {
+                "domain_suffix": [
+                    "facebook.com",
+                    "instagram.com",
+                    "whatsapp.com",
+                    "whatsapp.net",
+                    "fbcdn.net",
+                    "cdninstagram.com",
+                    "fb.com",
+                    "fbsbx.com",
+                    "messenger.com",
+                    "threads.net"
+                ],
+                "action": "route",
+                "outbound": "📘Meta"
+            },
+            {
+                "rule_set": [
+                    "OpenAI-Site"
+                ],
+                "action": "route",
+                "outbound": "🤖OpenAI"
+            },
+            {
+                "rule_set": [
+                    "Speedtest-Site"
+                ],
+                "action": "route",
+                "outbound": "⏱️Speedtest"
+            },
+            {
+                "rule_set": [
+                    "Spotify-Site"
+                ],
+                "action": "route",
+                "outbound": "🎵Spotify"
+            },
+            {
+                "rule_set": [
+                    "Steam-Site"
+                ],
+                "action": "route",
+                "outbound": "🎮Steam"
+            },
+            {
+                "rule_set": [
+                    "Telegram-Site"
+                ],
+                "action": "route",
+                "outbound": "✈️Telegram"
+            },
+            {
+                "rule_set": [
+                    "TikTok-Site"
+                ],
+                "action": "route",
+                "outbound": "🎶TikTok"
+            },
+            {
+                "rule_set": [
+                    "Apple-Site"
+                ],
+                "action": "route",
+                "outbound": "🍎Apple"
+            },
+            {
+                "rule_set": [
+                    "Google-Site"
+                ],
+                "action": "route",
+                "outbound": "🔍Google"
+            },
+            {
+                "rule_set": [
+                    "Microsoft-Site"
+                ],
+                "action": "route",
+                "outbound": "💻Microsoft"
+            },
+            {
+                "rule_set": [
+                    "GFWList-Site"
+                ],
+                "action": "route",
+                "outbound": "🧱黑名单网站"
+            },
+            {
+                "rule_set": [
+                    "China-Site"
+                ],
+                "action": "route",
+                "outbound": "🇨🇳中国大陆网站"
+            },
+            {
+                "rule_set": [
+                    "Local-IP"
+                ],
+                "action": "route",
+                "outbound": "Direct"
+            },
+            {
+                "rule_set": [
+                    "Bilibili-IP"
+                ],
+                "action": "route",
+                "outbound": "📺Bilibili"
+            },
+            {
+                "rule_set": [
+                    "Netflix-IP"
+                ],
+                "action": "route",
+                "outbound": "📽️Netflix"
+            },
+            {
+                "rule_set": [
+                    "OpenAI-IP"
+                ],
+                "action": "route",
+                "outbound": "🤖OpenAI"
+            },
+            {
+                "rule_set": [
+                    "Spotify-IP"
+                ],
+                "action": "route",
+                "outbound": "🎵Spotify"
+            },
+            {
+                "rule_set": [
+                    "Telegram-IP"
+                ],
+                "outbound": "✈️Telegram"
+            },
+            {
+                "rule_set": [
+                    "Apple-IP"
+                ],
+                "action": "route",
+                "outbound": "🍎Apple"
+            },
+            {
+                "rule_set": [
+                    "Google-IP"
+                ],
+                "action": "route",
+                "outbound": "🔍Google"
+            },
+            {
+                "rule_set": [
+                    "China-IP"
+                ],
+                "action": "route",
+                "outbound": "🇨🇳中国大陆网站"
+            }
         ],
-        "action": "route",
-        "outbound": "📺Bilibili"
-      },
-      {
-        "rule_set": [
-          "Discord-Site"
-        ],
-        "action": "route",
-        "outbound": "🎙️Discord"
-      },
-      {
-        "rule_set": [
-          "GoogleFCM-Site"
-        ],
-        "action": "route",
-        "outbound": "☁️GoogleFCM"
-      },
-      {
-        "rule_set": [
-          "Netflix-Site"
-        ],
-        "action": "route",
-        "outbound": "📽️Netflix"
-      },
-      {
-        "domain_suffix": [
-          "claude.ai",
-          "claude.com",
-          "anthropic.com"
-        ],
-        "action": "route",
-        "outbound": "✨Claude"
-      },
-      {
-        "rule_set": [
-          "OpenAI-Site"
-        ],
-        "action": "route",
-        "outbound": "🤖OpenAI"
-      },
-      {
-        "rule_set": [
-          "Speedtest-Site"
-        ],
-        "action": "route",
-        "outbound": "⏱️Speedtest"
-      },
-      {
-        "rule_set": [
-          "Spotify-Site"
-        ],
-        "action": "route",
-        "outbound": "🎵Spotify"
-      },
-      {
-        "rule_set": [
-          "Steam-Site"
-        ],
-        "action": "route",
-        "outbound": "🎮Steam"
-      },
-      {
-        "rule_set": [
-          "Telegram-Site"
-        ],
-        "action": "route",
-        "outbound": "✈️Telegram"
-      },
-      {
-        "rule_set": [
-          "TikTok-Site"
-        ],
-        "action": "route",
-        "outbound": "🎶TikTok"
-      },
-      {
-        "rule_set": [
-          "Apple-Site"
-        ],
-        "action": "route",
-        "outbound": "🍎Apple"
-      },
-      {
-        "rule_set": [
-          "Google-Site"
-        ],
-        "action": "route",
-        "outbound": "🔍Google"
-      },
-      {
-        "rule_set": [
-          "Microsoft-Site"
-        ],
-        "action": "route",
-        "outbound": "💻Microsoft"
-      },
-      {
-        "rule_set": [
-          "GFWList-Site"
-        ],
-        "action": "route",
-        "outbound": "🧱黑名单网站"
-      },
-      {
-        "rule_set": [
-          "China-Site"
-        ],
-        "action": "route",
-        "outbound": "🇨🇳中国大陆网站"
-      },
-      {
-        "rule_set": [
-          "Local-IP"
-        ],
-        "action": "route",
-        "outbound": "Direct"
-      },
-      {
-        "rule_set": [
-          "Bilibili-IP"
-        ],
-        "action": "route",
-        "outbound": "📺Bilibili"
-      },
-      {
-        "rule_set": [
-          "Netflix-IP"
-        ],
-        "action": "route",
-        "outbound": "📽️Netflix"
-      },
-      {
-        "rule_set": [
-          "OpenAI-IP"
-        ],
-        "action": "route",
-        "outbound": "🤖OpenAI"
-      },
-      {
-        "rule_set": [
-          "Spotify-IP"
-        ],
-        "action": "route",
-        "outbound": "🎵Spotify"
-      },
-      {
-        "rule_set": [
-          "Telegram-IP"
-        ],
-        "outbound": "✈️Telegram"
-      },
-      {
-        "rule_set": [
-          "Apple-IP"
-        ],
-        "action": "route",
-        "outbound": "🍎Apple"
-      },
-      {
-        "rule_set": [
-          "Google-IP"
-        ],
-        "action": "route",
-        "outbound": "🔍Google"
-      },
-      {
-        "rule_set": [
-          "China-IP"
-        ],
-        "action": "route",
-        "outbound": "🇨🇳中国大陆网站"
-      }
+        "final": "🌏️主代理",
+        "auto_detect_interface": true
+    },
+    "inbounds": [
+        {
+            "type": "direct",
+            "listen": "127.0.0.1",
+            "tag": "dns-in",
+            "listen_port": 5350
+        },
+        {
+            "type": "mixed",
+            "tag": "mixed-in",
+            "listen": "127.0.0.1",
+            "listen_port": 4000,
+            "udp_timeout": "5m"
+        },
+        {
+            "type": "tun",
+            "tag": "tun-in",
+            "interface_name": "SakuraiTunnel",
+            "address": [
+                "172.18.0.1/30"
+            ],
+            "auto_route": true,
+            "strict_route": true,
+            "stack": "system",
+            "mtu": 9000,
+            "endpoint_independent_nat": true,
+            "udp_timeout": "5m",
+            "platform": {
+                "http_proxy": {
+                    "enabled": true,
+                    "server": "127.0.0.1",
+                    "server_port": 4000
+                }
+            }
+        }
     ],
-    "final": "🌏️主代理",
-    "auto_detect_interface": true
-  },
-  "inbounds": [
-    {
-      "type": "direct",
-      "listen": "127.0.0.1",
-      "tag": "dns-in",
-      "listen_port": 5350
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 4000,
-      "udp_timeout": "5m"
-    },
-    {
-      "type": "tun",
-      "tag": "tun-in",
-      "interface_name": "SakuraiTunnel",
-      "address": [
-        "172.18.0.1/30"
-      ],
-      "auto_route": true,
-      "strict_route": true,
-      "stack": "system",
-      "mtu": 9000,
-      "endpoint_independent_nat": true,
-      "udp_timeout": "5m",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 4000
+    "http_clients": [
+        {
+            "tag": "RuleSetClient",
+            "detour": "Direct"
         }
-      }
+    ],
+    "outbounds": [
+        {
+            "type": "selector",
+            "tag": "🌏️主代理",
+            "outbounds": [
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "Direct",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "REJECT"
+            ],
+            "default": "♾️自动选择"
+        },
+        {
+            "tag": "🇨🇳中国大陆网站",
+            "type": "selector",
+            "outbounds": [
+                "Direct",
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "REJECT"
+            ],
+            "default": "Direct"
+        },
+        {
+            "tag": "🧱黑名单网站",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🔍Google",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🍎Apple",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "Direct",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "💻Microsoft",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "Direct",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🌸Bahamut",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "📺Bilibili",
+            "type": "selector",
+            "outbounds": [
+                "Direct",
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "REJECT"
+            ],
+            "default": "Direct"
+        },
+        {
+            "tag": "🎙️Discord",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "☁️GoogleFCM",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "📽️Netflix",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🤖OpenAI",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "✨Claude",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🐙GitHub",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "📺YouTube",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "📘Meta",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "⏱️Speedtest",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🎵Spotify",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🎮Steam",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "Direct",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "✈️Telegram",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🎶TikTok",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "♾️自动选择",
+            "type": "urltest",
+            "outbounds": [
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "2m",
+            "tolerance": 30
+        },
+        {
+            "tag": "♾️自动选择-HK",
+            "type": "urltest",
+            "outbounds": [
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "2m",
+            "tolerance": 30
+        },
+        {
+            "tag": "♾️自动选择-TW",
+            "type": "urltest",
+            "outbounds": [
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "2m",
+            "tolerance": 30
+        },
+        {
+            "tag": "♾️自动选择-JP",
+            "type": "urltest",
+            "outbounds": [
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "2m",
+            "tolerance": 30
+        },
+        {
+            "tag": "♾️自动选择-SG",
+            "type": "urltest",
+            "outbounds": [
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "2m",
+            "tolerance": 30
+        },
+        {
+            "tag": "♾️自动选择-US",
+            "type": "urltest",
+            "outbounds": [
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2",
+                "US7-HY2",
+                "US8-HY2"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "2m",
+            "tolerance": 30
+        },
+        {
+            "tag": "♾️自动选择-KR",
+            "type": "urltest",
+            "outbounds": [
+                "KR-1",
+                "KR-2"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "2m",
+            "tolerance": 30
+        },
+        {
+            "type": "direct",
+            "tag": "Direct"
+        },
+        {
+            "type": "block",
+            "tag": "REJECT"
+        },
+        {
+            "tag": "HK-1",
+            "type": "vless",
+            "server": "hk1-r.link-t7.com",
+            "server_port": 10126,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "HK-2",
+            "type": "vless",
+            "server": "hk2-r.link-t7.com",
+            "server_port": 10127,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "HK-3",
+            "type": "vless",
+            "server": "hk3-r.link-t7.com",
+            "server_port": 10128,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "HK-4",
+            "type": "vless",
+            "server": "hk4-r.link-t7.com",
+            "server_port": 10129,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "HK-5",
+            "type": "vless",
+            "server": "hk5-r.link-t7.com",
+            "server_port": 10130,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "HK-6",
+            "type": "vless",
+            "server": "hk6-r.link-t7.com",
+            "server_port": 10136,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "HK2-HY2",
+            "type": "hysteria2",
+            "server": "hk2.dexlos.com",
+            "server_port": 20357,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "hk2.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "HK3-HY2",
+            "type": "hysteria2",
+            "server": "hk3.dexlos.com",
+            "server_port": 20411,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "hk3.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "HK4-HY2",
+            "type": "hysteria2",
+            "server": "hk4.dexlos.com",
+            "server_port": 20600,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "hk4.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "HK5-HY2",
+            "type": "hysteria2",
+            "server": "hk5.dexlos.com",
+            "server_port": 20861,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "hk5.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "JP-1",
+            "type": "vless",
+            "server": "jp1-r.link-t7.com",
+            "server_port": 10031,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "JP-2",
+            "type": "vless",
+            "server": "jp2-r.link-t7.com",
+            "server_port": 10032,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "JP-3",
+            "type": "vless",
+            "server": "jp3-r.link-t7.com",
+            "server_port": 10033,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "JP-4",
+            "type": "vless",
+            "server": "jp4-r.link-t7.com",
+            "server_port": 10034,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "JP-5",
+            "type": "vless",
+            "server": "jp5-r.link-t7.com",
+            "server_port": 10035,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "JP-6",
+            "type": "vless",
+            "server": "jp6-r.link-t7.com",
+            "server_port": 10036,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "JP6-HY2",
+            "type": "hysteria2",
+            "server": "jp6.dexlos.com",
+            "server_port": 21171,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "jp6.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "JP7-HY2",
+            "type": "hysteria2",
+            "server": "jp7.dexlos.com",
+            "server_port": 21272,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "jp7.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "JP8-HY2",
+            "type": "hysteria2",
+            "server": "jp8.dexlos.com",
+            "server_port": 21514,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "jp8.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "JP9-HY2",
+            "type": "hysteria2",
+            "server": "jp9.dexlos.com",
+            "server_port": 21651,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "jp9.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "JP10-HY2",
+            "type": "hysteria2",
+            "server": "jp10.dexlos.com",
+            "server_port": 21941,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "jp10.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "KR-1",
+            "type": "vless",
+            "server": "kr1-r.link-t7.com",
+            "server_port": 10046,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "KR-2",
+            "type": "vless",
+            "server": "kr2-r.link-t7.com",
+            "server_port": 10047,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "SG-1",
+            "type": "vless",
+            "server": "sg1-r.link-t7.com",
+            "server_port": 10036,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "SG-2",
+            "type": "vless",
+            "server": "sg2-r.link-t7.com",
+            "server_port": 10037,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "SG-3",
+            "type": "vless",
+            "server": "sg3-r.link-t7.com",
+            "server_port": 10038,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "d1.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "update"
+            }
+        },
+        {
+            "tag": "SG1-HY2",
+            "type": "hysteria2",
+            "server": "sg1.dexlos.com",
+            "server_port": 20158,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "sg1.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "SG2-HY2",
+            "type": "hysteria2",
+            "server": "sg2.dexlos.com",
+            "server_port": 20324,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "sg2.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "TW-1",
+            "type": "tuic",
+            "server": "tw1.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw1.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-2",
+            "type": "tuic",
+            "server": "tw2.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw2.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-3",
+            "type": "tuic",
+            "server": "tw3.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw3.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-4",
+            "type": "tuic",
+            "server": "tw4.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw4.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-5",
+            "type": "tuic",
+            "server": "tw5.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw5.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-6",
+            "type": "tuic",
+            "server": "tw6.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw6.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-7",
+            "type": "tuic",
+            "server": "tw7.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw7.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-8",
+            "type": "tuic",
+            "server": "tw8.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw8.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-9",
+            "type": "tuic",
+            "server": "tw9.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw9.dexlos.com"
+            }
+        },
+        {
+            "tag": "TW-10",
+            "type": "tuic",
+            "server": "tw10.dexlos.com",
+            "server_port": 8080,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "tls": {
+                "enabled": true,
+                "alpn": [
+                    "h3"
+                ],
+                "insecure": false,
+                "server_name": "tw10.dexlos.com"
+            }
+        },
+        {
+            "tag": "US-1TCP",
+            "type": "vless",
+            "server": "us1-r.link-t7.com",
+            "server_port": 10238,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "US-2TCP",
+            "type": "vless",
+            "server": "us2-r.link-t7.com",
+            "server_port": 10239,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "US-3TCP",
+            "type": "vless",
+            "server": "us3-r.link-t7.com",
+            "server_port": 10240,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "US-4TCP",
+            "type": "vless",
+            "server": "us4-r.link-t7.com",
+            "server_port": 10241,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "US-5TCP",
+            "type": "vless",
+            "server": "us5-r.link-t7.com",
+            "server_port": 10242,
+            "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "s0.awsstatic.com",
+                "reality": {
+                    "enabled": true,
+                    "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+                    "short_id": "686c0ef0"
+                },
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "movie"
+            }
+        },
+        {
+            "tag": "US1-HY2",
+            "type": "hysteria2",
+            "server": "us1.dexlos.com",
+            "server_port": 20050,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "us1.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            },
+            "obfs": {
+                "type": "salamander",
+                "password": "xK9mN2pLq5vR8wB3"
+            }
+        },
+        {
+            "tag": "US2-HY2",
+            "type": "hysteria2",
+            "server": "us2.dexlos.com",
+            "server_port": 20211,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "us2.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            },
+            "obfs": {
+                "type": "salamander",
+                "password": "xK9mN2pLq5vR8wB3"
+            }
+        },
+        {
+            "tag": "US3-HY2",
+            "type": "hysteria2",
+            "server": "us3.dexlos.com",
+            "server_port": 20599,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "us3.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            },
+            "obfs": {
+                "type": "salamander",
+                "password": "xK9mN2pLq5vR8wB3"
+            }
+        },
+        {
+            "tag": "US4-HY2",
+            "type": "hysteria2",
+            "server": "us4.dexlos.com",
+            "server_port": 20797,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "us4.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            },
+            "obfs": {
+                "type": "salamander",
+                "password": "xK9mN2pLq5vR8wB3"
+            }
+        },
+        {
+            "tag": "US5-HY2",
+            "type": "hysteria2",
+            "server": "us5.dexlos.com",
+            "server_port": 20814,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "us5.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            },
+            "obfs": {
+                "type": "salamander",
+                "password": "xK9mN2pLq5vR8wB3"
+            }
+        },
+        {
+            "tag": "US6-HY2",
+            "type": "hysteria2",
+            "server": "us6.dexlos.com",
+            "server_port": 21042,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "us6.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            },
+            "obfs": {
+                "type": "salamander",
+                "password": "xK9mN2pLq5vR8wB3"
+            }
+        },
+        {
+            "tag": "US7-HY2",
+            "type": "hysteria2",
+            "server": "us7.dexlos.com",
+            "server_port": 21331,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "us7.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            },
+            "obfs": {
+                "type": "salamander",
+                "password": "xK9mN2pLq5vR8wB3"
+            }
+        },
+        {
+            "tag": "US8-HY2",
+            "type": "hysteria2",
+            "server": "us8.dexlos.com",
+            "server_port": 21446,
+            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "us8.dexlos.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            },
+            "obfs": {
+                "type": "salamander",
+                "password": "xK9mN2pLq5vR8wB3"
+            }
+        }
+    ],
+    "experimental": {
+        "clash_api": {
+            "external_controller": "127.0.0.1:9090",
+            "external_ui": "ui"
+        }
     }
-  ],
-  "http_clients": [
-    {
-      "tag": "RuleSetClient",
-      "detour": "Direct"
-    }
-  ],
-  "outbounds": [
-    {
-      "type": "selector",
-      "tag": "🌏️主代理",
-      "outbounds": [
-        "♾️自动选择",
-        "Direct",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "♾️自动选择"
-    },
-    {
-      "tag": "🇨🇳中国大陆网站",
-      "type": "selector",
-      "outbounds": [
-        "Direct",
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "Direct"
-    },
-    {
-      "tag": "🧱黑名单网站",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "🔍Google",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "🍎Apple",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "Direct",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "💻Microsoft",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "Direct",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "🌸Bahamut",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "📺Bilibili",
-      "type": "selector",
-      "outbounds": [
-        "Direct",
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "Direct"
-    },
-    {
-      "tag": "🎙️Discord",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "☁️GoogleFCM",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "📽️Netflix",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "🤖OpenAI",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "✨Claude",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "⏱️Speedtest",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "🎵Spotify",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "🎮Steam",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "Direct",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "✈️Telegram",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "🎶TikTok",
-      "type": "selector",
-      "outbounds": [
-        "🌏️主代理",
-        "♾️自动选择",
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "default": "🌏️主代理"
-    },
-    {
-      "tag": "♾️自动选择",
-      "type": "urltest",
-      "outbounds": [
-        "HK-1",
-        "HK-2",
-        "HK-3",
-        "HK-4",
-        "HK-5",
-        "HK-6",
-        "HK2-HY2",
-        "HK3-HY2",
-        "HK4-HY2",
-        "HK5-HY2",
-        "JP-1",
-        "JP-2",
-        "JP-3",
-        "JP-4",
-        "JP-5",
-        "JP-6",
-        "JP6-HY2",
-        "JP7-HY2",
-        "JP8-HY2",
-        "JP9-HY2",
-        "JP10-HY2",
-        "KR-1",
-        "KR-2",
-        "SG-1",
-        "SG-2",
-        "SG-3",
-        "SG1-HY2",
-        "SG2-HY2",
-        "TW-1",
-        "TW-2",
-        "TW-3",
-        "TW-4",
-        "TW-5",
-        "TW-6",
-        "TW-7",
-        "TW-8",
-        "TW-9",
-        "TW-10",
-        "US-1TCP",
-        "US-2TCP",
-        "US-3TCP",
-        "US-4TCP",
-        "US-5TCP",
-        "US1-HY2",
-        "US2-HY2",
-        "US3-HY2",
-        "US4-HY2",
-        "US5-HY2",
-        "US6-HY2",
-        "US7-HY2",
-        "US8-HY2"
-      ],
-      "url": "https://www.gstatic.com/generate_204"
-    },
-    {
-      "type": "direct",
-      "tag": "Direct"
-    },
-    {
-      "tag": "HK-1",
-      "type": "vless",
-      "server": "hk1-r.link-t7.com",
-      "server_port": 10126,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "HK-2",
-      "type": "vless",
-      "server": "hk2-r.link-t7.com",
-      "server_port": 10127,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "HK-3",
-      "type": "vless",
-      "server": "hk3-r.link-t7.com",
-      "server_port": 10128,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "HK-4",
-      "type": "vless",
-      "server": "hk4-r.link-t7.com",
-      "server_port": 10129,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "HK-5",
-      "type": "vless",
-      "server": "hk5-r.link-t7.com",
-      "server_port": 10130,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "HK-6",
-      "type": "vless",
-      "server": "hk6-r.link-t7.com",
-      "server_port": 10136,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "HK2-HY2",
-      "type": "hysteria2",
-      "server": "hk2.dexlos.com",
-      "server_port": 20225,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "hk2.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "HK3-HY2",
-      "type": "hysteria2",
-      "server": "hk3.dexlos.com",
-      "server_port": 20449,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "hk3.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "HK4-HY2",
-      "type": "hysteria2",
-      "server": "hk4.dexlos.com",
-      "server_port": 20750,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "hk4.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "HK5-HY2",
-      "type": "hysteria2",
-      "server": "hk5.dexlos.com",
-      "server_port": 20964,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "hk5.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "JP-1",
-      "type": "vless",
-      "server": "jp1-r.link-t7.com",
-      "server_port": 10031,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "JP-2",
-      "type": "vless",
-      "server": "jp2-r.link-t7.com",
-      "server_port": 10032,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "JP-3",
-      "type": "vless",
-      "server": "jp3-r.link-t7.com",
-      "server_port": 10033,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "JP-4",
-      "type": "vless",
-      "server": "jp4-r.link-t7.com",
-      "server_port": 10034,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "JP-5",
-      "type": "vless",
-      "server": "jp5-r.link-t7.com",
-      "server_port": 10035,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "JP-6",
-      "type": "vless",
-      "server": "jp6-r.link-t7.com",
-      "server_port": 10036,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "JP6-HY2",
-      "type": "hysteria2",
-      "server": "jp6.dexlos.com",
-      "server_port": 21136,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "jp6.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "JP7-HY2",
-      "type": "hysteria2",
-      "server": "jp7.dexlos.com",
-      "server_port": 21368,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "jp7.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "JP8-HY2",
-      "type": "hysteria2",
-      "server": "jp8.dexlos.com",
-      "server_port": 21511,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "jp8.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "JP9-HY2",
-      "type": "hysteria2",
-      "server": "jp9.dexlos.com",
-      "server_port": 21723,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "jp9.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "JP10-HY2",
-      "type": "hysteria2",
-      "server": "jp10.dexlos.com",
-      "server_port": 21960,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "jp10.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "KR-1",
-      "type": "vless",
-      "server": "kr1-r.link-t7.com",
-      "server_port": 10046,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "KR-2",
-      "type": "vless",
-      "server": "kr2-r.link-t7.com",
-      "server_port": 10047,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "SG-1",
-      "type": "vless",
-      "server": "sg1-r.link-t7.com",
-      "server_port": 10036,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "SG-2",
-      "type": "vless",
-      "server": "sg2-r.link-t7.com",
-      "server_port": 10037,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "SG-3",
-      "type": "vless",
-      "server": "sg3-r.link-t7.com",
-      "server_port": 10038,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "d1.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "update"
-      }
-    },
-    {
-      "tag": "SG1-HY2",
-      "type": "hysteria2",
-      "server": "sg1.dexlos.com",
-      "server_port": 20085,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "sg1.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "SG2-HY2",
-      "type": "hysteria2",
-      "server": "sg2.dexlos.com",
-      "server_port": 20347,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "sg2.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      }
-    },
-    {
-      "tag": "TW-1",
-      "type": "tuic",
-      "server": "tw1.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw1.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-2",
-      "type": "tuic",
-      "server": "tw2.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw2.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-3",
-      "type": "tuic",
-      "server": "tw3.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw3.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-4",
-      "type": "tuic",
-      "server": "tw4.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw4.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-5",
-      "type": "tuic",
-      "server": "tw5.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw5.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-6",
-      "type": "tuic",
-      "server": "tw6.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw6.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-7",
-      "type": "tuic",
-      "server": "tw7.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw7.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-8",
-      "type": "tuic",
-      "server": "tw8.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw8.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-9",
-      "type": "tuic",
-      "server": "tw9.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw9.dexlos.com"
-      }
-    },
-    {
-      "tag": "TW-10",
-      "type": "tuic",
-      "server": "tw10.dexlos.com",
-      "server_port": 8080,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "congestion_control": "bbr",
-      "udp_relay_mode": "native",
-      "zero_rtt_handshake": false,
-      "heartbeat": "10s",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "insecure": false,
-        "server_name": "tw10.dexlos.com"
-      }
-    },
-    {
-      "tag": "US-1TCP",
-      "type": "vless",
-      "server": "us1-r.link-t7.com",
-      "server_port": 10238,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "US-2TCP",
-      "type": "vless",
-      "server": "us2-r.link-t7.com",
-      "server_port": 10239,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "US-3TCP",
-      "type": "vless",
-      "server": "us3-r.link-t7.com",
-      "server_port": 10240,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "US-4TCP",
-      "type": "vless",
-      "server": "us4-r.link-t7.com",
-      "server_port": 10241,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "US-5TCP",
-      "type": "vless",
-      "server": "us5-r.link-t7.com",
-      "server_port": 10242,
-      "uuid": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "s0.awsstatic.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
-          "short_id": "686c0ef0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "movie"
-      }
-    },
-    {
-      "tag": "US1-HY2",
-      "type": "hysteria2",
-      "server": "us1.dexlos.com",
-      "server_port": 20021,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "us1.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
-      }
-    },
-    {
-      "tag": "US2-HY2",
-      "type": "hysteria2",
-      "server": "us2.dexlos.com",
-      "server_port": 20346,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "us2.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
-      }
-    },
-    {
-      "tag": "US3-HY2",
-      "type": "hysteria2",
-      "server": "us3.dexlos.com",
-      "server_port": 20555,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "us3.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
-      }
-    },
-    {
-      "tag": "US4-HY2",
-      "type": "hysteria2",
-      "server": "us4.dexlos.com",
-      "server_port": 20606,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "us4.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
-      }
-    },
-    {
-      "tag": "US5-HY2",
-      "type": "hysteria2",
-      "server": "us5.dexlos.com",
-      "server_port": 20894,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "us5.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
-      }
-    },
-    {
-      "tag": "US6-HY2",
-      "type": "hysteria2",
-      "server": "us6.dexlos.com",
-      "server_port": 21178,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "us6.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
-      }
-    },
-    {
-      "tag": "US7-HY2",
-      "type": "hysteria2",
-      "server": "us7.dexlos.com",
-      "server_port": 21296,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "us7.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
-      }
-    },
-    {
-      "tag": "US8-HY2",
-      "type": "hysteria2",
-      "server": "us8.dexlos.com",
-      "server_port": 21567,
-      "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-      "up_mbps": 10,
-      "down_mbps": 100,
-      "tls": {
-        "enabled": true,
-        "server_name": "us8.dexlos.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
-      }
-    }
-  ],
-  "experimental": {
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "ui"
-    }
-  }
 }
