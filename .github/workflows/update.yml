@@ -23,30 +23,27 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Start converter locally
-        run: |
-          nohup python main.py --template_index=0 > server.log 2>&1 &
-          sleep 6
-          echo "----- server.log -----"
-          cat server.log || true
-
-      - name: Generate config
+      - name: Inject real subscription URL into providers.json
         env:
           SUB_URL: ${{ secrets.SUB_URL }}
         run: |
+          python3 -c "import os; p='providers.json'; c=open(p,encoding='utf-8').read(); c=c.replace('__SUB_URL__', os.environ['SUB_URL']); open(p,'w',encoding='utf-8').write(c)"
+          echo "providers.json 已写入真实订阅地址"
+
+      - name: Locate custom template index
+        id: tpl
+        run: |
+          IDX=$(python3 -c "import os; files=sorted(f[:-5] for f in os.listdir('config_template') if f.endswith('.json')); print(files.index('zzz_custom_claude_template'))")
+          echo "index=$IDX" >> "$GITHUB_OUTPUT"
+          echo "模板序号: $IDX"
+
+      - name: Generate config
+        run: |
           mkdir -p dist
-          PORT=$(grep -oP 'http://127\.0\.0\.1:\K[0-9]+' server.log | head -1)
-          if [ -z "$PORT" ]; then
-            echo "未能从server.log中检测到端口,默认尝试5000"
-            PORT=5000
-          fi
-          echo "检测到端口: $PORT"
-          FILE_URL="https://raw.githubusercontent.com/${{ github.repository }}/main/template.json"
-          curl -s "http://127.0.0.1:${PORT}/config/${SUB_URL}&file=${FILE_URL}" -o dist/config.json
-          echo "----- 生成结果前200字符 -----"
-          head -c 200 dist/config.json
+          python main.py --template_index=${{ steps.tpl.outputs.index }}
+          echo "----- 生成结果前300字符 -----"
+          head -c 300 dist/config.json
           echo ""
-          # 简单校验是不是合法JSON,不是的话让任务失败,方便排查
           python -c "import json; json.load(open('dist/config.json', encoding='utf-8'))"
 
       - name: Commit and push if changed
