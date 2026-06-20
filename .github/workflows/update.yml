@@ -2,7 +2,7 @@ name: Update sing-box config
 
 on:
   schedule:
-    - cron: '*/30 * * * *'   # 每30分钟自动跑一次
+    - cron: '0 0 * * *'      # 每天跑一次,UTC 0:00 = 北京时间早8:00
   workflow_dispatch: {}      # 允许在Actions页面手动点击运行
 
 permissions:
