@@ -1,4 +1,5 @@
 {
+    "save_config_path": "./dist/config.json",
     "subscribes": [
         {
             "url": "__SUB_URL__",
