@@ -50,12 +50,6 @@
         ],
         "rules": [
             {
-                "rule_set": [
-                    "AWAvenue-Ads"
-                ],
-                "action": "reject"
-            },
-            {
                 "domain_suffix": [
                     "ntp.aliyun.com"
                 ],
@@ -103,12 +97,6 @@
         },
         "rule_set": [
             {
-                "tag": "AWAvenue-Ads",
-                "type": "remote",
-                "format": "source",
-                "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json"
-            },
-            {
                 "tag": "Apple-Site",
                 "type": "remote",
                 "format": "binary",
@@ -142,13 +130,13 @@
                 "tag": "China-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs"
+                "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geosite-cn.srs"
             },
             {
                 "tag": "China-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs"
+                "url": "https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geoip-cn.srs"
             },
             {
                 "tag": "Discord-Site",
@@ -308,12 +296,6 @@
                 "action": "reject",
                 "method": "default",
                 "no_drop": false
-            },
-            {
-                "rule_set": [
-                    "AWAvenue-Ads"
-                ],
-                "action": "reject"
             },
             {
                 "domain": [
@@ -604,7 +586,8 @@
     ],
     "http_clients": [
         {
-            "tag": "RuleSetClient"
+            "tag": "RuleSetClient",
+            "detour": "Direct"
         }
     ],
     "outbounds": [
@@ -669,8 +652,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "REJECT"
             ],
             "default": "♾️自动选择"
@@ -737,8 +718,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "REJECT"
             ],
             "default": "Direct"
@@ -804,8 +783,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -872,8 +849,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -941,8 +916,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "REJECT"
             ],
             "default": "🌏️主代理"
@@ -1009,8 +982,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "REJECT"
             ],
             "default": "🌏️主代理"
@@ -1076,8 +1047,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1145,8 +1114,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "REJECT"
             ],
             "default": "Direct"
@@ -1212,8 +1179,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1280,8 +1245,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1348,8 +1311,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1416,8 +1377,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1484,8 +1443,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1552,8 +1509,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1620,8 +1575,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1688,8 +1641,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1756,8 +1707,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1824,8 +1773,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -1893,8 +1840,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "REJECT"
             ],
             "default": "🌏️主代理"
@@ -1960,8 +1905,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -2028,8 +1971,6 @@
                 "US4-HY2",
                 "US5-HY2",
                 "US6-HY2",
-                "US7-HY2",
-                "US8-HY2",
                 "Direct",
                 "REJECT"
             ],
@@ -2087,9 +2028,7 @@
                 "US3-HY2",
                 "US4-HY2",
                 "US5-HY2",
-                "US6-HY2",
-                "US7-HY2",
-                "US8-HY2"
+                "US6-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
             "interval": "2m",
@@ -2181,9 +2120,7 @@
                 "US3-HY2",
                 "US4-HY2",
                 "US5-HY2",
-                "US6-HY2",
-                "US7-HY2",
-                "US8-HY2"
+                "US6-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
             "interval": "2m",
@@ -2368,7 +2305,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20252,
+            "server_port": 20214,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2385,7 +2322,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20588,
+            "server_port": 20402,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2402,7 +2339,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20732,
+            "server_port": 20622,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2419,7 +2356,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20857,
+            "server_port": 20889,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2592,7 +2529,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21062,
+            "server_port": 21148,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2609,7 +2546,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21208,
+            "server_port": 21311,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2626,7 +2563,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21438,
+            "server_port": 21421,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2643,7 +2580,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21617,
+            "server_port": 21724,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2660,7 +2597,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21971,
+            "server_port": 21887,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2807,7 +2744,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20079,
+            "server_port": 20192,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2824,7 +2761,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20216,
+            "server_port": 20233,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3171,7 +3108,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20044,
+            "server_port": 20185,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3192,7 +3129,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20318,
+            "server_port": 20237,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3213,7 +3150,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20461,
+            "server_port": 20455,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3234,7 +3171,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20714,
+            "server_port": 20772,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3255,7 +3192,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20883,
+            "server_port": 20924,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3276,55 +3213,13 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21123,
+            "server_port": 21071,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
             "tls": {
                 "enabled": true,
                 "server_name": "us6.dexlos.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ]
-            },
-            "obfs": {
-                "type": "salamander",
-                "password": "xK9mN2pLq5vR8wB3"
-            }
-        },
-        {
-            "tag": "US7-HY2",
-            "type": "hysteria2",
-            "server": "us7.dexlos.com",
-            "server_port": 21309,
-            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-            "up_mbps": 10,
-            "down_mbps": 100,
-            "tls": {
-                "enabled": true,
-                "server_name": "us7.dexlos.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ]
-            },
-            "obfs": {
-                "type": "salamander",
-                "password": "xK9mN2pLq5vR8wB3"
-            }
-        },
-        {
-            "tag": "US8-HY2",
-            "type": "hysteria2",
-            "server": "us8.dexlos.com",
-            "server_port": 21570,
-            "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
-            "up_mbps": 10,
-            "down_mbps": 100,
-            "tls": {
-                "enabled": true,
-                "server_name": "us8.dexlos.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
