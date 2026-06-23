@@ -397,6 +397,13 @@
             },
             {
                 "domain_suffix": [
+                    "music.youtube.com"
+                ],
+                "action": "route",
+                "outbound": "🎵YouTubeMusic"
+            },
+            {
+                "domain_suffix": [
                     "youtube.com",
                     "googlevideo.com",
                     "ytimg.com",
@@ -861,6 +868,24 @@
         },
         {
             "tag": "📺YouTube",
+            "type": "selector",
+            "outbounds": [
+                "🌏️主代理",
+                "♾️自动选择",
+                "♾️自动选择-HK",
+                "♾️自动选择-TW",
+                "♾️自动选择-JP",
+                "♾️自动选择-SG",
+                "♾️自动选择-US",
+                "♾️自动选择-KR",
+                "{all}",
+                "Direct",
+                "REJECT"
+            ],
+            "default": "🌏️主代理"
+        },
+        {
+            "tag": "🎵YouTubeMusic",
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
