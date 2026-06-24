@@ -23,7 +23,7 @@ REGION_PATTERNS = [
 
 NON_LEAF_TYPES = {"selector", "urltest", "direct", "block"}
 URLTEST_URL = "https://www.gstatic.com/generate_204"
-URLTEST_INTERVAL = "2m"
+URLTEST_INTERVAL = "30m"
 URLTEST_TOLERANCE = 30
 
 
