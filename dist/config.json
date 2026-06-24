@@ -2121,7 +2121,7 @@
                 "US6-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "2m",
+            "interval": "30m",
             "tolerance": 30
         },
         {
@@ -2140,7 +2140,7 @@
                 "HK5-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "2m",
+            "interval": "30m",
             "tolerance": 30
         },
         {
@@ -2159,7 +2159,7 @@
                 "TW-10"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "2m",
+            "interval": "30m",
             "tolerance": 30
         },
         {
@@ -2179,7 +2179,7 @@
                 "JP10-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "2m",
+            "interval": "30m",
             "tolerance": 30
         },
         {
@@ -2193,7 +2193,7 @@
                 "SG2-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "2m",
+            "interval": "30m",
             "tolerance": 30
         },
         {
@@ -2213,7 +2213,7 @@
                 "US6-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "2m",
+            "interval": "30m",
             "tolerance": 30
         },
         {
@@ -2224,7 +2224,7 @@
                 "KR-2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "2m",
+            "interval": "30m",
             "tolerance": 30
         },
         {
@@ -2395,7 +2395,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20357,
+            "server_port": 20332,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2412,7 +2412,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20411,
+            "server_port": 20580,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2429,7 +2429,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20619,
+            "server_port": 20695,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2446,7 +2446,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20957,
+            "server_port": 20962,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2619,7 +2619,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21141,
+            "server_port": 21057,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2636,7 +2636,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21380,
+            "server_port": 21241,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2653,7 +2653,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21592,
+            "server_port": 21539,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2670,7 +2670,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21777,
+            "server_port": 21625,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2687,7 +2687,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21867,
+            "server_port": 21908,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2834,7 +2834,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20087,
+            "server_port": 20074,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -2851,7 +2851,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20338,
+            "server_port": 20308,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3198,7 +3198,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20092,
+            "server_port": 20172,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3219,7 +3219,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20267,
+            "server_port": 20318,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3240,7 +3240,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20476,
+            "server_port": 20533,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3261,7 +3261,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20789,
+            "server_port": 20739,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3282,7 +3282,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20907,
+            "server_port": 20920,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3303,7 +3303,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21046,
+            "server_port": 21170,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
