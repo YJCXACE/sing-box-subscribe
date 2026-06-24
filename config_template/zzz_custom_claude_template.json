@@ -1017,7 +1017,7 @@
                 "{all}"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "2m",
+            "interval": "30m",
             "tolerance": 30
         },
         {
