@@ -90,6 +90,9 @@ def main():
 
     outbounds = config.get("outbounds", [])
     
+    # 1. 提取原始配置中所有合法的策略组 Tag 集合
+    existing_group_tags = {o["tag"] for o in outbounds if "tag" in o}
+    
     # 建立快捷查找
     outbound_by_tag = {o["tag"]: o for o in outbounds if "tag" in o}
 
@@ -104,7 +107,7 @@ def main():
     valid_tags = set()
     new_region_outbounds = []
 
-    # 遍历处理两个池子
+    # 遍历处理两个池子并生成动态地区组
     for pool_name, pool_tag, regions in POOLS:
         if pool_tag not in outbound_by_tag:
             print(f"警告: 在 outbounds 中找不到池子 {pool_tag}, 跳过该机场拆分。")
@@ -134,34 +137,40 @@ def main():
 
         print(f"{pool_name}: 共{len(node_tags)}个节点, 成功拆分区域: {', '.join(matched_summary) if matched_summary else '无'}")
 
-    # 算出模板里定义了、但在实际节点列表里完全不存在的“缺失标签”
+    # 将动态生成的地区组 Tag 名字也加入合法组集合中
+    for o in new_region_outbounds:
+        existing_group_tags.add(o["tag"])
+
+    # 算出模板里定义了、但在实际节点列表里完全不存在的“缺失单节点标签”
     missing_tags = all_possible_tags - valid_tags
 
     pool_tags = {p[1] for p in POOLS}
     final_outbounds = []
-    
-    # 🛡️ 强制白名单：收集所有合法、不能删除的非节点元素 🛡️
-    protected_tags = {"🌏️主代理", "♾️自动选择", "♾️自动选择-Mitce", "♾️自动选择-DJJC", "Direct", "REJECT", "Proxy"}
-    for o in new_region_outbounds:
-        protected_tags.add(o.get("tag"))
-    for o in outbounds:
-        if o.get("tag") and (o["tag"].startswith("♾️自动选择") or o["tag"] == "🌏️主代理"):
-            protected_tags.add(o["tag"])
 
     for o in outbounds:
-        # 1. 过滤掉临时中转节点池 (🔖NodePool-*)
+        # 步骤 1: 剔除临时中转节点池 (🔖NodePool-*)
         if o.get("tag") in pool_tags:
             continue
         
-        # 2. 清理选择器/测速组，剔除真正不存在的无效底层物理单节点，绝对放行策略组名
-        if "outbounds" in o and missing_tags:
-            o["outbounds"] = [
-                t for t in o["outbounds"] 
-                if t in protected_tags or (t not in missing_tags)
-            ]
+        # 步骤 2: 精准清洗子节点列表
+        if "outbounds" in o:
+            clean_nodes = []
+            for t in o["outbounds"]:
+                # 核心风控逻辑：如果这个名字本身是一个策略组，或者它不属于缺失的失效节点列表，就绝对保留
+                if t in existing_group_tags or t in ["Direct", "REJECT", "🌏️主代理", "♾️自动选择"]:
+                    clean_nodes.append(t)
+                elif t not in missing_tags:
+                    clean_nodes.append(t)
+            
+            # 极致兜底：如果被洗成空列表了，强制放入 Direct 防止核心报错
+            if not clean_nodes:
+                clean_nodes = ["Direct"]
+                
+            o["outbounds"] = clean_nodes
+
         final_outbounds.append(o)
 
-    # 3. 将新生成的地区 urltest 子组插入到大总组 "♾️自动选择" 后面
+    # 步骤 3: 将新生成的地区 urltest 子组动态插入到大总组 "♾️自动选择" 后面
     inserted = []
     for o in final_outbounds:
         inserted.append(o)
@@ -169,7 +178,7 @@ def main():
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
 
-    # 4. 极致风控：对相同 tag 进行规范性去重，保证顺序正确
+    # 步骤 4: 对相同 tag 进行全局去重，保护核心平稳加载
     seen = set()
     deduped = []
     for o in final_outbounds:
@@ -186,7 +195,7 @@ def main():
 
     # 5. 保存并导出最终配置
     save_config(config)
-    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，所有大组、小组及 fallback 链路闭环安全。")
+    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，动态地区组与回退链路完美闭环。")
 
 if __name__ == "__main__":
     main()
