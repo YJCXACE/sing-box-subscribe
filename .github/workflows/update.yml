@@ -23,12 +23,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Inject real subscription URL into providers.json
+      - name: Inject real subscription URLs into providers.json
         env:
           SUB_URL: ${{ secrets.SUB_URL }}
+          SUB_URL_2: ${{ secrets.SUB_URL_2 }}
         run: |
-          python3 -c "import os; p='providers.json'; c=open(p,encoding='utf-8').read(); c=c.replace('__SUB_URL__', os.environ['SUB_URL']); open(p,'w',encoding='utf-8').write(c)"
-          echo "providers.json 已写入真实订阅地址"
+          python3 -c "import os; p='providers.json'; c=open(p,encoding='utf-8').read(); c=c.replace('__SUB_URL__', os.environ['SUB_URL']); c=c.replace('__SUB_URL_2__', os.environ['SUB_URL_2']); open(p,'w',encoding='utf-8').write(c)"
+          echo "providers.json 已写入两条真实订阅地址"
 
       - name: Locate custom template index
         id: tpl
