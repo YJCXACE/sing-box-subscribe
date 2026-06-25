@@ -112,31 +112,25 @@
                 "tag": "Apple-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs"
             },
             {
                 "tag": "Apple-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
-            },
-            {
-                "tag": "Bahamut-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bahamut.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/apple.srs"
             },
             {
                 "tag": "Bilibili-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs"
             },
             {
                 "tag": "Bilibili-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/bilibili.srs"
             },
             {
                 "tag": "China-Site",
@@ -151,12 +145,6 @@
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs"
             },
             {
-                "tag": "Discord-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
-            },
-            {
                 "tag": "GFWList-Site",
                 "type": "remote",
                 "format": "binary",
@@ -166,19 +154,13 @@
                 "tag": "Google-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs"
             },
             {
                 "tag": "Google-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
-            },
-            {
-                "tag": "GoogleFCM-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/googlefcm.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs"
             },
             {
                 "tag": "Local-IP",
@@ -190,55 +172,43 @@
                 "tag": "Microsoft-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/microsoft.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs"
             },
             {
                 "tag": "Netflix-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs"
             },
             {
                 "tag": "Netflix-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs"
             },
             {
                 "tag": "OpenAI-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs"
             },
             {
                 "tag": "OpenAI-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
-            },
-            {
-                "tag": "Speedtest-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/speedtest.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/openai.srs"
             },
             {
                 "tag": "Spotify-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.srs"
             },
             {
                 "tag": "Spotify-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
-            },
-            {
-                "tag": "Steam-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/games.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/spotify.srs"
             },
             {
                 "tag": "Telegram-Site",
@@ -256,7 +226,19 @@
                 "tag": "TikTok-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/tiktok.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs"
+            },
+            {
+                "tag": "YouTube-Site-Extra",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs"
+            },
+            {
+                "tag": "GitHub-Site-Extra",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs"
             }
         ],
         "rules": [
@@ -339,11 +321,56 @@
                 "outbound": "🔍Google"
             },
             {
-                "rule_set": [
-                    "Bahamut-Site"
+                "domain_suffix": [
+                    "bahamut.com.tw",
+                    "gamer.com.tw"
                 ],
                 "action": "route",
                 "outbound": "🌸Bahamut"
+            },
+            {
+                "domain_suffix": [
+                    "discord.com",
+                    "discordapp.com",
+                    "discord.gg",
+                    "discord.media",
+                    "discordapp.net",
+                    "discordcdn.com",
+                    "dis.gd",
+                    "discordstatus.com"
+                ],
+                "action": "route",
+                "outbound": "🎙️Discord"
+            },
+            {
+                "domain_suffix": [
+                    "steampowered.com",
+                    "steamcommunity.com",
+                    "steamstatic.com",
+                    "steamcontent.com",
+                    "steamusercontent.com",
+                    "valvesoftware.com",
+                    "steam-chat.com",
+                    "steamgames.com"
+                ],
+                "action": "route",
+                "outbound": "🎮Steam"
+            },
+            {
+                "domain_suffix": [
+                    "speedtest.net",
+                    "ooklaserver.net",
+                    "ookla.com"
+                ],
+                "action": "route",
+                "outbound": "⏱️Speedtest"
+            },
+            {
+                "domain_suffix": [
+                    "fcm.googleapis.com"
+                ],
+                "action": "route",
+                "outbound": "☁️GoogleFCM"
             },
             {
                 "rule_set": [
@@ -351,20 +378,6 @@
                 ],
                 "action": "route",
                 "outbound": "📺Bilibili"
-            },
-            {
-                "rule_set": [
-                    "Discord-Site"
-                ],
-                "action": "route",
-                "outbound": "🎙️Discord"
-            },
-            {
-                "rule_set": [
-                    "GoogleFCM-Site"
-                ],
-                "action": "route",
-                "outbound": "☁️GoogleFCM"
             },
             {
                 "rule_set": [
@@ -396,6 +409,13 @@
                 "outbound": "🐙GitHub"
             },
             {
+                "rule_set": [
+                    "GitHub-Site-Extra"
+                ],
+                "action": "route",
+                "outbound": "🐙GitHub"
+            },
+            {
                 "domain_suffix": [
                     "music.youtube.com"
                 ],
@@ -410,6 +430,13 @@
                     "youtu.be",
                     "youtubei.googleapis.com",
                     "ggpht.com"
+                ],
+                "action": "route",
+                "outbound": "📺YouTube"
+            },
+            {
+                "rule_set": [
+                    "YouTube-Site-Extra"
                 ],
                 "action": "route",
                 "outbound": "📺YouTube"
@@ -439,24 +466,10 @@
             },
             {
                 "rule_set": [
-                    "Speedtest-Site"
-                ],
-                "action": "route",
-                "outbound": "⏱️Speedtest"
-            },
-            {
-                "rule_set": [
                     "Spotify-Site"
                 ],
                 "action": "route",
                 "outbound": "🎵Spotify"
-            },
-            {
-                "rule_set": [
-                    "Steam-Site"
-                ],
-                "action": "route",
-                "outbound": "🎮Steam"
             },
             {
                 "rule_set": [
