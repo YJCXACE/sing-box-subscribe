@@ -5,6 +5,11 @@
             "url": "__SUB_URL__",
             "tag": "Mitce",
             "enabled": true
+        },
+        {
+            "url": "__SUB_URL_2__",
+            "tag": "DJJC",
+            "enabled": true
         }
     ]
 }
