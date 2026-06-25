@@ -620,9 +620,6 @@
             "type": "selector",
             "tag": "🌏️主代理",
             "outbounds": [
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -632,7 +629,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -710,6 +706,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -740,9 +737,6 @@
             "outbounds": [
                 "Direct",
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -752,7 +746,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -829,6 +822,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -858,9 +852,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -870,7 +861,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -947,6 +937,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -977,9 +968,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -989,7 +977,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1066,6 +1053,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -1096,9 +1084,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1108,7 +1093,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1186,6 +1170,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -1215,9 +1200,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1227,7 +1209,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1305,6 +1286,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -1334,9 +1316,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1346,7 +1325,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1423,6 +1401,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -1454,9 +1433,6 @@
             "outbounds": [
                 "Direct",
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1466,7 +1442,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1543,6 +1518,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -1572,9 +1548,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1584,7 +1557,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1661,6 +1633,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -1691,9 +1664,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1703,7 +1673,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1780,6 +1749,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -1810,9 +1780,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1822,7 +1789,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1899,6 +1865,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -1929,9 +1896,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1941,7 +1905,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2018,6 +1981,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -2048,9 +2012,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2060,7 +2021,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2137,6 +2097,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -2167,9 +2128,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2179,7 +2137,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2256,6 +2213,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -2286,9 +2244,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2298,7 +2253,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2375,6 +2329,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -2405,9 +2360,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2417,7 +2369,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2494,6 +2445,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -2524,9 +2476,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2536,7 +2485,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2613,6 +2561,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -2643,9 +2592,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2655,7 +2601,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2732,6 +2677,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -2762,9 +2708,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2774,7 +2717,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2851,6 +2793,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -2881,9 +2824,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2893,7 +2833,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2971,6 +2910,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -3000,9 +2940,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -3012,7 +2949,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -3089,6 +3025,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -3119,9 +3056,6 @@
             "type": "selector",
             "outbounds": [
                 "🌏️主代理",
-                "♾️自动选择",
-                "♾️自动选择-Mitce",
-                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -3131,7 +3065,6 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
-                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -3208,6 +3141,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -3305,6 +3239,7 @@
                 "🇯🇵日本",
                 "🇮🇳印度孟买-1.5倍率",
                 "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
                 "🇬🇧英国伦敦2-1.8倍率",
                 "🇿🇦非洲约翰内斯堡-3.5倍率",
                 "🇨🇦加拿大多伦多-1.5倍率",
@@ -3325,67 +3260,6 @@
                 "🇬🇧英国伦敦-1倍",
                 "🇹🇼台湾—TK专线",
                 "🇮🇳印度孟买"
-            ],
-            "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
-        },
-        {
-            "tag": "♾️自动选择-Mitce",
-            "type": "urltest",
-            "outbounds": [
-                "HK-1",
-                "HK-2",
-                "HK-3",
-                "HK-4",
-                "HK-5",
-                "HK-6",
-                "HK2-HY2",
-                "HK3-HY2",
-                "HK4-HY2",
-                "HK5-HY2",
-                "JP-1",
-                "JP-2",
-                "JP-3",
-                "JP-4",
-                "JP-5",
-                "JP-6",
-                "JP6-HY2",
-                "JP7-HY2",
-                "JP8-HY2",
-                "JP9-HY2",
-                "JP10-HY2",
-                "KR-1",
-                "KR-2",
-                "KR-3",
-                "KR-4",
-                "KR-5",
-                "SG-1",
-                "SG-2",
-                "SG-3",
-                "SG1-HY2",
-                "SG2-HY2",
-                "TW-1",
-                "TW-2",
-                "TW-3",
-                "TW-4",
-                "TW-5",
-                "TW-6",
-                "TW-7",
-                "TW-8",
-                "TW-9",
-                "TW-10",
-                "US-1TCP",
-                "US-2TCP",
-                "US-3TCP",
-                "US-4TCP",
-                "US-5TCP",
-                "US1-HY2",
-                "US2-HY2",
-                "US3-HY2",
-                "US4-HY2",
-                "US5-HY2",
-                "US6-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
             "interval": "30m",
@@ -3407,8 +3281,8 @@
                 "HK5-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-Mitce-TW",
@@ -3426,8 +3300,8 @@
                 "TW-10"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-Mitce-JP",
@@ -3446,8 +3320,8 @@
                 "JP10-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-Mitce-SG",
@@ -3460,8 +3334,8 @@
                 "SG2-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-Mitce-US",
@@ -3480,8 +3354,8 @@
                 "US6-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-Mitce-KR",
@@ -3494,53 +3368,8 @@
                 "KR-5"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
-        },
-        {
-            "tag": "♾️自动选择-DJJC",
-            "type": "urltest",
-            "outbounds": [
-                "剩余流量：1.96 TB",
-                "套餐到期：长期有效",
-                "🇺🇸美国洛杉矶1号",
-                "🇺🇸美国洛杉矶2号",
-                "🇺🇸美国洛杉矶3号",
-                "🇺🇸美国凤凰城1号",
-                "🇯🇵日本东京1号",
-                "🇯🇵日本东京2号",
-                "🇯🇵日本东京3号",
-                "🇩🇪德国法兰克福2",
-                "🇧🇷巴西圣保罗-1.5倍率",
-                "🇦🇪迪拜-1.2倍率",
-                "🇦🇪迪拜2-1.5倍率",
-                "🇯🇵日本",
-                "🇮🇳印度孟买-1.5倍率",
-                "🇮🇳印度海得拉巴-1.5倍率",
-                "🇬🇧英国伦敦2-1.8倍率",
-                "🇿🇦非洲约翰内斯堡-3.5倍率",
-                "🇨🇦加拿大多伦多-1.5倍率",
-                "🇸🇪瑞典斯德哥尔摩-1.5倍率",
-                "🇲🇽墨西哥克雷塔罗",
-                "🇯🇵日本1号 三网高速",
-                "🇯🇵日本2号 三网高速",
-                "🇯🇵日本3号 三网高速",
-                "🇺🇸美国凤凰城-0.1倍",
-                "🇺🇸美国1号-0.1倍",
-                "🇺🇸美国3号-0.1倍",
-                "🇺🇸美国4号-0.1倍",
-                "🇯🇵日本-0.1—流媒体",
-                "🇯🇵日本2-0.1—流媒体",
-                "🇯🇵日本3-0.1—流媒体",
-                "🇯🇵日本4-0.1—流媒体",
-                "🇩🇪德国",
-                "🇬🇧英国伦敦-1倍",
-                "🇹🇼台湾—TK专线",
-                "🇮🇳印度孟买"
-            ],
-            "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-台湾",
@@ -3549,8 +3378,8 @@
                 "🇹🇼台湾—TK专线"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-日本",
@@ -3569,8 +3398,8 @@
                 "🇯🇵日本4-0.1—流媒体"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-美国",
@@ -3586,19 +3415,8 @@
                 "🇺🇸美国4号-0.1倍"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
-        },
-        {
-            "tag": "♾️自动选择-DJJC-英国",
-            "type": "urltest",
-            "outbounds": [
-                "🇬🇧英国伦敦2-1.8倍率",
-                "🇬🇧英国伦敦-1倍"
-            ],
-            "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-德国",
@@ -3608,8 +3426,8 @@
                 "🇩🇪德国"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-加拿大",
@@ -3618,8 +3436,8 @@
                 "🇨🇦加拿大多伦多-1.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-印度",
@@ -3630,8 +3448,8 @@
                 "🇮🇳印度孟买"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-巴西",
@@ -3640,8 +3458,8 @@
                 "🇧🇷巴西圣保罗-1.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-墨西哥",
@@ -3650,8 +3468,8 @@
                 "🇲🇽墨西哥克雷塔罗"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-南非",
@@ -3660,8 +3478,8 @@
                 "🇿🇦非洲约翰内斯堡-3.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-迪拜",
@@ -3671,8 +3489,8 @@
                 "🇦🇪迪拜2-1.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "tag": "♾️自动选择-DJJC-瑞典",
@@ -3681,8 +3499,8 @@
                 "🇸🇪瑞典斯德哥尔摩-1.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "3m0s",
+            "tolerance": 50
         },
         {
             "type": "direct",
@@ -3852,7 +3670,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20329,
+            "server_port": 20363,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3869,7 +3687,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20596,
+            "server_port": 20482,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3886,7 +3704,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20602,
+            "server_port": 20777,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3903,7 +3721,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20859,
+            "server_port": 20958,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4076,7 +3894,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21035,
+            "server_port": 21070,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4093,7 +3911,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21242,
+            "server_port": 21358,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4110,7 +3928,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21576,
+            "server_port": 21592,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4127,7 +3945,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21656,
+            "server_port": 21652,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4144,7 +3962,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21854,
+            "server_port": 21931,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4369,7 +4187,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20089,
+            "server_port": 20162,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4386,7 +4204,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20217,
+            "server_port": 20377,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4733,7 +4551,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20054,
+            "server_port": 20149,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4754,7 +4572,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20264,
+            "server_port": 20355,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4775,7 +4593,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20463,
+            "server_port": 20520,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4796,7 +4614,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20775,
+            "server_port": 20609,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4817,7 +4635,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20904,
+            "server_port": 20925,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4838,7 +4656,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21080,
+            "server_port": 21103,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4943,7 +4761,7 @@
         {
             "tag": "🇺🇸美国凤凰城1号",
             "type": "hysteria2",
-            "server": "129.153.90.9",
+            "server": "129.153.71.226",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -4960,7 +4778,7 @@
         {
             "tag": "🇯🇵日本东京1号",
             "type": "hysteria2",
-            "server": "103.62.49.133",
+            "server": "103.62.49.134",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -4977,7 +4795,7 @@
         {
             "tag": "🇯🇵日本东京2号",
             "type": "hysteria2",
-            "server": "103.62.49.133",
+            "server": "103.62.49.134",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -4994,7 +4812,7 @@
         {
             "tag": "🇯🇵日本东京3号",
             "type": "hysteria2",
-            "server": "103.62.49.133",
+            "server": "103.62.49.134",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5036,7 +4854,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5045,7 +4863,7 @@
         {
             "tag": "🇦🇪迪拜-1.2倍率",
             "type": "hysteria2",
-            "server": "139.185.32.100",
+            "server": "145.241.123.223",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5053,7 +4871,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.hoyoverse.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5062,7 +4880,7 @@
         {
             "tag": "🇦🇪迪拜2-1.5倍率",
             "type": "hysteria2",
-            "server": "139.185.34.29",
+            "server": "84.235.248.28",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5070,7 +4888,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.hoyoverse.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5079,7 +4897,7 @@
         {
             "tag": "🇯🇵日本",
             "type": "hysteria2",
-            "server": "131.186.42.162",
+            "server": "140.238.37.247",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5087,7 +4905,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5096,7 +4914,7 @@
         {
             "tag": "🇮🇳印度孟买-1.5倍率",
             "type": "hysteria2",
-            "server": "144.24.99.141",
+            "server": "92.4.67.21",
             "server_port": 53,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5104,7 +4922,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.hoyoverse.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5113,7 +4931,7 @@
         {
             "tag": "🇮🇳印度海得拉巴-1.5倍率",
             "type": "hysteria2",
-            "server": "144.24.146.216",
+            "server": "129.159.232.60",
             "server_port": 53,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5121,7 +4939,24 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.hoyoverse.com",
-                "insecure": true,
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "🇬🇧英国伦敦-2倍率",
+            "type": "hysteria2",
+            "server": "132.145.52.10",
+            "server_port": 65535,
+            "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
+            "up_mbps": 10,
+            "down_mbps": 100,
+            "tls": {
+                "enabled": true,
+                "server_name": "www.microsoft.com",
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5138,7 +4973,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5147,7 +4982,7 @@
         {
             "tag": "🇿🇦非洲约翰内斯堡-3.5倍率",
             "type": "hysteria2",
-            "server": "129.151.169.64",
+            "server": "84.8.138.180",
             "server_port": 65535,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5155,7 +4990,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5164,7 +4999,7 @@
         {
             "tag": "🇨🇦加拿大多伦多-1.5倍率",
             "type": "hysteria2",
-            "server": "40.233.77.86",
+            "server": "40.233.75.43",
             "server_port": 65535,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5172,7 +5007,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5181,7 +5016,7 @@
         {
             "tag": "🇸🇪瑞典斯德哥尔摩-1.5倍率",
             "type": "hysteria2",
-            "server": "129.151.193.163",
+            "server": "79.76.39.118",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5189,7 +5024,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5198,7 +5033,7 @@
         {
             "tag": "🇲🇽墨西哥克雷塔罗",
             "type": "hysteria2",
-            "server": "140.84.178.54",
+            "server": "159.54.158.30",
             "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
@@ -5206,7 +5041,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": true,
+                "insecure": false,
                 "alpn": [
                     "h3"
                 ]
@@ -5284,7 +5119,7 @@
         {
             "tag": "🇺🇸美国凤凰城-0.1倍",
             "type": "vless",
-            "server": "129.153.90.9",
+            "server": "129.153.210.227",
             "server_port": 443,
             "uuid": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "packet_encoding": "xudp",
@@ -5498,11 +5333,11 @@
             "tls": {
                 "enabled": true,
                 "insecure": false,
-                "server_name": "www.microsoft.com",
+                "server_name": "cdn-dynmedia-1.microsoft.com",
                 "reality": {
                     "enabled": true,
-                    "public_key": "-QnsFApdhq1l1d2h302qhAs7usDdWLBTAOeMH54dwmU",
-                    "short_id": "c2bdc032"
+                    "public_key": "dOjm2v6U3InruqKrvGFgMRB6yEEcBUpgihl92b0f-BQ",
+                    "short_id": "b019aed3"
                 },
                 "utls": {
                     "enabled": true,
