@@ -78,11 +78,11 @@
                 "server": "DNS-GOOGLE"
             },
             {
-                "rule_set": [
-                    "GoogleFCM-Site"
-                ],
                 "action": "route",
-                "server": "DNS-GOOGLEFCM"
+                "server": "DNS-GOOGLEFCM",
+                "domain_suffix": [
+                    "fcm.googleapis.com"
+                ]
             },
             {
                 "query_type": [
