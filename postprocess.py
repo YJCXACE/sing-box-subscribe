@@ -96,7 +96,7 @@ def main():
     # 收集模板定义的可能缺失的tag集合（即 `{all}` 展开的所有目标底层节点）
     all_possible_tags = set()
     for o in outbounds:
-        if o.get("type") == "selector" and "outbounds" in o:
+        if "outbounds" in o:
             for t in o["outbounds"]:
                 if not t.startswith("🔖NodePool-") and t not in ["🌏️主代理", "Direct", "REJECT", "{all}"]:
                     all_possible_tags.add(t)
@@ -140,25 +140,24 @@ def main():
     pool_tags = {p[1] for p in POOLS}
     final_outbounds = []
     
-    # 🌟 终极防御：这里定义绝对不能被当作无效单节点过滤掉的“策略组免死金牌” 🌟
-    # 包括：主代理、全选、直连、拒绝，以及你在模板中写死的两个总大组名
+    # 🛡️ 强制白名单：收集所有合法、不能删除的非节点元素 🛡️
     protected_tags = {"🌏️主代理", "♾️自动选择", "♾️自动选择-Mitce", "♾️自动选择-DJJC", "Direct", "REJECT", "Proxy"}
-    
-    # 同时也把动态生成的地区子组 tag 名字加进去
     for o in new_region_outbounds:
         protected_tags.add(o.get("tag"))
+    for o in outbounds:
+        if o.get("tag") and (o["tag"].startswith("♾️自动选择") or o["tag"] == "🌏️主代理"):
+            protected_tags.add(o["tag"])
 
     for o in outbounds:
         # 1. 过滤掉临时中转节点池 (🔖NodePool-*)
         if o.get("tag") in pool_tags:
             continue
         
-        # 2. 清理选择器组，剔除不存在的无效底层单节点
-        if o.get("type") == "selector" and missing_tags:
-            # 高效风控：如果是需要保留的策略组名字，或者本身就是合法的有效单节点，就予以保留
+        # 2. 清理选择器/测速组，剔除真正不存在的无效底层物理单节点，绝对放行策略组名
+        if "outbounds" in o and missing_tags:
             o["outbounds"] = [
                 t for t in o["outbounds"] 
-                if t in protected_tags or t not in missing_tags
+                if t in protected_tags or (t not in missing_tags)
             ]
         final_outbounds.append(o)
 
@@ -170,11 +169,13 @@ def main():
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
 
-    # 4. 规范性去重，防止相同分组二次叠加报错
+    # 4. 极致风控：对相同 tag 进行规范性去重，保证顺序正确
     seen = set()
     deduped = []
     for o in final_outbounds:
         tag = o.get("tag")
+        if not tag:
+            continue
         if tag in seen:
             continue
         seen.add(tag)
@@ -185,8 +186,7 @@ def main():
 
     # 5. 保存并导出最终配置
     save_config(config)
-    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，所有总组与子组安全闭环。")
+    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，所有大组、小组及 fallback 链路闭环安全。")
 
 if __name__ == "__main__":
     main()
-
