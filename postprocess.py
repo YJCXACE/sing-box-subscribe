@@ -1,4 +1,3 @@
-# filename: postprocess.py
 """
 后处理脚本:
 main.py 用 {Mitce} / {DJJC} 占位符生成的 config.json 里,有两个内部"节点池"
@@ -31,37 +30,38 @@ MITCE_REGIONS = [
     ("KR", re.compile(r"^KR", re.IGNORECASE)),
 ]
 
-# DJJC: 中文关键词匹配
+# DJJC: 中文关键词匹配(re.search,关键词可以出现在名字任意位置)
 DJJC_REGIONS = [
-    ("香港", re.compile(r"香港|HK|HongKong")),
-    ("台湾", re.compile(r"台湾|台北|TW|Taiwan")),
-    ("日本", re.compile(r"日本|东京|大阪|京都|JP|Japan")),
-    ("新加坡", re.compile(r"新加坡|狮城|SG|Singapore")),
-    ("美国", re.compile(r"美国|纽约|洛杉矶|圣好塞|圣何塞|US|America|United States")),
-    ("韩国", re.compile(r"韩国|首尔|KR|Korea")),
-    ("德国", re.compile(r"德国|法兰克福|DE|Germany")),
-    ("法国", re.compile(r"法国|巴黎|FR|France")),
-    ("荷兰", re.compile(r"荷兰|阿姆斯特丹|NL|Netherlands")),
-    ("俄罗斯", re.compile(r"俄罗斯|莫斯科|伯力|RU|Russia")),
-    ("加拿大", re.compile(r"加拿大|枫叶|CA|Canada")),
-    ("澳大利亚", re.compile(r"澳大利亚|悉尼|墨尔本|AU|Australia")),
-    ("印度", re.compile(r"印度|孟买|IN|India")),
-    ("巴西", re.compile(r"巴西|圣保罗|BR|Brazil")),
-    ("墨西哥", re.compile(r"墨西哥|MX|Mexico")),
-    ("南非", re.compile(r"南非|约翰内斯堡|ZA|South Africa")),
-    ("迪拜", re.compile(r"迪拜|阿联酋|AE|Dubai")),
-    ("瑞典", re.compile(r"瑞典|SE|Sweden")),
-    ("瑞士", re.compile(r"瑞士|CH|Switzerland")),
-    ("土耳其", re.compile(r"土耳其|伊斯坦布尔|TR|Turkey")),
-    ("泰国", re.compile(r"泰国|曼谷|TH|Thailand")),
-    ("菲律宾", re.compile(r"菲律宾|马尼拉|PH|Philippines")),
-    ("印尼", re.compile(r"印尼|雅加达|ID|Indonesia")),
-    ("越南", re.compile(r"越南|胡志明|VN|Vietnam")),
-    ("马来西亚", re.compile(r"马来西亚|吉隆坡|MY|Malaysia")),
-    ("阿根廷", re.compile(r"阿根廷|AR|Argentina")),
-    ("意大利", re.compile(r"意大利|米兰|IT|Italy")),
-    ("西班牙", re.compile(r"西班牙|马德里|ES|Spain")),
-    ("波兰", re.compile(r"波兰|华沙|PL|Poland")),
+    ("香港", re.compile("香港")),
+    ("台湾", re.compile("台湾")),
+    ("日本", re.compile("日本")),
+    ("韩国", re.compile("韩国")),
+    ("新加坡", re.compile("新加坡")),
+    ("美国", re.compile("美国")),
+    ("英国", re.compile("英国")),
+    ("德国", re.compile("德国")),
+    ("法国", re.compile("法国")),
+    ("荷兰", re.compile("荷兰")),
+    ("俄罗斯", re.compile("俄罗斯")),
+    ("加拿大", re.compile("加拿大")),
+    ("澳大利亚", re.compile("澳大利亚|澳洲")),
+    ("印度", re.compile("印度")),
+    ("巴西", re.compile("巴西")),
+    ("墨西哥", re.compile("墨西哥")),
+    ("南非", re.compile("南非|非洲")),
+    ("迪拜", re.compile("迪拜|阿联酋")),
+    ("瑞典", re.compile("瑞典")),
+    ("瑞士", re.compile("瑞士")),
+    ("土耳其", re.compile("土耳其")),
+    ("泰国", re.compile("泰国")),
+    ("菲律宾", re.compile("菲律宾")),
+    ("印尼", re.compile("印尼|印度尼西亚")),
+    ("越南", re.compile("越南")),
+    ("马来西亚", re.compile("马来西亚")),
+    ("阿根廷", re.compile("阿根廷")),
+    ("意大利", re.compile("意大利")),
+    ("西班牙", re.compile("西班牙")),
+    ("波兰", re.compile("波兰")),
 ]
 
 POOLS = [
@@ -70,64 +70,51 @@ POOLS = [
 ]
 
 URLTEST_URL = "https://www.gstatic.com/generate_204"
-URLTEST_INTERVAL = "3m0s"
-URLTEST_TOLERANCE = 50
+URLTEST_INTERVAL = "30m"
+URLTEST_TOLERANCE = 30
 
-def load_config():
-    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-def save_config(config):
-    with open(CONFIG_PATH, "w", encoding="utf-8") as f:
-        json.dump(config, f, indent=4, ensure_ascii=False)
 
 def main():
-    try:
-        config = load_config()
-    except FileNotFoundError:
-        print(f"错误: 找不到 {CONFIG_PATH} 文件。请先确保生成了基础配置。")
-        return
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        config = json.load(f)
 
     outbounds = config.get("outbounds", [])
-    
-    # 1. 提取原始配置中所有合法的策略组 Tag 集合
-    existing_group_tags = {o["tag"] for o in outbounds if "tag" in o}
-    
-    # 建立快捷查找
-    outbound_by_tag = {o["tag"]: o for o in outbounds if "tag" in o}
+    by_tag = {o["tag"]: o for o in outbounds if "tag" in o}
 
-    # 收集模板定义的可能缺失的tag集合（即 `{all}` 展开的所有目标底层节点）
-    all_possible_tags = set()
-    for o in outbounds:
-        if "outbounds" in o:
-            for t in o["outbounds"]:
-                if not t.startswith("🔖NodePool-") and t not in ["🌏️主代理", "Direct", "REJECT", "{all}"]:
-                    all_possible_tags.add(t)
-
-    valid_tags = set()
     new_region_outbounds = []
+    all_possible_tags = set()
+    valid_tags = set()
 
-    # 遍历处理两个池子并生成动态地区组
     for pool_name, pool_tag, regions in POOLS:
-        if pool_tag not in outbound_by_tag:
-            print(f"警告: 在 outbounds 中找不到池子 {pool_tag}, 跳过该机场拆分。")
-            continue
+        pool_obj = by_tag.get(pool_tag)
+        node_tags = pool_obj.get("outbounds", []) if pool_obj else []
+        node_tags = [t for t in node_tags if t in by_tag and by_tag[t].get("type") not in (
+            "selector", "urltest", "direct", "block")]
 
-        pool_outbound = outbound_by_tag[pool_tag]
-        node_tags = pool_outbound.get("outbounds", [])
-        
-        # 记录真实存在的节点
-        valid_tags.update(node_tags)
+        # 该订阅整体(不分地区)的自动选择组
+        whole_pool_tag = f"♾️自动选择-{pool_name}"
+        all_possible_tags.add(whole_pool_tag)
+        if node_tags:
+            valid_tags.add(whole_pool_tag)
+            new_region_outbounds.append({
+                "tag": whole_pool_tag,
+                "type": "urltest",
+                "outbounds": node_tags,
+                "url": URLTEST_URL,
+                "interval": URLTEST_INTERVAL,
+                "tolerance": URLTEST_TOLERANCE,
+            })
 
         matched_summary = []
-        for reg_name, regex in regions:
-            matched = [t for t in node_tags if regex.search(t)]
+        for region, pattern in regions:
+            group_tag = f"♾️自动选择-{pool_name}-{region}"
+            all_possible_tags.add(group_tag)
+            matched = [t for t in node_tags if pattern.search(t)]
+            matched_summary.append((region, len(matched)))
             if matched:
-                matched_summary.append(f"{reg_name}({len(matched)})")
-                
-                # 创建该机场专属的地区自动选择组
+                valid_tags.add(group_tag)
                 new_region_outbounds.append({
-                    "tag": f"♾️自动选择-{pool_name}-{reg_name}",
+                    "tag": group_tag,
                     "type": "urltest",
                     "outbounds": matched,
                     "url": URLTEST_URL,
@@ -135,42 +122,19 @@ def main():
                     "tolerance": URLTEST_TOLERANCE,
                 })
 
-        print(f"{pool_name}: 共{len(node_tags)}个节点, 成功拆分区域: {', '.join(matched_summary) if matched_summary else '无'}")
+        print(f"{pool_name}: 共{len(node_tags)}个节点, {matched_summary}")
 
-    # 将动态生成的地区组 Tag 名字也加入合法组集合中
-    for o in new_region_outbounds:
-        existing_group_tags.add(o["tag"])
-
-    # 算出模板里定义了、但在实际节点列表里完全不存在的“缺失单节点标签”
     missing_tags = all_possible_tags - valid_tags
 
     pool_tags = {p[1] for p in POOLS}
     final_outbounds = []
-
     for o in outbounds:
-        # 步骤 1: 剔除临时中转节点池 (🔖NodePool-*)
         if o.get("tag") in pool_tags:
             continue
-        
-        # 步骤 2: 精准清洗子节点列表
-        if "outbounds" in o:
-            clean_nodes = []
-            for t in o["outbounds"]:
-                # 核心风控逻辑：如果这个名字本身是一个策略组，或者它不属于缺失的失效节点列表，就绝对保留
-                if t in existing_group_tags or t in ["Direct", "REJECT", "🌏️主代理", "♾️自动选择"]:
-                    clean_nodes.append(t)
-                elif t not in missing_tags:
-                    clean_nodes.append(t)
-            
-            # 极致兜底：如果被洗成空列表了，强制放入 Direct 防止核心报错
-            if not clean_nodes:
-                clean_nodes = ["Direct"]
-                
-            o["outbounds"] = clean_nodes
-
+        if o.get("type") == "selector" and missing_tags:
+            o["outbounds"] = [t for t in o["outbounds"] if t not in missing_tags]
         final_outbounds.append(o)
 
-    # 步骤 3: 将新生成的地区 urltest 子组动态插入到大总组 "♾️自动选择" 后面
     inserted = []
     for o in final_outbounds:
         inserted.append(o)
@@ -178,13 +142,11 @@ def main():
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
 
-    # 步骤 4: 对相同 tag 进行全局去重，保护核心平稳加载
+    # 保险:不管什么原因导致同一个tag被重复添加,这里统一去重,只保留第一次出现的
     seen = set()
     deduped = []
     for o in final_outbounds:
         tag = o.get("tag")
-        if not tag:
-            continue
         if tag in seen:
             continue
         seen.add(tag)
@@ -193,9 +155,13 @@ def main():
 
     config["outbounds"] = final_outbounds
 
-    # 5. 保存并导出最终配置
-    save_config(config)
-    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，动态地区组与回退链路完美闭环。")
+    with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+        json.dump(config, f, ensure_ascii=False, indent=4)
+
+    print(f"生成的地区组: {sorted(valid_tags)}")
+    if missing_tags:
+        print(f"以下地区本次没有节点,已从选择器中摘除引用: {sorted(missing_tags)}")
+
 
 if __name__ == "__main__":
     main()
