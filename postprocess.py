@@ -37,7 +37,7 @@ DJJC_REGIONS = [
     ("台湾", re.compile(r"台湾|台北|TW|Taiwan")),
     ("日本", re.compile(r"日本|东京|大阪|京都|JP|Japan")),
     ("新加坡", re.compile(r"新加坡|狮城|SG|Singapore")),
-    ("美国", re.compile(r"美国|纽约|洛杉矶|圣何塞|US|America|United States")),
+    ("美国", re.compile(r"美国|纽约|洛杉矶|圣好塞|圣何塞|US|America|United States")),
     ("韩国", re.compile(r"韩国|首尔|KR|Korea")),
     ("德国", re.compile(r"德国|法兰克福|DE|Germany")),
     ("法国", re.compile(r"法国|巴黎|FR|France")),
@@ -140,23 +140,27 @@ def main():
     pool_tags = {p[1] for p in POOLS}
     final_outbounds = []
     
-    # === 核心安全升级：提取所有动态生成的区域策略组 tag 名字 ===
-    new_group_tags = {o.get("tag") for o in new_region_outbounds}
+    # 定义绝对不能被抹杀的保留策略组（核心保护区）
+    protected_tags = {"🌏️主代理", "♾️自动选择", "Direct", "REJECT", "Proxy"}
+    # 加上动态生成的地区组
+    for o in new_region_outbounds:
+        protected_tags.add(o.get("tag"))
 
     for o in outbounds:
         # 1. 过滤掉临时中转节点池 (🔖NodePool-*)
         if o.get("tag") in pool_tags:
             continue
         
-        # 2. 清理选择器组，剔除不存在的无效底层节点，但务必保护动态生成的地区策略组
+        # 2. 清理选择器组，剔除不存在的无效底层单节点
         if o.get("type") == "selector" and missing_tags:
+            # 强化风控：只要这个名字属于受保护的策略组，或者它不属于缺失列表，就保留
             o["outbounds"] = [
                 t for t in o["outbounds"] 
-                if t not in missing_tags or t in new_group_tags
+                if t in protected_tags or t not in missing_tags
             ]
         final_outbounds.append(o)
 
-    # 3. 将新生成的地区 urltest 组插入到大总组 "♾️自动选择" 后面，保持界面美观整洁
+    # 3. 将新生成的地区 urltest 组插入到大总组 "♾️自动选择" 后面
     inserted = []
     for o in final_outbounds:
         inserted.append(o)
@@ -164,7 +168,7 @@ def main():
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
 
-    # 4. 极致风控：对相同 tag 进行规范性去重，确保核心加载时绝对不报错
+    # 4. 极致风控：对相同 tag 进行规范性去重
     seen = set()
     deduped = []
     for o in final_outbounds:
@@ -179,7 +183,7 @@ def main():
 
     # 5. 保存并导出最终配置
     save_config(config)
-    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，动态地区组受保护。")
+    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，兜底机制已风控升级。")
 
 if __name__ == "__main__":
     main()
