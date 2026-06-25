@@ -122,20 +122,6 @@ def main():
                     "tolerance": URLTEST_TOLERANCE,
                 })
 
-        # 该订阅"全部节点"的自动选择(不分地区)
-        whole_pool_tag = f"♾️自动选择-{pool_name}"
-        all_possible_tags.add(whole_pool_tag)
-        if node_tags:
-            valid_tags.add(whole_pool_tag)
-            new_region_outbounds.append({
-                "tag": whole_pool_tag,
-                "type": "urltest",
-                "outbounds": node_tags,
-                "url": URLTEST_URL,
-                "interval": URLTEST_INTERVAL,
-                "tolerance": URLTEST_TOLERANCE,
-            })
-
         print(f"{pool_name}: 共{len(node_tags)}个节点, {matched_summary}")
 
     missing_tags = all_possible_tags - valid_tags
@@ -155,6 +141,17 @@ def main():
         if o.get("tag") == "♾️自动选择" and o.get("type") == "urltest":
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
+
+    # 保险:不管什么原因导致同一个tag被重复添加,这里统一去重,只保留第一次出现的
+    seen = set()
+    deduped = []
+    for o in final_outbounds:
+        tag = o.get("tag")
+        if tag in seen:
+            continue
+        seen.add(tag)
+        deduped.append(o)
+    final_outbounds = deduped
 
     config["outbounds"] = final_outbounds
 
