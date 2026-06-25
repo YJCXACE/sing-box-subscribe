@@ -244,13 +244,13 @@
                 "tag": "Telegram-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.srs"
             },
             {
                 "tag": "Telegram-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs"
             },
             {
                 "tag": "TikTok-Site",
@@ -546,7 +546,8 @@
                 "rule_set": [
                     "Telegram-IP"
                 ],
-                "outbound": "✈️Telegram"
+                "outbound": "✈️Telegram",
+                "action": "route"
             },
             {
                 "rule_set": [
