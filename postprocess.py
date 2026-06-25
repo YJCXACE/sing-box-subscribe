@@ -140,9 +140,11 @@ def main():
     pool_tags = {p[1] for p in POOLS}
     final_outbounds = []
     
-    # 定义绝对不能被抹杀的保留策略组（核心保护区）
-    protected_tags = {"🌏️主代理", "♾️自动选择", "Direct", "REJECT", "Proxy"}
-    # 加上动态生成的地区组
+    # 🌟 终极防御：这里定义绝对不能被当作无效单节点过滤掉的“策略组免死金牌” 🌟
+    # 包括：主代理、全选、直连、拒绝，以及你在模板中写死的两个总大组名
+    protected_tags = {"🌏️主代理", "♾️自动选择", "♾️自动选择-Mitce", "♾️自动选择-DJJC", "Direct", "REJECT", "Proxy"}
+    
+    # 同时也把动态生成的地区子组 tag 名字加进去
     for o in new_region_outbounds:
         protected_tags.add(o.get("tag"))
 
@@ -153,14 +155,14 @@ def main():
         
         # 2. 清理选择器组，剔除不存在的无效底层单节点
         if o.get("type") == "selector" and missing_tags:
-            # 强化风控：只要这个名字属于受保护的策略组，或者它不属于缺失列表，就保留
+            # 高效风控：如果是需要保留的策略组名字，或者本身就是合法的有效单节点，就予以保留
             o["outbounds"] = [
                 t for t in o["outbounds"] 
                 if t in protected_tags or t not in missing_tags
             ]
         final_outbounds.append(o)
 
-    # 3. 将新生成的地区 urltest 组插入到大总组 "♾️自动选择" 后面
+    # 3. 将新生成的地区 urltest 子组插入到大总组 "♾️自动选择" 后面
     inserted = []
     for o in final_outbounds:
         inserted.append(o)
@@ -168,7 +170,7 @@ def main():
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
 
-    # 4. 极致风控：对相同 tag 进行规范性去重
+    # 4. 规范性去重，防止相同分组二次叠加报错
     seen = set()
     deduped = []
     for o in final_outbounds:
@@ -183,7 +185,8 @@ def main():
 
     # 5. 保存并导出最终配置
     save_config(config)
-    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，兜底机制已风控升级。")
+    print("✨ 后处理完成: 已成功整合并优化策略组分流架构，所有总组与子组安全闭环。")
 
 if __name__ == "__main__":
     main()
+
