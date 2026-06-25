@@ -91,6 +91,20 @@ def main():
         node_tags = [t for t in node_tags if t in by_tag and by_tag[t].get("type") not in (
             "selector", "urltest", "direct", "block")]
 
+        # 该订阅整体(不分地区)的自动选择组
+        whole_pool_tag = f"♾️自动选择-{pool_name}"
+        all_possible_tags.add(whole_pool_tag)
+        if node_tags:
+            valid_tags.add(whole_pool_tag)
+            new_region_outbounds.append({
+                "tag": whole_pool_tag,
+                "type": "urltest",
+                "outbounds": node_tags,
+                "url": URLTEST_URL,
+                "interval": URLTEST_INTERVAL,
+                "tolerance": URLTEST_TOLERANCE,
+            })
+
         matched_summary = []
         for region, pattern in regions:
             group_tag = f"♾️自动选择-{pool_name}-{region}"
@@ -107,6 +121,20 @@ def main():
                     "interval": URLTEST_INTERVAL,
                     "tolerance": URLTEST_TOLERANCE,
                 })
+
+        # 该订阅"全部节点"的自动选择(不分地区)
+        whole_pool_tag = f"♾️自动选择-{pool_name}"
+        all_possible_tags.add(whole_pool_tag)
+        if node_tags:
+            valid_tags.add(whole_pool_tag)
+            new_region_outbounds.append({
+                "tag": whole_pool_tag,
+                "type": "urltest",
+                "outbounds": node_tags,
+                "url": URLTEST_URL,
+                "interval": URLTEST_INTERVAL,
+                "tolerance": URLTEST_TOLERANCE,
+            })
 
         print(f"{pool_name}: 共{len(node_tags)}个节点, {matched_summary}")
 
