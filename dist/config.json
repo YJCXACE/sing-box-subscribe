@@ -112,31 +112,25 @@
                 "tag": "Apple-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs"
             },
             {
                 "tag": "Apple-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/apple.srs"
-            },
-            {
-                "tag": "Bahamut-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bahamut.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/apple.srs"
             },
             {
                 "tag": "Bilibili-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs"
             },
             {
                 "tag": "Bilibili-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/bilibili.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/bilibili.srs"
             },
             {
                 "tag": "China-Site",
@@ -151,12 +145,6 @@
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs"
             },
             {
-                "tag": "Discord-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/socialmedia.srs"
-            },
-            {
                 "tag": "GFWList-Site",
                 "type": "remote",
                 "format": "binary",
@@ -166,19 +154,13 @@
                 "tag": "Google-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs"
             },
             {
                 "tag": "Google-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/google.srs"
-            },
-            {
-                "tag": "GoogleFCM-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/googlefcm.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs"
             },
             {
                 "tag": "Local-IP",
@@ -190,55 +172,43 @@
                 "tag": "Microsoft-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/microsoft.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs"
             },
             {
                 "tag": "Netflix-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs"
             },
             {
                 "tag": "Netflix-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/netflix.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs"
             },
             {
                 "tag": "OpenAI-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs"
             },
             {
                 "tag": "OpenAI-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/ai.srs"
-            },
-            {
-                "tag": "Speedtest-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/speedtest.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/openai.srs"
             },
             {
                 "tag": "Spotify-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.srs"
             },
             {
                 "tag": "Spotify-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/spotify.srs"
-            },
-            {
-                "tag": "Steam-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/games.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/spotify.srs"
             },
             {
                 "tag": "Telegram-Site",
@@ -256,7 +226,19 @@
                 "tag": "TikTok-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/tiktok.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs"
+            },
+            {
+                "tag": "YouTube-Site-Extra",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs"
+            },
+            {
+                "tag": "GitHub-Site-Extra",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs"
             }
         ],
         "rules": [
@@ -339,11 +321,56 @@
                 "outbound": "🔍Google"
             },
             {
-                "rule_set": [
-                    "Bahamut-Site"
+                "domain_suffix": [
+                    "bahamut.com.tw",
+                    "gamer.com.tw"
                 ],
                 "action": "route",
                 "outbound": "🌸Bahamut"
+            },
+            {
+                "domain_suffix": [
+                    "discord.com",
+                    "discordapp.com",
+                    "discord.gg",
+                    "discord.media",
+                    "discordapp.net",
+                    "discordcdn.com",
+                    "dis.gd",
+                    "discordstatus.com"
+                ],
+                "action": "route",
+                "outbound": "🎙️Discord"
+            },
+            {
+                "domain_suffix": [
+                    "steampowered.com",
+                    "steamcommunity.com",
+                    "steamstatic.com",
+                    "steamcontent.com",
+                    "steamusercontent.com",
+                    "valvesoftware.com",
+                    "steam-chat.com",
+                    "steamgames.com"
+                ],
+                "action": "route",
+                "outbound": "🎮Steam"
+            },
+            {
+                "domain_suffix": [
+                    "speedtest.net",
+                    "ooklaserver.net",
+                    "ookla.com"
+                ],
+                "action": "route",
+                "outbound": "⏱️Speedtest"
+            },
+            {
+                "domain_suffix": [
+                    "fcm.googleapis.com"
+                ],
+                "action": "route",
+                "outbound": "☁️GoogleFCM"
             },
             {
                 "rule_set": [
@@ -351,20 +378,6 @@
                 ],
                 "action": "route",
                 "outbound": "📺Bilibili"
-            },
-            {
-                "rule_set": [
-                    "Discord-Site"
-                ],
-                "action": "route",
-                "outbound": "🎙️Discord"
-            },
-            {
-                "rule_set": [
-                    "GoogleFCM-Site"
-                ],
-                "action": "route",
-                "outbound": "☁️GoogleFCM"
             },
             {
                 "rule_set": [
@@ -396,6 +409,13 @@
                 "outbound": "🐙GitHub"
             },
             {
+                "rule_set": [
+                    "GitHub-Site-Extra"
+                ],
+                "action": "route",
+                "outbound": "🐙GitHub"
+            },
+            {
                 "domain_suffix": [
                     "music.youtube.com"
                 ],
@@ -410,6 +430,13 @@
                     "youtu.be",
                     "youtubei.googleapis.com",
                     "ggpht.com"
+                ],
+                "action": "route",
+                "outbound": "📺YouTube"
+            },
+            {
+                "rule_set": [
+                    "YouTube-Site-Extra"
                 ],
                 "action": "route",
                 "outbound": "📺YouTube"
@@ -439,24 +466,10 @@
             },
             {
                 "rule_set": [
-                    "Speedtest-Site"
-                ],
-                "action": "route",
-                "outbound": "⏱️Speedtest"
-            },
-            {
-                "rule_set": [
                     "Spotify-Site"
                 ],
                 "action": "route",
                 "outbound": "🎵Spotify"
-            },
-            {
-                "rule_set": [
-                    "Steam-Site"
-                ],
-                "action": "route",
-                "outbound": "🎮Steam"
             },
             {
                 "rule_set": [
@@ -621,6 +634,8 @@
             "tag": "🌏️主代理",
             "outbounds": [
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -630,6 +645,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -739,6 +755,8 @@
                 "Direct",
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -748,6 +766,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -855,6 +874,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -864,6 +885,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -972,6 +994,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -981,6 +1005,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1089,6 +1114,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1098,6 +1125,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1206,6 +1234,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1215,6 +1245,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1323,6 +1354,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1332,6 +1365,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1441,6 +1475,8 @@
                 "Direct",
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1450,6 +1486,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1557,6 +1594,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1566,6 +1605,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1674,6 +1714,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1683,6 +1725,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1791,6 +1834,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1800,6 +1845,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -1908,6 +1954,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -1917,6 +1965,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2025,6 +2074,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2034,6 +2085,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2142,6 +2194,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2151,6 +2205,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2259,6 +2314,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2268,6 +2325,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2376,6 +2434,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2385,6 +2445,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2493,6 +2554,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2502,6 +2565,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2610,6 +2674,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2619,6 +2685,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2727,6 +2794,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2736,6 +2805,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2844,6 +2914,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2853,6 +2925,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -2961,6 +3034,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -2970,6 +3045,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -3078,6 +3154,8 @@
             "outbounds": [
                 "🌏️主代理",
                 "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
                 "♾️自动选择-Mitce-HK",
                 "♾️自动选择-Mitce-TW",
                 "♾️自动选择-Mitce-JP",
@@ -3087,6 +3165,7 @@
                 "♾️自动选择-DJJC-台湾",
                 "♾️自动选择-DJJC-日本",
                 "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
                 "♾️自动选择-DJJC-德国",
                 "♾️自动选择-DJJC-加拿大",
                 "♾️自动选择-DJJC-印度",
@@ -3288,6 +3367,67 @@
             "tolerance": 30
         },
         {
+            "tag": "♾️自动选择-Mitce",
+            "type": "urltest",
+            "outbounds": [
+                "HK-1",
+                "HK-2",
+                "HK-3",
+                "HK-4",
+                "HK-5",
+                "HK-6",
+                "HK2-HY2",
+                "HK3-HY2",
+                "HK4-HY2",
+                "HK5-HY2",
+                "JP-1",
+                "JP-2",
+                "JP-3",
+                "JP-4",
+                "JP-5",
+                "JP-6",
+                "JP6-HY2",
+                "JP7-HY2",
+                "JP8-HY2",
+                "JP9-HY2",
+                "JP10-HY2",
+                "KR-1",
+                "KR-2",
+                "KR-3",
+                "KR-4",
+                "KR-5",
+                "SG-1",
+                "SG-2",
+                "SG-3",
+                "SG1-HY2",
+                "SG2-HY2",
+                "TW-1",
+                "TW-2",
+                "TW-3",
+                "TW-4",
+                "TW-5",
+                "TW-6",
+                "TW-7",
+                "TW-8",
+                "TW-9",
+                "TW-10",
+                "US-1TCP",
+                "US-2TCP",
+                "US-3TCP",
+                "US-4TCP",
+                "US-5TCP",
+                "US1-HY2",
+                "US2-HY2",
+                "US3-HY2",
+                "US4-HY2",
+                "US5-HY2",
+                "US6-HY2"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "30m",
+            "tolerance": 30
+        },
+        {
             "tag": "♾️自动选择-Mitce-HK",
             "type": "urltest",
             "outbounds": [
@@ -3303,8 +3443,8 @@
                 "HK5-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-Mitce-TW",
@@ -3322,8 +3462,8 @@
                 "TW-10"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-Mitce-JP",
@@ -3342,8 +3482,8 @@
                 "JP10-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-Mitce-SG",
@@ -3356,8 +3496,8 @@
                 "SG2-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-Mitce-US",
@@ -3376,8 +3516,8 @@
                 "US6-HY2"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-Mitce-KR",
@@ -3390,8 +3530,54 @@
                 "KR-5"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
+        },
+        {
+            "tag": "♾️自动选择-DJJC",
+            "type": "urltest",
+            "outbounds": [
+                "剩余流量：1.96 TB",
+                "套餐到期：长期有效",
+                "🇺🇸美国洛杉矶1号",
+                "🇺🇸美国洛杉矶2号",
+                "🇺🇸美国洛杉矶3号",
+                "🇺🇸美国凤凰城1号",
+                "🇯🇵日本东京1号",
+                "🇯🇵日本东京2号",
+                "🇯🇵日本东京3号",
+                "🇩🇪德国法兰克福2",
+                "🇧🇷巴西圣保罗-1.5倍率",
+                "🇦🇪迪拜-1.2倍率",
+                "🇦🇪迪拜2-1.5倍率",
+                "🇯🇵日本",
+                "🇮🇳印度孟买-1.5倍率",
+                "🇮🇳印度海得拉巴-1.5倍率",
+                "🇬🇧英国伦敦-2倍率",
+                "🇬🇧英国伦敦2-1.8倍率",
+                "🇿🇦非洲约翰内斯堡-3.5倍率",
+                "🇨🇦加拿大多伦多-1.5倍率",
+                "🇸🇪瑞典斯德哥尔摩-1.5倍率",
+                "🇲🇽墨西哥克雷塔罗",
+                "🇯🇵日本1号 三网高速",
+                "🇯🇵日本2号 三网高速",
+                "🇯🇵日本3号 三网高速",
+                "🇺🇸美国凤凰城-0.1倍",
+                "🇺🇸美国1号-0.1倍",
+                "🇺🇸美国3号-0.1倍",
+                "🇺🇸美国4号-0.1倍",
+                "🇯🇵日本-0.1—流媒体",
+                "🇯🇵日本2-0.1—流媒体",
+                "🇯🇵日本3-0.1—流媒体",
+                "🇯🇵日本4-0.1—流媒体",
+                "🇩🇪德国",
+                "🇬🇧英国伦敦-1倍",
+                "🇹🇼台湾—TK专线",
+                "🇮🇳印度孟买"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-台湾",
@@ -3400,8 +3586,8 @@
                 "🇹🇼台湾—TK专线"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-日本",
@@ -3420,8 +3606,8 @@
                 "🇯🇵日本4-0.1—流媒体"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-美国",
@@ -3437,8 +3623,20 @@
                 "🇺🇸美国4号-0.1倍"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
+        },
+        {
+            "tag": "♾️自动选择-DJJC-英国",
+            "type": "urltest",
+            "outbounds": [
+                "🇬🇧英国伦敦-2倍率",
+                "🇬🇧英国伦敦2-1.8倍率",
+                "🇬🇧英国伦敦-1倍"
+            ],
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-德国",
@@ -3448,8 +3646,8 @@
                 "🇩🇪德国"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-加拿大",
@@ -3458,8 +3656,8 @@
                 "🇨🇦加拿大多伦多-1.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-印度",
@@ -3470,8 +3668,8 @@
                 "🇮🇳印度孟买"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-巴西",
@@ -3480,8 +3678,8 @@
                 "🇧🇷巴西圣保罗-1.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-墨西哥",
@@ -3490,8 +3688,8 @@
                 "🇲🇽墨西哥克雷塔罗"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-南非",
@@ -3500,8 +3698,8 @@
                 "🇿🇦非洲约翰内斯堡-3.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-迪拜",
@@ -3511,8 +3709,8 @@
                 "🇦🇪迪拜2-1.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "tag": "♾️自动选择-DJJC-瑞典",
@@ -3521,8 +3719,8 @@
                 "🇸🇪瑞典斯德哥尔摩-1.5倍率"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m0s",
-            "tolerance": 50
+            "interval": "30m",
+            "tolerance": 30
         },
         {
             "type": "direct",
@@ -3692,7 +3890,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20250,
+            "server_port": 20256,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3709,7 +3907,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20573,
+            "server_port": 20492,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3726,7 +3924,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20792,
+            "server_port": 20662,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3743,7 +3941,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20867,
+            "server_port": 20866,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3916,7 +4114,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21131,
+            "server_port": 21142,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3933,7 +4131,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21317,
+            "server_port": 21343,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3950,7 +4148,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21504,
+            "server_port": 21519,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3967,7 +4165,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21668,
+            "server_port": 21798,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -3984,7 +4182,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21894,
+            "server_port": 21916,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4209,7 +4407,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20015,
+            "server_port": 20103,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4226,7 +4424,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20326,
+            "server_port": 20288,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4573,7 +4771,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20124,
+            "server_port": 20140,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4594,7 +4792,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20391,
+            "server_port": 20372,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4615,7 +4813,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20492,
+            "server_port": 20405,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4636,7 +4834,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20799,
+            "server_port": 20729,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4657,7 +4855,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20834,
+            "server_port": 20886,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4678,7 +4876,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21009,
+            "server_port": 21070,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
