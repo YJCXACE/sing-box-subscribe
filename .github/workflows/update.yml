@@ -48,6 +48,8 @@ jobs:
           python -c "import json; json.load(open('dist/config.json', encoding='utf-8'))"
 
       - name: Split auto-select group by region
+        env:
+          SUB_URL_2: ${{ secrets.SUB_URL_2 }}
         run: |
           python postprocess.py
           python -c "import json; json.load(open('dist/config.json', encoding='utf-8'))"
