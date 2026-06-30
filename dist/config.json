@@ -211,18 +211,6 @@
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/spotify.srs"
             },
             {
-                "tag": "Telegram-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.srs"
-            },
-            {
-                "tag": "Telegram-IP",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs"
-            },
-            {
                 "tag": "TikTok-Site",
                 "type": "remote",
                 "format": "binary",
@@ -239,18 +227,6 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs"
-            },
-            {
-                "tag": "X-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/twitter.srs"
-            },
-            {
-                "tag": "X-IP",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/twitter.srs"
             }
         ],
         "rules": [
@@ -341,15 +317,8 @@
                 "outbound": "🌸Bahamut"
             },
             {
-                "domain_suffix": [
-                    "discord.com",
-                    "discordapp.com",
-                    "discord.gg",
-                    "discord.media",
-                    "discordapp.net",
-                    "discordcdn.com",
-                    "dis.gd",
-                    "discordstatus.com"
+                "package_name": [
+                    "com.discord"
                 ],
                 "action": "route",
                 "outbound": "🎙️Discord"
@@ -454,17 +423,16 @@
                 "outbound": "📺YouTube"
             },
             {
-                "domain_suffix": [
-                    "facebook.com",
-                    "instagram.com",
-                    "whatsapp.com",
-                    "whatsapp.net",
-                    "fbcdn.net",
-                    "cdninstagram.com",
-                    "fb.com",
-                    "fbsbx.com",
-                    "messenger.com",
-                    "threads.net"
+                "package_name": [
+                    "com.facebook.katana",
+                    "com.facebook.lite",
+                    "com.instagram.android",
+                    "com.whatsapp",
+                    "com.whatsapp.w4b",
+                    "com.facebook.orca",
+                    "com.facebook.mlite",
+                    "com.facebook.appmanager",
+                    "com.threads.android"
                 ],
                 "action": "route",
                 "outbound": "📘Meta"
@@ -484,15 +452,21 @@
                 "outbound": "🎵Spotify"
             },
             {
-                "rule_set": [
-                    "Telegram-Site"
+                "package_name": [
+                    "org.telegram.messenger",
+                    "org.telegram.messenger.web",
+                    "org.telegram.plus",
+                    "org.thunderdog.challegram",
+                    "nekox.messenger"
                 ],
                 "action": "route",
                 "outbound": "✈️Telegram"
             },
             {
-                "rule_set": [
-                    "X-Site"
+                "package_name": [
+                    "com.twitter.android",
+                    "com.twitter.android.lite",
+                    "com.atebits.Tweetie2"
                 ],
                 "action": "route",
                 "outbound": "🐦X"
@@ -573,20 +547,6 @@
                 ],
                 "action": "route",
                 "outbound": "🎵Spotify"
-            },
-            {
-                "rule_set": [
-                    "Telegram-IP"
-                ],
-                "outbound": "✈️Telegram",
-                "action": "route"
-            },
-            {
-                "rule_set": [
-                    "X-IP"
-                ],
-                "action": "route",
-                "outbound": "🐦X"
             },
             {
                 "rule_set": [
@@ -4036,7 +3996,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20247,
+            "server_port": 20356,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4053,7 +4013,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20404,
+            "server_port": 20583,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4070,7 +4030,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20703,
+            "server_port": 20669,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4087,7 +4047,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20931,
+            "server_port": 20944,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4260,7 +4220,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21173,
+            "server_port": 21061,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4277,7 +4237,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21299,
+            "server_port": 21208,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4294,7 +4254,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21499,
+            "server_port": 21580,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4311,7 +4271,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21794,
+            "server_port": 21693,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4328,7 +4288,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21926,
+            "server_port": 21983,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4553,7 +4513,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20009,
+            "server_port": 20179,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4570,7 +4530,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20259,
+            "server_port": 20314,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4917,7 +4877,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20001,
+            "server_port": 20152,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4938,7 +4898,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20213,
+            "server_port": 20228,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4959,7 +4919,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20476,
+            "server_port": 20420,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4980,7 +4940,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20604,
+            "server_port": 20707,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5001,7 +4961,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20974,
+            "server_port": 20809,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5022,7 +4982,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21081,
+            "server_port": 21130,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
