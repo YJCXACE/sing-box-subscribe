@@ -155,6 +155,14 @@ def main():
 
     config["outbounds"] = final_outbounds
 
+    # 补填DJJC订阅里被转换器丢失的Hysteria2关键参数(mport/pinSHA256)
+    import os
+    sub_url_2 = os.environ.get('SUB_URL_2', '')
+    if sub_url_2:
+        config = patch_djjc_hysteria2(config, sub_url_2)
+    else:
+        print("[patch_djjc] SUB_URL_2未设置,跳过补填")
+
     with open(CONFIG_PATH, "w", encoding="utf-8") as f:
         json.dump(config, f, ensure_ascii=False, indent=4)
 
@@ -165,3 +173,77 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def patch_djjc_hysteria2(config, sub_url):
+    """
+    DJJC订阅的Hysteria2节点在转换时丢失了两个关键参数:
+    - mport (端口跳跃范围) -> sing-box的 server_ports 字段
+    - pinSHA256 (证书指纹) -> sing-box的 tls.pinned_peer_certificate_chain_sha256
+
+    这个函数从原始订阅重新解析这两个参数,并补填到生成的config里。
+    """
+    import urllib.request, urllib.parse, base64
+    from urllib.parse import urlparse, parse_qs
+    import re
+
+    try:
+        req = urllib.request.Request(sub_url, headers={'User-Agent': 'clash.meta'})
+        raw = urllib.request.urlopen(req, timeout=15).read()
+        decoded = base64.b64decode(raw).decode('utf-8')
+    except Exception as e:
+        print(f"[patch_djjc] 拉取原始订阅失败: {e}")
+        return config
+
+    # 解析每条 hysteria2:// 行,建立 tag -> 参数 映射
+    extra = {}
+    for line in decoded.split('\n'):
+        line = line.strip()
+        if not line.startswith('hysteria2://'):
+            continue
+        try:
+            url = urlparse(line)
+            params = parse_qs(url.query)
+            name = urllib.parse.unquote(line.split('#')[-1]) if '#' in line else ''
+            # 只保留真实节点名(跳过"剩余流量""套餐到期"这种信息行)
+            if not name or re.search(r'流量|套餐|到期', name):
+                continue
+            mport = params.get('mport', [None])[0]
+            pin = params.get('pinSHA256', [None])[0]
+            extra[name] = {'mport': mport, 'pin': pin}
+        except Exception:
+            continue
+
+    print(f"[patch_djjc] 找到 {len(extra)} 个DJJC Hysteria2节点的额外参数")
+
+    # 将参数补填到config的outbounds里
+    patched = 0
+    for o in config.get('outbounds', []):
+        tag = o.get('tag', '')
+        if o.get('type') != 'hysteria2':
+            continue
+        if tag not in extra:
+            continue
+        info = extra[tag]
+        # 补 server_ports (端口跳跃)
+        if info['mport'] and 'server_ports' not in o:
+            o['server_ports'] = info['mport']
+            # 有端口跳跃时建议加上跳跃间隔
+            if 'hop_interval' not in o:
+                o['hop_interval'] = '30s'
+            # 有了server_ports就不能同时有server_port
+            o.pop('server_port', None)
+        # 补 pinSHA256 -> tls.pinned_peer_certificate_chain_sha256
+        if info['pin']:
+            tls = o.setdefault('tls', {})
+            if 'pinned_peer_certificate_chain_sha256' not in tls:
+                # 原始是hex格式,sing-box要求base64格式
+                try:
+                    pin_b64 = base64.b64encode(bytes.fromhex(info['pin'])).decode()
+                    tls['pinned_peer_certificate_chain_sha256'] = [pin_b64]
+                except Exception:
+                    pass
+        patched += 1
+
+    print(f"[patch_djjc] 成功补填 {patched} 个节点")
+    return config
