@@ -227,6 +227,18 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs"
+            },
+            {
+                "tag": "Meta-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs"
+            },
+            {
+                "tag": "Meta-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/facebook.srs"
             }
         ],
         "rules": [
@@ -423,16 +435,33 @@
                 "outbound": "📺YouTube"
             },
             {
-                "package_name": [
-                    "com.facebook.katana",
-                    "com.facebook.lite",
-                    "com.instagram.android",
-                    "com.whatsapp",
-                    "com.whatsapp.w4b",
-                    "com.facebook.orca",
-                    "com.facebook.mlite",
-                    "com.facebook.appmanager",
-                    "com.threads.android"
+                "action": "route",
+                "outbound": "📘Meta",
+                "domain_suffix": [
+                    "facebook.com",
+                    "instagram.com",
+                    "whatsapp.com",
+                    "whatsapp.net",
+                    "fbcdn.net",
+                    "cdninstagram.com",
+                    "fb.com",
+                    "fbsbx.com",
+                    "messenger.com",
+                    "threads.net",
+                    "meta.com",
+                    "meta.ai"
+                ]
+            },
+            {
+                "rule_set": [
+                    "Meta-Site"
+                ],
+                "action": "route",
+                "outbound": "📘Meta"
+            },
+            {
+                "rule_set": [
+                    "Meta-IP"
                 ],
                 "action": "route",
                 "outbound": "📘Meta"
@@ -457,7 +486,8 @@
                     "org.telegram.messenger.web",
                     "org.telegram.plus",
                     "org.thunderdog.challegram",
-                    "nekox.messenger"
+                    "nekox.messenger",
+                    "org.telegram.group"
                 ],
                 "action": "route",
                 "outbound": "✈️Telegram"
