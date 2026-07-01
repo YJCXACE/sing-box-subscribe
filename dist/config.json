@@ -3996,7 +3996,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20326,
+            "server_port": 20225,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4013,7 +4013,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20552,
+            "server_port": 20522,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4030,7 +4030,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20790,
+            "server_port": 20756,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4047,7 +4047,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20826,
+            "server_port": 20936,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4220,7 +4220,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21078,
+            "server_port": 21108,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4237,7 +4237,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21245,
+            "server_port": 21242,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4254,7 +4254,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21511,
+            "server_port": 21483,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4271,7 +4271,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21666,
+            "server_port": 21764,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4288,7 +4288,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21948,
+            "server_port": 21995,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4513,7 +4513,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20189,
+            "server_port": 20020,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4530,7 +4530,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20265,
+            "server_port": 20252,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4877,7 +4877,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20049,
+            "server_port": 20083,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4898,7 +4898,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20348,
+            "server_port": 20214,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4919,7 +4919,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20406,
+            "server_port": 20586,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4940,7 +4940,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20683,
+            "server_port": 20688,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4961,7 +4961,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20878,
+            "server_port": 20840,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4982,7 +4982,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21053,
+            "server_port": 21035,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5046,9 +5046,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "0vtPG4M+5+d+gwTcRlLrE+Gw4GTgh0zeOhoaFmC3Tu8="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5067,9 +5064,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "J6uCjamfK3ty92TdPUJspDQYewaB9ZxPj1Us1Cfo2F8="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5088,9 +5082,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "bX6no+YKhz/Vr9sDn20rF8xBDFNm+S5UOcjpou0k8Yw="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5109,9 +5100,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "tG4JwmzJVMC4Hss1RlJePI2nQshAMb2jS9bgOmWru6I="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5130,9 +5118,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "4UpYsQAtOryRiaMhV8E73MfZc+aT0doxeCHDsWns36o="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5151,9 +5136,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "4UpYsQAtOryRiaMhV8E73MfZc+aT0doxeCHDsWns36o="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5172,9 +5154,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "4UpYsQAtOryRiaMhV8E73MfZc+aT0doxeCHDsWns36o="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5194,9 +5173,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "UL4v0NbvNPPjQuMm01JST021aZZNU67hZmx/N3BvZ/o="
                 ]
             }
         },
@@ -5213,9 +5189,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "Qis3K+AS2wrODKg+1XzV+h5UzKNRjTYY0NBg7M72T1o="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5234,9 +5207,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "JiBc67P9KdBKIamU6JHn1GQja78ZcOTYW+py4/zIcJU="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5255,9 +5225,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "JCw4nD4PbJn+UY7PIoGcI7kSIh3xg0oGktDApfElADM="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5276,9 +5243,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "4UpYsQAtOryRiaMhV8E73MfZc+aT0doxeCHDsWns36o="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5298,9 +5262,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "1EdOJqq9jYZA/qXqaBtrOtzGOD64Uw1SIJbnckp4K98="
                 ]
             }
         },
@@ -5318,9 +5279,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "Zpy1zmxV+69z/yPdOBKEp/HXZAEo1yWhETQCEWt1WWw="
                 ]
             }
         },
@@ -5338,9 +5296,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "SqdTWfsQFERS5gIPbRtj5/8QYpCqGyugFHjsrNxKO9g="
                 ]
             }
         },
@@ -5358,9 +5313,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "Y5K8RqV3umbVTvFeo1hIZvQEe4T+F66aTzB9b0ADmLE="
                 ]
             }
         },
@@ -5378,9 +5330,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "6j9FdWDpObL1XdV0jRAtTx3F2cE1L/EH8HsvA9iCffo="
                 ]
             }
         },
@@ -5398,9 +5347,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "G4HRVUtgC/8V5ys0Ypk3GJ2xQQXUyWJpjaf913r9L6g="
                 ]
             }
         },
@@ -5417,9 +5363,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "aS4tyfqk/ObK1rGEV/km5mKDoHOfaTnSDRKfuC2HMjk="
                 ]
             },
             "server_ports": "50000-53000",
@@ -5438,9 +5381,6 @@
                 "insecure": false,
                 "alpn": [
                     "h3"
-                ],
-                "pinned_peer_certificate_chain_sha256": [
-                    "cS+EAjPR0OEjugvvXQYbLhJRgHIX3ID9mmzjcDG/gK0="
                 ]
             },
             "server_ports": "50000-53000",
