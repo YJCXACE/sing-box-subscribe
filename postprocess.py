@@ -1,27 +1,10 @@
-"""
-后处理脚本:
-main.py 用 {Mitce} / {DJJC} 占位符生成的 config.json 里,有两个内部"节点池"
-selector(🔖NodePool-Mitce / 🔖NodePool-DJJC),里面分别是各自订阅的真实节点tag。
-
-这个脚本读取这两个池子,各自按"地区识别规则"拆分成该订阅专属的 urltest
-地区组(例如 ♾️自动选择-Mitce-HK / ♾️自动选择-DJJC-日本),插入回 config.json,
-然后把两个池子selector本身从最终配置里删掉(纯中间数据,不需要出现在
-App的分组列表里)。
-
-两个订阅命名风格不同,所以各自配了一套匹配规则:
-- Mitce: 英文地区前缀(HK-/TW-/JP-/SG-/US-/KR-)
-- DJJC : 纯中文地区关键词(日本/美国/香港……),覆盖面更广
-
-某个订阅在某个地区没有节点的话,会自动从所有 selector 的候选列表里
-摘除对应tag的引用,避免悬空引用导致配置非法。
-"""
 import json
 import re
+import os
 
 CONFIG_PATH = "dist/config.json"
 
-# Mitce: 英文前缀匹配
-MITCE_REGIONS = [
+REGIONS = [
     ("HK", re.compile(r"^HK", re.IGNORECASE)),
     ("TW", re.compile(r"^TW", re.IGNORECASE)),
     ("JP", re.compile(r"^JP", re.IGNORECASE)),
@@ -30,7 +13,6 @@ MITCE_REGIONS = [
     ("KR", re.compile(r"^KR", re.IGNORECASE)),
 ]
 
-# DJJC: 中文关键词匹配(re.search,关键词可以出现在名字任意位置)
 DJJC_REGIONS = [
     ("香港", re.compile("香港")),
     ("台湾", re.compile("台湾")),
@@ -65,13 +47,76 @@ DJJC_REGIONS = [
 ]
 
 POOLS = [
-    ("Mitce", "🔖NodePool-Mitce", MITCE_REGIONS),
+    ("Mitce", "🔖NodePool-Mitce", REGIONS),
     ("DJJC", "🔖NodePool-DJJC", DJJC_REGIONS),
 ]
 
 URLTEST_URL = "https://www.gstatic.com/generate_204"
 URLTEST_INTERVAL = "30m"
 URLTEST_TOLERANCE = 30
+
+
+def patch_djjc_hysteria2(config, sub_url):
+    """
+    DJJC订阅的Hysteria2节点在转换时丢失了两个关键参数:
+    - mport (端口跳跃范围) -> sing-box的 server_ports 字段
+    - pinSHA256 (证书指纹) -> sing-box的 tls.pinned_peer_certificate_chain_sha256
+    """
+    import urllib.request
+    import urllib.parse
+    import base64
+    from urllib.parse import urlparse, parse_qs
+
+    try:
+        req = urllib.request.Request(sub_url, headers={"User-Agent": "clash.meta"})
+        raw = urllib.request.urlopen(req, timeout=15).read()
+        decoded = base64.b64decode(raw).decode("utf-8")
+    except Exception as e:
+        print(f"[patch_djjc] 拉取原始订阅失败: {e}")
+        return config
+
+    extra = {}
+    for line in decoded.split("\n"):
+        line = line.strip()
+        if not line.startswith("hysteria2://"):
+            continue
+        try:
+            url = urlparse(line)
+            params = parse_qs(url.query)
+            name = urllib.parse.unquote(line.split("#")[-1]) if "#" in line else ""
+            if not name or re.search(r"流量|套餐|到期", name):
+                continue
+            mport = params.get("mport", [None])[0]
+            pin = params.get("pinSHA256", [None])[0]
+            extra[name] = {"mport": mport, "pin": pin}
+        except Exception:
+            continue
+
+    print(f"[patch_djjc] 找到 {len(extra)} 个DJJC Hysteria2节点的额外参数")
+
+    patched = 0
+    for o in config.get("outbounds", []):
+        tag = o.get("tag", "")
+        if o.get("type") != "hysteria2" or tag not in extra:
+            continue
+        info = extra[tag]
+        if info["mport"] and "server_ports" not in o:
+            o["server_ports"] = info["mport"]
+            if "hop_interval" not in o:
+                o["hop_interval"] = "30s"
+            o.pop("server_port", None)
+        if info["pin"]:
+            tls = o.setdefault("tls", {})
+            if "pinned_peer_certificate_chain_sha256" not in tls:
+                try:
+                    pin_b64 = base64.b64encode(bytes.fromhex(info["pin"])).decode()
+                    tls["pinned_peer_certificate_chain_sha256"] = [pin_b64]
+                except Exception:
+                    pass
+        patched += 1
+
+    print(f"[patch_djjc] 成功补填 {patched} 个节点")
+    return config
 
 
 def main():
@@ -91,20 +136,6 @@ def main():
         node_tags = [t for t in node_tags if t in by_tag and by_tag[t].get("type") not in (
             "selector", "urltest", "direct", "block")]
 
-        # 该订阅整体(不分地区)的自动选择组
-        whole_pool_tag = f"♾️自动选择-{pool_name}"
-        all_possible_tags.add(whole_pool_tag)
-        if node_tags:
-            valid_tags.add(whole_pool_tag)
-            new_region_outbounds.append({
-                "tag": whole_pool_tag,
-                "type": "urltest",
-                "outbounds": node_tags,
-                "url": URLTEST_URL,
-                "interval": URLTEST_INTERVAL,
-                "tolerance": URLTEST_TOLERANCE,
-            })
-
         matched_summary = []
         for region, pattern in regions:
             group_tag = f"♾️自动选择-{pool_name}-{region}"
@@ -121,6 +152,19 @@ def main():
                     "interval": URLTEST_INTERVAL,
                     "tolerance": URLTEST_TOLERANCE,
                 })
+
+        whole_pool_tag = f"♾️自动选择-{pool_name}"
+        all_possible_tags.add(whole_pool_tag)
+        if node_tags:
+            valid_tags.add(whole_pool_tag)
+            new_region_outbounds.append({
+                "tag": whole_pool_tag,
+                "type": "urltest",
+                "outbounds": node_tags,
+                "url": URLTEST_URL,
+                "interval": URLTEST_INTERVAL,
+                "tolerance": URLTEST_TOLERANCE,
+            })
 
         print(f"{pool_name}: 共{len(node_tags)}个节点, {matched_summary}")
 
@@ -142,7 +186,7 @@ def main():
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
 
-    # 保险:不管什么原因导致同一个tag被重复添加,这里统一去重,只保留第一次出现的
+    # 去重保险
     seen = set()
     deduped = []
     for o in final_outbounds:
@@ -155,9 +199,8 @@ def main():
 
     config["outbounds"] = final_outbounds
 
-    # 补填DJJC订阅里被转换器丢失的Hysteria2关键参数(mport/pinSHA256)
-    import os
-    sub_url_2 = os.environ.get('SUB_URL_2', '')
+    # 补填DJJC订阅里被转换器丢失的Hysteria2关键参数
+    sub_url_2 = os.environ.get("SUB_URL_2", "")
     if sub_url_2:
         config = patch_djjc_hysteria2(config, sub_url_2)
     else:
@@ -173,77 +216,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-def patch_djjc_hysteria2(config, sub_url):
-    """
-    DJJC订阅的Hysteria2节点在转换时丢失了两个关键参数:
-    - mport (端口跳跃范围) -> sing-box的 server_ports 字段
-    - pinSHA256 (证书指纹) -> sing-box的 tls.pinned_peer_certificate_chain_sha256
-
-    这个函数从原始订阅重新解析这两个参数,并补填到生成的config里。
-    """
-    import urllib.request, urllib.parse, base64
-    from urllib.parse import urlparse, parse_qs
-    import re
-
-    try:
-        req = urllib.request.Request(sub_url, headers={'User-Agent': 'clash.meta'})
-        raw = urllib.request.urlopen(req, timeout=15).read()
-        decoded = base64.b64decode(raw).decode('utf-8')
-    except Exception as e:
-        print(f"[patch_djjc] 拉取原始订阅失败: {e}")
-        return config
-
-    # 解析每条 hysteria2:// 行,建立 tag -> 参数 映射
-    extra = {}
-    for line in decoded.split('\n'):
-        line = line.strip()
-        if not line.startswith('hysteria2://'):
-            continue
-        try:
-            url = urlparse(line)
-            params = parse_qs(url.query)
-            name = urllib.parse.unquote(line.split('#')[-1]) if '#' in line else ''
-            # 只保留真实节点名(跳过"剩余流量""套餐到期"这种信息行)
-            if not name or re.search(r'流量|套餐|到期', name):
-                continue
-            mport = params.get('mport', [None])[0]
-            pin = params.get('pinSHA256', [None])[0]
-            extra[name] = {'mport': mport, 'pin': pin}
-        except Exception:
-            continue
-
-    print(f"[patch_djjc] 找到 {len(extra)} 个DJJC Hysteria2节点的额外参数")
-
-    # 将参数补填到config的outbounds里
-    patched = 0
-    for o in config.get('outbounds', []):
-        tag = o.get('tag', '')
-        if o.get('type') != 'hysteria2':
-            continue
-        if tag not in extra:
-            continue
-        info = extra[tag]
-        # 补 server_ports (端口跳跃)
-        if info['mport'] and 'server_ports' not in o:
-            o['server_ports'] = info['mport']
-            # 有端口跳跃时建议加上跳跃间隔
-            if 'hop_interval' not in o:
-                o['hop_interval'] = '30s'
-            # 有了server_ports就不能同时有server_port
-            o.pop('server_port', None)
-        # 补 pinSHA256 -> tls.pinned_peer_certificate_chain_sha256
-        if info['pin']:
-            tls = o.setdefault('tls', {})
-            if 'pinned_peer_certificate_chain_sha256' not in tls:
-                # 原始是hex格式,sing-box要求base64格式
-                try:
-                    pin_b64 = base64.b64encode(bytes.fromhex(info['pin'])).decode()
-                    tls['pinned_peer_certificate_chain_sha256'] = [pin_b64]
-                except Exception:
-                    pass
-        patched += 1
-
-    print(f"[patch_djjc] 成功补填 {patched} 个节点")
-    return config
