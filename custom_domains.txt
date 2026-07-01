@@ -1,0 +1,9 @@
+# 收藏网址域名列表
+# 每行一个域名后缀，支持子域名匹配（如 example.com 会匹配 www.example.com、sub.example.com 等）
+# 以 # 开头的行是注释，会被忽略
+# 空行也会被忽略
+# 示例：
+# example.com
+# google.com
+jable.tv
+missav.ai
