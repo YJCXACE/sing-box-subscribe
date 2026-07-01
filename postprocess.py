@@ -57,74 +57,76 @@ URLTEST_TOLERANCE = 30
 
 
 def patch_djjc_hysteria2(config, sub_url):
-    """
-    DJJC订阅的Hysteria2节点在转换时丢失了两个关键参数:
-    - mport (端口跳跃范围) -> sing-box的 server_ports 字段
-    - pinSHA256 (证书指纹) -> sing-box的 tls.pinned_peer_certificate_chain_sha256
-    """
     import urllib.request
-    import urllib.parse
     import base64
-    from urllib.parse import urlparse, parse_qs
 
     try:
         req = urllib.request.Request(sub_url, headers={"User-Agent": "clash.meta"})
         raw = urllib.request.urlopen(req, timeout=15).read()
-        # 先尝试base64解码,失败则当明文直接用
-        try:
-            raw_clean = raw.strip().replace(b'\n', b'').replace(b'\r', b'').replace(b' ', b'')
-            padding = 4 - len(raw_clean) % 4
-            if padding != 4:
-                raw_clean += b'=' * padding
-            decoded = base64.b64decode(raw_clean).decode("utf-8")
-        except Exception:
-            decoded = raw.decode("utf-8", errors="ignore")
-        print(f"[patch_djjc] 订阅内容前100字符: {decoded[:100]!r}")
+        text = raw.decode("utf-8", errors="ignore")
     except Exception as e:
-        print(f"[patch_djjc] 拉取原始订阅失败: {e}")
+        print("[patch_djjc] 拉取原始订阅失败: " + str(e))
         return config
 
+    # 按"  - name:"分割每个proxy块
+    newline_marker = "\n  - name:"
+    proxy_blocks = text.split(newline_marker)
     extra = {}
-    for line in decoded.split("\n"):
-        line = line.strip()
-        if not line.startswith("hysteria2://"):
-            continue
-        try:
-            url = urlparse(line)
-            params = parse_qs(url.query)
-            name = urllib.parse.unquote(line.split("#")[-1]) if "#" in line else ""
-            if not name or re.search(r"流量|套餐|到期", name):
-                continue
-            mport = params.get("mport", [None])[0]
-            pin = params.get("pinSHA256", [None])[0]
-            extra[name] = {"mport": mport, "pin": pin}
-        except Exception:
-            continue
+    for block in proxy_blocks[1:]:
+        lines = block.split("\n")
+        name = lines[0].strip().strip("\"'")
+        ptype = None
+        ports = None
+        fingerprint = None
+        for ln in lines:
+            ln_stripped = ln.strip()
+            if ln_stripped.startswith("type:"):
+                ptype = ln_stripped.split(":", 1)[1].strip().strip("\"'")
+            elif ln_stripped.startswith("ports:"):
+                ports = ln_stripped.split(":", 1)[1].strip().strip("\"'")
+            elif ln_stripped.startswith("fingerprint:"):
+                fingerprint = ln_stripped.split(":", 1)[1].strip().strip("\"'")
+            elif ln_stripped.startswith("ca-str:"):
+                if not fingerprint:
+                    fingerprint = ln_stripped.split(":", 1)[1].strip().strip("\"'")
+        if ptype == "hysteria2" and name and (ports or fingerprint):
+            extra[name] = {"ports": ports, "fingerprint": fingerprint}
 
-    print(f"[patch_djjc] 找到 {len(extra)} 个DJJC Hysteria2节点的额外参数")
+    print("[patch_djjc] 找到 " + str(len(extra)) + " 个DJJC Hysteria2节点的额外参数")
+    if extra:
+        sample = list(extra.items())[:2]
+        print("[patch_djjc] 示例: " + str(sample))
 
     patched = 0
     for o in config.get("outbounds", []):
         tag = o.get("tag", "")
-        if o.get("type") != "hysteria2" or tag not in extra:
+        if o.get("type") != "hysteria2":
             continue
-        info = extra[tag]
-        if info["mport"] and "server_ports" not in o:
-            o["server_ports"] = info["mport"]
+        matched_name = None
+        for name in extra:
+            if name in tag or tag in name:
+                matched_name = name
+                break
+        if not matched_name:
+            continue
+        info = extra[matched_name]
+        if info["ports"] and "server_ports" not in o:
+            o["server_ports"] = info["ports"]
             if "hop_interval" not in o:
                 o["hop_interval"] = "30s"
             o.pop("server_port", None)
-        if info["pin"]:
+        if info["fingerprint"]:
             tls = o.setdefault("tls", {})
             if "pinned_peer_certificate_chain_sha256" not in tls:
                 try:
-                    pin_b64 = base64.b64encode(bytes.fromhex(info["pin"])).decode()
+                    clean = info["fingerprint"].replace(":", "").replace(" ", "")
+                    pin_b64 = base64.b64encode(bytes.fromhex(clean)).decode()
                     tls["pinned_peer_certificate_chain_sha256"] = [pin_b64]
                 except Exception:
                     pass
         patched += 1
 
-    print(f"[patch_djjc] 成功补填 {patched} 个节点")
+    print("[patch_djjc] 成功补填 " + str(patched) + " 个节点")
     return config
 
 
@@ -147,7 +149,7 @@ def main():
 
         matched_summary = []
         for region, pattern in regions:
-            group_tag = f"♾️自动选择-{pool_name}-{region}"
+            group_tag = "♾️自动选择-" + pool_name + "-" + region
             all_possible_tags.add(group_tag)
             matched = [t for t in node_tags if pattern.search(t)]
             matched_summary.append((region, len(matched)))
@@ -162,7 +164,7 @@ def main():
                     "tolerance": URLTEST_TOLERANCE,
                 })
 
-        whole_pool_tag = f"♾️自动选择-{pool_name}"
+        whole_pool_tag = "♾️自动选择-" + pool_name
         all_possible_tags.add(whole_pool_tag)
         if node_tags:
             valid_tags.add(whole_pool_tag)
@@ -175,7 +177,7 @@ def main():
                 "tolerance": URLTEST_TOLERANCE,
             })
 
-        print(f"{pool_name}: 共{len(node_tags)}个节点, {matched_summary}")
+        print(pool_name + ": 共" + str(len(node_tags)) + "个节点, " + str(matched_summary))
 
     missing_tags = all_possible_tags - valid_tags
 
@@ -195,7 +197,6 @@ def main():
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
 
-    # 去重保险
     seen = set()
     deduped = []
     for o in final_outbounds:
@@ -208,7 +209,6 @@ def main():
 
     config["outbounds"] = final_outbounds
 
-    # 补填DJJC订阅里被转换器丢失的Hysteria2关键参数
     sub_url_2 = os.environ.get("SUB_URL_2", "")
     if sub_url_2:
         config = patch_djjc_hysteria2(config, sub_url_2)
@@ -218,9 +218,9 @@ def main():
     with open(CONFIG_PATH, "w", encoding="utf-8") as f:
         json.dump(config, f, ensure_ascii=False, indent=4)
 
-    print(f"生成的地区组: {sorted(valid_tags)}")
+    print("生成的地区组: " + str(sorted(valid_tags)))
     if missing_tags:
-        print(f"以下地区本次没有节点,已从选择器中摘除引用: {sorted(missing_tags)}")
+        print("以下地区本次没有节点,已从选择器中摘除引用: " + str(sorted(missing_tags)))
 
 
 if __name__ == "__main__":
