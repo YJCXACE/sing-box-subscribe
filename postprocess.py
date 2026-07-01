@@ -141,8 +141,12 @@ def patch_djjc_hysteria2(config, sub_url):
         if not matched_name:
             continue
         info = extra[matched_name]
-        # server_ports/hop_interval 暂时跳过,先验证基础连通性
-        # pinSHA256在sing-box Hysteria2里没有对应字段,跳过
+        # server_ports/hop_interval 暂时跳过
+        # pinSHA256在sing-box里没有对应字段,改为设置insecure=true跳过证书验证
+        # 原理:原始节点用pinSHA256替代域名验证,sing-box不支持所以改用insecure
+        if info["fingerprint"]:
+            tls = o.setdefault("tls", {})
+            tls["insecure"] = True
         patched += 1
 
     print("[patch_djjc] 成功补填 " + str(patched) + " 个节点")
