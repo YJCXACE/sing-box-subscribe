@@ -3996,7 +3996,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20225,
+            "server_port": 20300,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4013,7 +4013,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20522,
+            "server_port": 20577,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4030,7 +4030,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20756,
+            "server_port": 20658,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4047,7 +4047,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20936,
+            "server_port": 20854,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4220,7 +4220,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21108,
+            "server_port": 21144,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4237,7 +4237,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21242,
+            "server_port": 21258,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4254,7 +4254,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21483,
+            "server_port": 21430,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4271,7 +4271,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21764,
+            "server_port": 21703,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4288,7 +4288,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21995,
+            "server_port": 21990,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4513,7 +4513,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20020,
+            "server_port": 20117,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4530,7 +4530,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20252,
+            "server_port": 20264,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4877,7 +4877,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20083,
+            "server_port": 20054,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4898,7 +4898,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20214,
+            "server_port": 20397,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4919,7 +4919,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20586,
+            "server_port": 20447,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4940,7 +4940,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20688,
+            "server_port": 20749,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4961,7 +4961,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20840,
+            "server_port": 20941,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4982,7 +4982,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21035,
+            "server_port": 21085,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5048,7 +5048,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5066,7 +5068,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5084,7 +5088,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5102,7 +5108,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5120,7 +5128,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5138,7 +5148,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5156,7 +5168,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5191,7 +5205,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5209,7 +5225,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5227,7 +5245,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5245,7 +5265,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5365,7 +5387,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
@@ -5383,7 +5407,9 @@
                     "h3"
                 ]
             },
-            "server_ports": "50000-53000",
+            "server_ports": [
+                "50000-53000"
+            ],
             "hop_interval": "30s"
         },
         {
