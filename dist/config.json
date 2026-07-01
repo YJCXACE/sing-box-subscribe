@@ -3996,7 +3996,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20382,
+            "server_port": 20357,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4013,7 +4013,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20486,
+            "server_port": 20498,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4030,7 +4030,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20661,
+            "server_port": 20740,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4047,7 +4047,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20891,
+            "server_port": 20842,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4220,7 +4220,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21075,
+            "server_port": 21048,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4237,7 +4237,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21363,
+            "server_port": 21305,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4254,7 +4254,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21555,
+            "server_port": 21445,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4271,7 +4271,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21718,
+            "server_port": 21668,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4288,7 +4288,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21988,
+            "server_port": 21950,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4513,7 +4513,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20168,
+            "server_port": 20079,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4530,7 +4530,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20208,
+            "server_port": 20359,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4877,7 +4877,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20176,
+            "server_port": 20152,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4898,7 +4898,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20324,
+            "server_port": 20206,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4919,7 +4919,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20493,
+            "server_port": 20453,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4940,7 +4940,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20750,
+            "server_port": 20793,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4961,7 +4961,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20966,
+            "server_port": 20950,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4982,7 +4982,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21024,
+            "server_port": 21032,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5037,6 +5037,7 @@
             "tag": "🇺🇸美国洛杉矶1号",
             "type": "hysteria2",
             "server": "208.87.242.105",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5047,14 +5048,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇺🇸美国洛杉矶2号",
             "type": "hysteria2",
             "server": "208.87.242.109",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5065,14 +5065,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇺🇸美国洛杉矶3号",
             "type": "hysteria2",
             "server": "208.87.242.163",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5083,14 +5082,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇺🇸美国凤凰城1号",
             "type": "hysteria2",
             "server": "129.153.210.227",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5101,14 +5099,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇯🇵日本东京1号",
             "type": "hysteria2",
             "server": "103.62.49.134",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5119,14 +5116,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇯🇵日本东京2号",
             "type": "hysteria2",
             "server": "103.62.49.134",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5137,14 +5133,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇯🇵日本东京3号",
             "type": "hysteria2",
             "server": "103.62.49.134",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5155,9 +5150,7 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇩🇪德国法兰克福2",
@@ -5180,6 +5173,7 @@
             "tag": "🇧🇷巴西圣保罗-1.5倍率",
             "type": "hysteria2",
             "server": "146.235.51.238",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5190,14 +5184,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇦🇪迪拜-1.2倍率",
             "type": "hysteria2",
             "server": "145.241.123.223",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5208,14 +5201,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇦🇪迪拜2-1.5倍率",
             "type": "hysteria2",
             "server": "84.235.248.28",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5226,14 +5218,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇯🇵日本",
             "type": "hysteria2",
             "server": "140.238.37.247",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5244,9 +5235,7 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇮🇳印度孟买-1.5倍率",
@@ -5354,6 +5343,7 @@
             "tag": "🇸🇪瑞典斯德哥尔摩-1.5倍率",
             "type": "hysteria2",
             "server": "79.76.39.118",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5364,14 +5354,13 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇲🇽墨西哥克雷塔罗",
             "type": "hysteria2",
             "server": "159.54.158.30",
+            "server_port": 50000,
             "password": "df80ccbe-a4d4-47ff-ae90-78ae6e07cb0d",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5382,9 +5371,7 @@
                 "alpn": [
                     "h3"
                 ]
-            },
-            "server_ports": "50000-53000",
-            "hop_interval": "30s"
+            }
         },
         {
             "tag": "🇯🇵日本1号 三网高速",
