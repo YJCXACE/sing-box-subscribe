@@ -70,12 +70,16 @@ def patch_djjc_hysteria2(config, sub_url):
     try:
         req = urllib.request.Request(sub_url, headers={"User-Agent": "clash.meta"})
         raw = urllib.request.urlopen(req, timeout=15).read()
-        # 清理空白字符后补齐padding再解码
-        raw_clean = raw.strip().replace(b'\n', b'').replace(b'\r', b'').replace(b' ', b'')
-        padding = 4 - len(raw_clean) % 4
-        if padding != 4:
-            raw_clean += b'=' * padding
-        decoded = base64.b64decode(raw_clean).decode("utf-8")
+        # 先尝试base64解码,失败则当明文直接用
+        try:
+            raw_clean = raw.strip().replace(b'\n', b'').replace(b'\r', b'').replace(b' ', b'')
+            padding = 4 - len(raw_clean) % 4
+            if padding != 4:
+                raw_clean += b'=' * padding
+            decoded = base64.b64decode(raw_clean).decode("utf-8")
+        except Exception:
+            decoded = raw.decode("utf-8", errors="ignore")
+        print(f"[patch_djjc] 订阅内容前100字符: {decoded[:100]!r}")
     except Exception as e:
         print(f"[patch_djjc] 拉取原始订阅失败: {e}")
         return config
