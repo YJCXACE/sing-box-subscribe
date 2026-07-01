@@ -142,7 +142,7 @@ def patch_djjc_hysteria2(config, sub_url):
             continue
         info = extra[matched_name]
         if info["ports"] and "server_ports" not in o:
-            o["server_ports"] = [info["ports"]]   # 必须是数组格式
+            o["server_ports"] = info["ports"]   # 字符串格式如 "50000-53000"
             if "hop_interval" not in o:
                 o["hop_interval"] = "30s"
             o.pop("server_port", None)
