@@ -227,6 +227,18 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs"
+            },
+            {
+                "tag": "Meta-Site",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs"
+            },
+            {
+                "tag": "Meta-IP",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/facebook.srs"
             }
         ],
         "rules": [
@@ -423,16 +435,33 @@
                 "outbound": "📺YouTube"
             },
             {
-                "package_name": [
-                    "com.facebook.katana",
-                    "com.facebook.lite",
-                    "com.instagram.android",
-                    "com.whatsapp",
-                    "com.whatsapp.w4b",
-                    "com.facebook.orca",
-                    "com.facebook.mlite",
-                    "com.facebook.appmanager",
-                    "com.threads.android"
+                "action": "route",
+                "outbound": "📘Meta",
+                "domain_suffix": [
+                    "facebook.com",
+                    "instagram.com",
+                    "whatsapp.com",
+                    "whatsapp.net",
+                    "fbcdn.net",
+                    "cdninstagram.com",
+                    "fb.com",
+                    "fbsbx.com",
+                    "messenger.com",
+                    "threads.net",
+                    "meta.com",
+                    "meta.ai"
+                ]
+            },
+            {
+                "rule_set": [
+                    "Meta-Site"
+                ],
+                "action": "route",
+                "outbound": "📘Meta"
+            },
+            {
+                "rule_set": [
+                    "Meta-IP"
                 ],
                 "action": "route",
                 "outbound": "📘Meta"
@@ -457,7 +486,8 @@
                     "org.telegram.messenger.web",
                     "org.telegram.plus",
                     "org.thunderdog.challegram",
-                    "nekox.messenger"
+                    "nekox.messenger",
+                    "org.telegram.group"
                 ],
                 "action": "route",
                 "outbound": "✈️Telegram"
@@ -3996,7 +4026,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20255,
+            "server_port": 20264,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4013,7 +4043,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20580,
+            "server_port": 20594,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4030,7 +4060,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20729,
+            "server_port": 20600,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4047,7 +4077,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20915,
+            "server_port": 20905,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4220,7 +4250,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21074,
+            "server_port": 21169,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4237,7 +4267,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21254,
+            "server_port": 21211,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4254,7 +4284,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21577,
+            "server_port": 21449,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4271,7 +4301,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21624,
+            "server_port": 21689,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4288,7 +4318,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21826,
+            "server_port": 21833,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4513,7 +4543,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20170,
+            "server_port": 20037,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4530,7 +4560,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20390,
+            "server_port": 20264,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4877,7 +4907,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20193,
+            "server_port": 20185,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4898,7 +4928,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20245,
+            "server_port": 20321,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4919,7 +4949,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20557,
+            "server_port": 20568,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4940,7 +4970,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20625,
+            "server_port": 20790,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4961,7 +4991,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20921,
+            "server_port": 20850,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4982,7 +5012,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21142,
+            "server_port": 21012,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
