@@ -238,6 +238,27 @@ def main():
     else:
         print("[patch_djjc] SUB_URL_2未设置,跳过补填")
 
+    # 读取自定义收藏网址列表,动态注入路由规则
+    custom_domains_path = "custom_domains.txt"
+    if os.path.exists(custom_domains_path):
+        domains = []
+        with open(custom_domains_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    domains.append(line)
+        if domains:
+            # 在路由规则最前面插入收藏网址规则(优先级最高)
+            fav_rule = {
+                "domain_suffix": domains,
+                "action": "route",
+                "outbound": "⭐收藏网址"
+            }
+            config["route"]["rules"].insert(0, fav_rule)
+            print("[custom_domains] 注入 " + str(len(domains)) + " 个收藏域名: " + str(domains))
+        else:
+            print("[custom_domains] 列表为空,跳过注入")
+
     with open(CONFIG_PATH, "w", encoding="utf-8") as f:
         json.dump(config, f, ensure_ascii=False, indent=4)
 
