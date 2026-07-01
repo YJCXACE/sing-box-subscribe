@@ -3996,7 +3996,7 @@
             "tag": "HK2-HY2",
             "type": "hysteria2",
             "server": "hk2.dexlos.com",
-            "server_port": 20357,
+            "server_port": 20255,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4013,7 +4013,7 @@
             "tag": "HK3-HY2",
             "type": "hysteria2",
             "server": "hk3.dexlos.com",
-            "server_port": 20498,
+            "server_port": 20580,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4030,7 +4030,7 @@
             "tag": "HK4-HY2",
             "type": "hysteria2",
             "server": "hk4.dexlos.com",
-            "server_port": 20740,
+            "server_port": 20729,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4047,7 +4047,7 @@
             "tag": "HK5-HY2",
             "type": "hysteria2",
             "server": "hk5.dexlos.com",
-            "server_port": 20842,
+            "server_port": 20915,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4220,7 +4220,7 @@
             "tag": "JP6-HY2",
             "type": "hysteria2",
             "server": "jp6.dexlos.com",
-            "server_port": 21048,
+            "server_port": 21074,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4237,7 +4237,7 @@
             "tag": "JP7-HY2",
             "type": "hysteria2",
             "server": "jp7.dexlos.com",
-            "server_port": 21305,
+            "server_port": 21254,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4254,7 +4254,7 @@
             "tag": "JP8-HY2",
             "type": "hysteria2",
             "server": "jp8.dexlos.com",
-            "server_port": 21445,
+            "server_port": 21577,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4271,7 +4271,7 @@
             "tag": "JP9-HY2",
             "type": "hysteria2",
             "server": "jp9.dexlos.com",
-            "server_port": 21668,
+            "server_port": 21624,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4288,7 +4288,7 @@
             "tag": "JP10-HY2",
             "type": "hysteria2",
             "server": "jp10.dexlos.com",
-            "server_port": 21950,
+            "server_port": 21826,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4513,7 +4513,7 @@
             "tag": "SG1-HY2",
             "type": "hysteria2",
             "server": "sg1.dexlos.com",
-            "server_port": 20079,
+            "server_port": 20170,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4530,7 +4530,7 @@
             "tag": "SG2-HY2",
             "type": "hysteria2",
             "server": "sg2.dexlos.com",
-            "server_port": 20359,
+            "server_port": 20390,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4877,7 +4877,7 @@
             "tag": "US1-HY2",
             "type": "hysteria2",
             "server": "us1.dexlos.com",
-            "server_port": 20152,
+            "server_port": 20193,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4898,7 +4898,7 @@
             "tag": "US2-HY2",
             "type": "hysteria2",
             "server": "us2.dexlos.com",
-            "server_port": 20206,
+            "server_port": 20245,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4919,7 +4919,7 @@
             "tag": "US3-HY2",
             "type": "hysteria2",
             "server": "us3.dexlos.com",
-            "server_port": 20453,
+            "server_port": 20557,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4940,7 +4940,7 @@
             "tag": "US4-HY2",
             "type": "hysteria2",
             "server": "us4.dexlos.com",
-            "server_port": 20793,
+            "server_port": 20625,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4961,7 +4961,7 @@
             "tag": "US5-HY2",
             "type": "hysteria2",
             "server": "us5.dexlos.com",
-            "server_port": 20950,
+            "server_port": 20921,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -4982,7 +4982,7 @@
             "tag": "US6-HY2",
             "type": "hysteria2",
             "server": "us6.dexlos.com",
-            "server_port": 21032,
+            "server_port": 21142,
             "password": "CC7EB1A7-49E0-453C-A657-814B173490BA",
             "up_mbps": 10,
             "down_mbps": 100,
@@ -5044,7 +5044,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.bing.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5061,7 +5061,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.bing.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5078,7 +5078,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.bing.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5095,7 +5095,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5112,7 +5112,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.bing.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5129,7 +5129,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.bing.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5146,7 +5146,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.bing.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5163,7 +5163,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.bing.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5180,7 +5180,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5197,7 +5197,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.hoyoverse.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5214,7 +5214,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.hoyoverse.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5231,7 +5231,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5248,7 +5248,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.hoyoverse.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5265,7 +5265,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.hoyoverse.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5282,7 +5282,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5299,7 +5299,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5316,7 +5316,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5333,7 +5333,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5350,7 +5350,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
@@ -5367,7 +5367,7 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.microsoft.com",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "h3"
                 ]
