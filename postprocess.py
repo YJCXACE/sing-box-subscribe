@@ -61,41 +61,72 @@ def patch_djjc_hysteria2(config, sub_url):
     import base64
 
     try:
-        req = urllib.request.Request(sub_url, headers={"User-Agent": "clash.meta"})
+        req = urllib.request.Request(sub_url, headers={"User-Agent": "Mozilla/5.0"})
         raw = urllib.request.urlopen(req, timeout=15).read()
-        text = raw.decode("utf-8", errors="ignore")
     except Exception as e:
         print("[patch_djjc] 拉取原始订阅失败: " + str(e))
         return config
 
-    # 按"  - name:"分割每个proxy块
-    newline_marker = "\n  - name:"
-    proxy_blocks = text.split(newline_marker)
+    # 尝试base64解码,失败则当明文
+    try:
+        import base64 as _b64
+        raw_clean = raw.strip().replace(b"\r", b"").replace(b"\n", b"").replace(b" ", b"")
+        pad = 4 - len(raw_clean) % 4
+        if pad != 4:
+            raw_clean += b"=" * pad
+        text = _b64.b64decode(raw_clean).decode("utf-8", errors="ignore")
+    except Exception:
+        text = raw.decode("utf-8", errors="ignore")
+
+    print("[patch_djjc] 内容前80字符: " + repr(text[:80]))
+
     extra = {}
-    for block in proxy_blocks[1:]:
-        lines = block.split("\n")
-        name = lines[0].strip().strip("\"'")
-        ptype = None
-        ports = None
-        fingerprint = None
-        for ln in lines:
-            ln_stripped = ln.strip()
-            if ln_stripped.startswith("type:"):
-                ptype = ln_stripped.split(":", 1)[1].strip().strip("\"'")
-            elif ln_stripped.startswith("ports:"):
-                ports = ln_stripped.split(":", 1)[1].strip().strip("\"'")
-            elif ln_stripped.startswith("fingerprint:"):
-                fingerprint = ln_stripped.split(":", 1)[1].strip().strip("\"'")
-            elif ln_stripped.startswith("ca-str:"):
-                if not fingerprint:
-                    fingerprint = ln_stripped.split(":", 1)[1].strip().strip("\"'")
-        if ptype == "hysteria2" and name and (ports or fingerprint):
-            extra[name] = {"ports": ports, "fingerprint": fingerprint}
+    # 格式1: hysteria2://...#名称 (URI格式)
+    if "hysteria2://" in text:
+        import urllib.parse as _up
+        from urllib.parse import urlparse as _urlparse, parse_qs as _pqs
+        for line in text.splitlines():
+            line = line.strip()
+            if not line.startswith("hysteria2://"):
+                continue
+            try:
+                url = _urlparse(line)
+                params = _pqs(url.query)
+                name = _up.unquote(line.split("#")[-1]) if "#" in line else ""
+                if not name or any(k in name for k in ["流量", "套餐", "到期", "剩余"]):
+                    continue
+                mport = params.get("mport", [None])[0]
+                pin = params.get("pinSHA256", [None])[0]
+                if mport or pin:
+                    extra[name] = {"ports": mport, "fingerprint": pin}
+            except Exception:
+                continue
+    else:
+        # 格式2: Clash YAML (按"- name:"分割)
+        for separator in ["\n  - name:", "\n- name:"]:
+            if separator in text:
+                proxy_blocks = text.split(separator)
+                for block in proxy_blocks[1:]:
+                    lines = block.split("\n")
+                    name = lines[0].strip().strip("\"'")
+                    ptype = ports = fingerprint = None
+                    for ln in lines:
+                        s = ln.strip()
+                        if s.startswith("type:"):
+                            ptype = s.split(":", 1)[1].strip().strip("\"'")
+                        elif s.startswith("ports:"):
+                            ports = s.split(":", 1)[1].strip().strip("\"'")
+                        elif s.startswith("fingerprint:") and not fingerprint:
+                            fingerprint = s.split(":", 1)[1].strip().strip("\"'")
+                        elif s.startswith("ca-str:") and not fingerprint:
+                            fingerprint = s.split(":", 1)[1].strip().strip("\"'")
+                    if ptype == "hysteria2" and name and (ports or fingerprint):
+                        extra[name] = {"ports": ports, "fingerprint": fingerprint}
+                break
 
     print("[patch_djjc] 找到 " + str(len(extra)) + " 个DJJC Hysteria2节点的额外参数")
     if extra:
-        sample = list(extra.items())[:2]
-        print("[patch_djjc] 示例: " + str(sample))
+        print("[patch_djjc] 示例: " + str(list(extra.items())[:2]))
 
     patched = 0
     for o in config.get("outbounds", []):
