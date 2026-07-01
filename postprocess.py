@@ -141,11 +141,7 @@ def patch_djjc_hysteria2(config, sub_url):
         if not matched_name:
             continue
         info = extra[matched_name]
-        if info["ports"] and "server_ports" not in o:
-            o["server_ports"] = info["ports"]   # 字符串格式如 "50000-53000"
-            if "hop_interval" not in o:
-                o["hop_interval"] = "30s"
-            o.pop("server_port", None)
+        # server_ports/hop_interval 暂时跳过,先验证基础连通性
         # pinSHA256在sing-box Hysteria2里没有对应字段,跳过
         patched += 1
 
