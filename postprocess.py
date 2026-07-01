@@ -248,14 +248,33 @@ def main():
                 if line and not line.startswith("#"):
                     domains.append(line)
         if domains:
-            # 在路由规则最前面插入收藏网址规则(优先级最高)
             fav_rule = {
                 "domain_suffix": domains,
                 "action": "route",
                 "outbound": "⭐收藏网址"
             }
-            config["route"]["rules"].insert(0, fav_rule)
-            print("[custom_domains] 注入 " + str(len(domains)) + " 个收藏域名: " + str(domains))
+            # 找到第一条"业务"路由规则的位置(广告拦截规则之后),插在那里
+            # 结构性规则:sniff/hijack-dns/private-ip/QUIC拦截/广告拦截
+            # 业务规则:Google/Bahamut/Discord/Steam等有具体outbound的规则
+            structural_actions = {"sniff", "hijack-dns", "reject"}
+            structural_outbounds = {"Direct"}
+            insert_pos = len(config["route"]["rules"])  # 兜底:插到末尾
+            for i, r in enumerate(config["route"]["rules"]):
+                action = r.get("action", "route")
+                outbound = r.get("outbound", "")
+                rule_set = r.get("rule_set", [])
+                # 跳过系统性规则
+                if action in structural_actions:
+                    continue
+                if outbound in structural_outbounds:
+                    continue
+                if rule_set == ["AWAvenue-Ads"]:
+                    continue
+                # 第一条真正的业务规则
+                insert_pos = i
+                break
+            config["route"]["rules"].insert(insert_pos, fav_rule)
+            print("[custom_domains] 注入 " + str(len(domains)) + " 个收藏域名,插入位置: " + str(insert_pos))
         else:
             print("[custom_domains] 列表为空,跳过注入")
 
