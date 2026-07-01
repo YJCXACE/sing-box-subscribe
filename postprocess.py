@@ -146,15 +146,7 @@ def patch_djjc_hysteria2(config, sub_url):
             if "hop_interval" not in o:
                 o["hop_interval"] = "30s"
             o.pop("server_port", None)
-        if info["fingerprint"]:
-            tls = o.setdefault("tls", {})
-            if "pinned_peer_certificate_chain_sha256" not in tls:
-                try:
-                    clean = info["fingerprint"].replace(":", "").replace(" ", "")
-                    pin_b64 = base64.b64encode(bytes.fromhex(clean)).decode()
-                    tls["pinned_peer_certificate_chain_sha256"] = [pin_b64]
-                except Exception:
-                    pass
+        # pinSHA256在sing-box Hysteria2里没有对应字段,跳过
         patched += 1
 
     print("[patch_djjc] 成功补填 " + str(patched) + " 个节点")
