@@ -97,7 +97,6 @@
         "final": "DNS-DIRECT"
     },
     "route": {
-        "default_http_client": "RuleSetClient",
         "default_domain_resolver": {
             "server": "DNS-DIRECT"
         },
@@ -106,139 +105,162 @@
                 "tag": "AWAvenue-Ads",
                 "type": "remote",
                 "format": "source",
-                "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json"
+                "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Apple-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Apple-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/apple.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/apple.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Bilibili-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Bilibili-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/bilibili.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/bilibili.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "China-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "China-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "GFWList-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/Dreista/sing-box-rule-set-cn@rule-set/gfwlist.txt.srs"
+                "url": "https://fastly.jsdelivr.net/gh/Dreista/sing-box-rule-set-cn@rule-set/gfwlist.txt.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Google-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Google-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Local-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/iplocation-direct.srs"
+                "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/iplocation-direct.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Microsoft-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Netflix-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Netflix-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "OpenAI-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "OpenAI-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/openai.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/openai.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Spotify-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Spotify-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/spotify.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/spotify.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "TikTok-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "YouTube-Site-Extra",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "GitHub-Site-Extra",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Meta-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs",
+                "download_detour": "Direct"
             },
             {
                 "tag": "Meta-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/facebook.srs"
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/facebook.srs",
+                "download_detour": "Direct"
             }
         ],
         "rules": [
@@ -639,11 +661,6 @@
             }
         }
     ],
-    "http_clients": [
-        {
-            "tag": "RuleSetClient"
-        }
-    ],
     "outbounds": [
         {
             "type": "selector",
@@ -662,6 +679,153 @@
         {
             "type": "selector",
             "tag": "🌏️主代理",
+            "outbounds": [
+                "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
+                "♾️自动选择-Mitce-HK",
+                "♾️自动选择-Mitce-TW",
+                "♾️自动选择-Mitce-JP",
+                "♾️自动选择-Mitce-SG",
+                "♾️自动选择-Mitce-US",
+                "♾️自动选择-Mitce-KR",
+                "♾️自动选择-DJJC-香港",
+                "♾️自动选择-DJJC-台湾",
+                "♾️自动选择-DJJC-日本",
+                "♾️自动选择-DJJC-韩国",
+                "♾️自动选择-DJJC-新加坡",
+                "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
+                "♾️自动选择-DJJC-德国",
+                "♾️自动选择-DJJC-法国",
+                "♾️自动选择-DJJC-荷兰",
+                "♾️自动选择-DJJC-俄罗斯",
+                "♾️自动选择-DJJC-加拿大",
+                "♾️自动选择-DJJC-澳大利亚",
+                "♾️自动选择-DJJC-印度",
+                "♾️自动选择-DJJC-巴西",
+                "♾️自动选择-DJJC-墨西哥",
+                "♾️自动选择-DJJC-南非",
+                "♾️自动选择-DJJC-迪拜",
+                "♾️自动选择-DJJC-瑞典",
+                "♾️自动选择-DJJC-瑞士",
+                "♾️自动选择-DJJC-土耳其",
+                "♾️自动选择-DJJC-泰国",
+                "♾️自动选择-DJJC-菲律宾",
+                "♾️自动选择-DJJC-印尼",
+                "♾️自动选择-DJJC-越南",
+                "♾️自动选择-DJJC-马来西亚",
+                "♾️自动选择-DJJC-阿根廷",
+                "♾️自动选择-DJJC-意大利",
+                "♾️自动选择-DJJC-西班牙",
+                "♾️自动选择-DJJC-波兰",
+                "Direct",
+                "{all}",
+                "REJECT"
+            ],
+            "default": "♾️自动选择"
+        },
+        {
+            "type": "selector",
+            "tag": "🌏️主代理2",
+            "outbounds": [
+                "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
+                "♾️自动选择-Mitce-HK",
+                "♾️自动选择-Mitce-TW",
+                "♾️自动选择-Mitce-JP",
+                "♾️自动选择-Mitce-SG",
+                "♾️自动选择-Mitce-US",
+                "♾️自动选择-Mitce-KR",
+                "♾️自动选择-DJJC-香港",
+                "♾️自动选择-DJJC-台湾",
+                "♾️自动选择-DJJC-日本",
+                "♾️自动选择-DJJC-韩国",
+                "♾️自动选择-DJJC-新加坡",
+                "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
+                "♾️自动选择-DJJC-德国",
+                "♾️自动选择-DJJC-法国",
+                "♾️自动选择-DJJC-荷兰",
+                "♾️自动选择-DJJC-俄罗斯",
+                "♾️自动选择-DJJC-加拿大",
+                "♾️自动选择-DJJC-澳大利亚",
+                "♾️自动选择-DJJC-印度",
+                "♾️自动选择-DJJC-巴西",
+                "♾️自动选择-DJJC-墨西哥",
+                "♾️自动选择-DJJC-南非",
+                "♾️自动选择-DJJC-迪拜",
+                "♾️自动选择-DJJC-瑞典",
+                "♾️自动选择-DJJC-瑞士",
+                "♾️自动选择-DJJC-土耳其",
+                "♾️自动选择-DJJC-泰国",
+                "♾️自动选择-DJJC-菲律宾",
+                "♾️自动选择-DJJC-印尼",
+                "♾️自动选择-DJJC-越南",
+                "♾️自动选择-DJJC-马来西亚",
+                "♾️自动选择-DJJC-阿根廷",
+                "♾️自动选择-DJJC-意大利",
+                "♾️自动选择-DJJC-西班牙",
+                "♾️自动选择-DJJC-波兰",
+                "Direct",
+                "{all}",
+                "REJECT"
+            ],
+            "default": "♾️自动选择"
+        },
+        {
+            "type": "selector",
+            "tag": "🌏️主代理3",
+            "outbounds": [
+                "♾️自动选择",
+                "♾️自动选择-Mitce",
+                "♾️自动选择-DJJC",
+                "♾️自动选择-Mitce-HK",
+                "♾️自动选择-Mitce-TW",
+                "♾️自动选择-Mitce-JP",
+                "♾️自动选择-Mitce-SG",
+                "♾️自动选择-Mitce-US",
+                "♾️自动选择-Mitce-KR",
+                "♾️自动选择-DJJC-香港",
+                "♾️自动选择-DJJC-台湾",
+                "♾️自动选择-DJJC-日本",
+                "♾️自动选择-DJJC-韩国",
+                "♾️自动选择-DJJC-新加坡",
+                "♾️自动选择-DJJC-美国",
+                "♾️自动选择-DJJC-英国",
+                "♾️自动选择-DJJC-德国",
+                "♾️自动选择-DJJC-法国",
+                "♾️自动选择-DJJC-荷兰",
+                "♾️自动选择-DJJC-俄罗斯",
+                "♾️自动选择-DJJC-加拿大",
+                "♾️自动选择-DJJC-澳大利亚",
+                "♾️自动选择-DJJC-印度",
+                "♾️自动选择-DJJC-巴西",
+                "♾️自动选择-DJJC-墨西哥",
+                "♾️自动选择-DJJC-南非",
+                "♾️自动选择-DJJC-迪拜",
+                "♾️自动选择-DJJC-瑞典",
+                "♾️自动选择-DJJC-瑞士",
+                "♾️自动选择-DJJC-土耳其",
+                "♾️自动选择-DJJC-泰国",
+                "♾️自动选择-DJJC-菲律宾",
+                "♾️自动选择-DJJC-印尼",
+                "♾️自动选择-DJJC-越南",
+                "♾️自动选择-DJJC-马来西亚",
+                "♾️自动选择-DJJC-阿根廷",
+                "♾️自动选择-DJJC-意大利",
+                "♾️自动选择-DJJC-西班牙",
+                "♾️自动选择-DJJC-波兰",
+                "Direct",
+                "{all}",
+                "REJECT"
+            ],
+            "default": "♾️自动选择"
+        },
+        {
+            "type": "selector",
+            "tag": "🌏️主代理4",
             "outbounds": [
                 "♾️自动选择",
                 "♾️自动选择-Mitce",
