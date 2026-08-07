@@ -10,6 +10,11 @@
             "url": "__SUB_URL_2__",
             "tag": "DJJC",
             "enabled": true
+        },
+        {
+            "url": "__SUB_URL_3__",
+            "tag": "LX",
+            "enabled": true
         }
     ]
 }

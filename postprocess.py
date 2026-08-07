@@ -46,9 +46,13 @@ DJJC_REGIONS = [
     ("波兰", re.compile("波兰")),
 ]
 
+# LX: 中文关键词匹配(与DJJC相同策略)
+LX_REGIONS = DJJC_REGIONS  # 复用DJJC的地区匹配规则
+
 POOLS = [
     ("Mitce", "🔖NodePool-Mitce", REGIONS),
     ("DJJC", "🔖NodePool-DJJC", DJJC_REGIONS),
+    ("LX", "🔖NodePool-LX", LX_REGIONS),
 ]
 
 URLTEST_URL = "https://www.gstatic.com/generate_204"
