@@ -27,9 +27,10 @@ jobs:
         env:
           SUB_URL: ${{ secrets.SUB_URL }}
           SUB_URL_2: ${{ secrets.SUB_URL_2 }}
+          SUB_URL_3: ${{ secrets.SUB_URL_3 }}
         run: |
-          python3 -c "import os; p='providers.json'; c=open(p,encoding='utf-8').read(); c=c.replace('__SUB_URL__', os.environ['SUB_URL']); c=c.replace('__SUB_URL_2__', os.environ['SUB_URL_2']); open(p,'w',encoding='utf-8').write(c)"
-          echo "providers.json 已写入两条真实订阅地址"
+          python3 -c "import os; p='providers.json'; c=open(p,encoding='utf-8').read(); c=c.replace('__SUB_URL__', os.environ['SUB_URL']); c=c.replace('__SUB_URL_2__', os.environ['SUB_URL_2']); c=c.replace('__SUB_URL_3__', os.environ['SUB_URL_3']); open(p,'w',encoding='utf-8').write(c)"
+          echo "providers.json 已写入三条真实订阅地址"
 
       - name: Locate custom template index
         id: tpl
