@@ -176,7 +176,7 @@ def main():
 
         matched_summary = []
         for region, pattern in regions:
-            group_tag = "♾️自动选择-" + pool_name + "-" + region
+            group_tag = "⚡自动-" + pool_name + "-" + region
             all_possible_tags.add(group_tag)
             matched = [t for t in node_tags if pattern.search(t)]
             matched_summary.append((region, len(matched)))
@@ -191,7 +191,7 @@ def main():
                     "tolerance": URLTEST_TOLERANCE,
                 })
 
-        whole_pool_tag = "♾️自动选择-" + pool_name
+        whole_pool_tag = "⚡自动-" + pool_name
         all_possible_tags.add(whole_pool_tag)
         if node_tags:
             valid_tags.add(whole_pool_tag)
@@ -220,7 +220,7 @@ def main():
     inserted = []
     for o in final_outbounds:
         inserted.append(o)
-        if o.get("tag") == "♾️自动选择" and o.get("type") == "urltest":
+        if o.get("tag") == "⚡自动选择" and o.get("type") == "urltest":
             inserted.extend(new_region_outbounds)
     final_outbounds = inserted
 
