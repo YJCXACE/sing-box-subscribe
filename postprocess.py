@@ -56,8 +56,9 @@ POOLS = [
 ]
 
 URLTEST_URL = "https://www.gstatic.com/generate_204"
-URLTEST_INTERVAL = "30m"
-URLTEST_TOLERANCE = 30
+URLTEST_INTERVAL = "10m"
+URLTEST_TOLERANCE = 50
+URLTEST_LAZY = False
 
 
 def patch_djjc_hysteria2(config, sub_url):
@@ -189,6 +190,7 @@ def main():
                     "url": URLTEST_URL,
                     "interval": URLTEST_INTERVAL,
                     "tolerance": URLTEST_TOLERANCE,
+                    "idle_timeout": "30m",
                 })
 
         whole_pool_tag = "⚡自动-" + pool_name
@@ -202,6 +204,7 @@ def main():
                 "url": URLTEST_URL,
                 "interval": URLTEST_INTERVAL,
                 "tolerance": URLTEST_TOLERANCE,
+                "idle_timeout": "30m",
             })
 
         print(pool_name + ": 共" + str(len(node_tags)) + "个节点, " + str(matched_summary))
