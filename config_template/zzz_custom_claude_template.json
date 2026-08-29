@@ -3037,8 +3037,9 @@
                 "{all}"
             ],
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "30m",
-            "tolerance": 30
+            "interval": "10m",
+            "tolerance": 50,
+            "idle_timeout": "15m"
         },
         {
             "type": "direct",
