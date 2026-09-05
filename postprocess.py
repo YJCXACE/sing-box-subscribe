@@ -188,9 +188,6 @@ def main():
                     "type": "urltest",
                     "outbounds": matched,
                     "url": URLTEST_URL,
-                    "interval": URLTEST_INTERVAL,
-                    "tolerance": URLTEST_TOLERANCE,
-                    "idle_timeout": "30m",
                 })
 
         whole_pool_tag = "⚡自动-" + pool_name
@@ -202,9 +199,6 @@ def main():
                 "type": "urltest",
                 "outbounds": node_tags,
                 "url": URLTEST_URL,
-                "interval": URLTEST_INTERVAL,
-                "tolerance": URLTEST_TOLERANCE,
-                "idle_timeout": "30m",
             })
 
         print(pool_name + ": 共" + str(len(node_tags)) + "个节点, " + str(matched_summary))
