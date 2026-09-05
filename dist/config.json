@@ -112,42 +112,28 @@
                 "tag": "Apple-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs",
-                "download_detour": "Direct"
-            },
-            {
-                "tag": "Apple-IP",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/apple.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "Bilibili-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bilibili.srs",
-                "download_detour": "Direct"
-            },
-            {
-                "tag": "Bilibili-IP",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/bilibili.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "China-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "China-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
                 "download_detour": "Direct"
             },
             {
@@ -161,14 +147,14 @@
                 "tag": "Google-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "Google-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
                 "download_detour": "Direct"
             },
             {
@@ -182,77 +168,56 @@
                 "tag": "Microsoft-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "Netflix-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "Netflix-IP",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "OpenAI-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/openai.srs",
-                "download_detour": "Direct"
-            },
-            {
-                "tag": "Spotify-Site",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",
-                "download_detour": "Direct"
-            },
-            {
-                "tag": "Spotify-IP",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/spotify.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "TikTok-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "YouTube-Site-Extra",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "GitHub-Site-Extra",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
                 "download_detour": "Direct"
             },
             {
                 "tag": "Meta-Site",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs",
-                "download_detour": "Direct"
-            },
-            {
-                "tag": "Meta-IP",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/facebook.srs",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs",
                 "download_detour": "Direct"
             }
         ],
@@ -498,24 +463,10 @@
             },
             {
                 "rule_set": [
-                    "Meta-IP"
-                ],
-                "action": "route",
-                "outbound": "📘Meta"
-            },
-            {
-                "rule_set": [
                     "OpenAI-Site"
                 ],
                 "action": "route",
                 "outbound": "🤖OpenAI"
-            },
-            {
-                "rule_set": [
-                    "Spotify-Site"
-                ],
-                "action": "route",
-                "outbound": "🎵Spotify"
             },
             {
                 "package_name": [
@@ -589,31 +540,10 @@
             },
             {
                 "rule_set": [
-                    "Bilibili-IP"
-                ],
-                "action": "route",
-                "outbound": "📺Bilibili"
-            },
-            {
-                "rule_set": [
                     "Netflix-IP"
                 ],
                 "action": "route",
                 "outbound": "📽️Netflix"
-            },
-            {
-                "rule_set": [
-                    "Spotify-IP"
-                ],
-                "action": "route",
-                "outbound": "🎵Spotify"
-            },
-            {
-                "rule_set": [
-                    "Apple-IP"
-                ],
-                "action": "route",
-                "outbound": "🍎Apple"
             },
             {
                 "rule_set": [
