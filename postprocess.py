@@ -199,6 +199,7 @@ def main():
                 "type": "urltest",
                 "outbounds": node_tags,
                 "url": URLTEST_URL,
+                "lazy": False,   # 启动时立即测速,不等流量触发
             })
 
         print(pool_name + ": 共" + str(len(node_tags)) + "个节点, " + str(matched_summary))
