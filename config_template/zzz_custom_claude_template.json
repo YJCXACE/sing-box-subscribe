@@ -2952,8 +2952,7 @@
             "outbounds": [
                 "{all}"
             ],
-            "url": "https://www.gstatic.com/generate_204",
-            "lazy": false
+            "url": "https://www.gstatic.com/generate_204"
         },
         {
             "type": "direct",
