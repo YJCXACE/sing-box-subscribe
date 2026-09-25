@@ -294,6 +294,17 @@
                 "outbound": "🌏️主代理"
             },
             {
+                "domain_suffix": [
+                    "gemini.google.com",
+                    "generativelanguage.googleapis.com",
+                    "aistudio.google.com",
+                    "deepmind.google",
+                    "deepmind.com"
+                ],
+                "action": "route",
+                "outbound": "🔮Gemini"
+            },
+            {
                 "domain_keyword": [
                     "googleapis"
                 ],
@@ -358,17 +369,6 @@
                 ],
                 "action": "route",
                 "outbound": "📽️Netflix"
-            },
-            {
-                "domain_suffix": [
-                    "gemini.google.com",
-                    "generativelanguage.googleapis.com",
-                    "aistudio.google.com",
-                    "deepmind.google",
-                    "deepmind.com"
-                ],
-                "action": "route",
-                "outbound": "🔮Gemini"
             },
             {
                 "domain_suffix": [
