@@ -106,119 +106,119 @@
                 "type": "remote",
                 "format": "source",
                 "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Apple-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Bilibili-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "China-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "China-IP",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "GFWList-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/Dreista/sing-box-rule-set-cn@rule-set/gfwlist.txt.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Google-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Google-IP",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Local-IP",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/QuixoticHeart/rule-set@ruleset/singbox/version3/iplocation-direct.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Microsoft-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Netflix-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Netflix-IP",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "OpenAI-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "TikTok-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "YouTube-Site-Extra",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "GitHub-Site-Extra",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             },
             {
                 "tag": "Meta-Site",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs",
-                "download_detour": "Direct"
+                "download_detour": "🌏️主代理"
             }
         ],
         "rules": [
@@ -3149,6 +3149,9 @@
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
             "external_ui": "ui"
+        },
+        "cache_file": {
+            "enabled": true
         }
     }
 }
